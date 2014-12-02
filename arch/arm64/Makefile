@@ -16,6 +16,7 @@ OBJCOPYFLAGS	:=-O binary -R .note -R .note.gnu.build-id -R .comment -S
 GZFLAGS		:=-9
 
 KBUILD_DEFCONFIG := defconfig
+KBUILD_CFLAGS	+= -fno-pic
 
 KBUILD_CFLAGS	+= -mgeneral-regs-only
 KBUILD_CFLAGS	+= -fno-pic
