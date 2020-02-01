@@ -19,7 +19,10 @@
 #include <linux/kthread.h>
 #include <linux/sched/rt.h>
 #include <linux/hisi/hisi_mailbox.h>
+
+#ifdef CONFIG_HISI_MAILBOX_DEBUGFS
 #include "hisi_mailbox_debugfs.h"
+#endif
 
 #define MBOX_PR_ERR(fmt, args ...)	\
 	({				\
@@ -513,7 +516,7 @@ static void hisi_mbox_tx_thread(unsigned long context)
 	struct hisi_mbox_device *mdev = (struct hisi_mbox_device *)context;
 	struct hisi_mbox_task *tx_task = NULL;
 	int ret = 0;
-	
+
     while (!kthread_should_stop())
     {
 		ret = wait_event_interruptible(mdev->tx_wait, (kfifo_len(&mdev->fifo) >= TX_FIFO_CELL_SIZE));
@@ -1000,7 +1003,10 @@ int hisi_mbox_device_unregister(void)
 	list = NULL;
 	mdevices = list;
 
+	#ifdef CONFIG_HISI_MAILBOX_DEBUGFS
 	mbox_debugfs_unregister();
+	#endif
+
 	return 0;
 }
 EXPORT_SYMBOL(hisi_mbox_device_unregister);
@@ -1058,7 +1064,10 @@ hisi_mbox_device_register(struct device *parent, struct hisi_mbox_device **list)
 
 	mdevices = list;
 
+	#ifdef CONFIG_HISI_MAILBOX_DEBUGFS
 	mbox_debugfs_register(mdevices);
+	#endif
+
 	return 0;
 
 err_out:
