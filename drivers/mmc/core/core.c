@@ -79,7 +79,7 @@ static const unsigned freqs_emmc[] = { 100000, 100000, 100000, 100000 };
  * performance cost, and for other reasons may not always be desired.
  * So we allow it it to be disabled.
  */
-bool use_spi_crc = 1;
+bool use_spi_crc = 0;
 module_param(use_spi_crc, bool, 0644);
 
 /*
@@ -2356,7 +2356,7 @@ static int mmc_do_erase(struct mmc_card *card, unsigned int from,
 				DSM_EMMC_LOG(card, DSM_EMMC_ERASE_ERR,
 					"%s:error %d requesting status %#x\n", __FUNCTION__,
 					err, cmd.resp[0]);
-			
+
 			}
 #endif
 /* END PN:DTS2014081103718 , Modified by d00168349, 2014/08/11 */
@@ -2753,7 +2753,7 @@ int _mmc_detect_card_removed(struct mmc_host *host)
 		{
 			dsm_sdcard_cmd_logs[i].value = 0;
 		}
-		
+
 	}
 #endif
 /* END PN:DTS2014081103718 , Modified by d00168349, 2014/08/11 */
