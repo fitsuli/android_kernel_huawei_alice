@@ -286,7 +286,7 @@ int mipi_dsi_read_reg(struct balong_fb_data_type *balongfd, u32 reg, u32 *val, u
     u32 tmp = 0;
     int ret = 0;
 
-    balongfb_logi("check esd enter.\n");
+    //balongfb_logi("check esd enter.\n");
 
     down(&balongfd->mipi_read_sem);
     down(&balong_fb_blank_sem);
