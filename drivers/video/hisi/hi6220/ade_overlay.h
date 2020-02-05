@@ -61,8 +61,8 @@ extern u32 g_ade_offline_disable;
 extern u32 g_debug_dis_ade_ioctl;
 extern u32 g_debug_diable_ade;
 extern u32 g_debug_frame_number;
-#else
-#warning "ADE_DEBUG_LOG_ENABLE is 0"
+//#else
+//#warning "ADE_DEBUG_LOG_ENABLE is 0"
 #endif
 
 #define WFD_SUPPORT (1)
