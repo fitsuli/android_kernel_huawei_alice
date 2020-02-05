@@ -44,7 +44,7 @@ int log_to_jank(int tag, int prio,const char* fmt, ...);
 
 #else
 #define pr_jank(tag, fmt, ...)	(-ENOENT)
-#define LOG_JANK_D(tag, fmt, ...)	(-ENOENT)
+#define LOG_JANK_D(tag, fmt, ...)	//(-ENOENT)
 #define LOG_JANK_W(tag, fmt, ...)	(-ENOENT)
 #define LOG_JANK_V(tag, fmt, ...)	(-ENOENT)
 #define LOG_JANK_I(tag, fmt, ...)	(-ENOENT)
