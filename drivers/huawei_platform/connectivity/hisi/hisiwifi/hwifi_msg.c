@@ -743,11 +743,11 @@ uint8 *hwifi_fill_scan_chan(uint8 *buf, struct hwifi_scan_param_stru *param)
 
 /*
  * Prototype    : hwifi_del_p2p_ie
- * Description  : ´ÓÊäÈëie²ÎÊýÖÐÈ¥³ýP2P IE£¬¿½±´µ½Êä³ö²ÎÊýie_outÖÐ
+ * Description  : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ieï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½P2P IEï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ie_outï¿½ï¿½
  * Input        : ie
  *              : ie_len
- * Output       : ie_out,ÐèÒªµ÷ÓÃÕß±£Ö¤ ²»Îª¿Õ£¬ÇÒÓÐ×ã¹»¿Õ¼ä´æ´¢Êä³öIE
- *              : ie_out_len È¥³ýP2P IEºóµÄIE³¤¶È
+ * Output       : ie_out,ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ß±ï¿½Ö¤ ï¿½ï¿½Îªï¿½Õ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã¹»ï¿½Õ¼ï¿½æ´¢ï¿½ï¿½ï¿½IE
+ *              : ie_out_len È¥ï¿½ï¿½P2P IEï¿½ï¿½ï¿½IEï¿½ï¿½ï¿½ï¿½
  * Return Value : int32
  * Calls        :
  * Called By    :
@@ -812,7 +812,7 @@ static int32 hwifi_del_p2p_ie(uint8 *ie, int32 ie_len, uint8 *ie_out, int32 *ie_
 
         if (TRUE == p2p_ie_found_flag)
         {
-            /* ÕÒµ½P2P IE£¬Ìø¹ý´ËIE ,²¢½«ºóÃæÊ£ÏÂµÄIE¿½±´µ½Êä³ö²ÎÊýie_outÖÐ*/
+            /* ï¿½Òµï¿½P2P IEï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½IE ,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê£ï¿½Âµï¿½IEï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ie_outï¿½ï¿½*/
             left -= elen;
             pos += elen;
 
@@ -824,7 +824,7 @@ static int32 hwifi_del_p2p_ie(uint8 *ie, int32 ie_len, uint8 *ie_out, int32 *ie_
         }
         else
         {
-            /* ²»ÊÇP2P IE,Ôò¿½±´µ½Êä³ö²ÎÊýÖÐ */
+            /* ï¿½ï¿½ï¿½ï¿½P2P IE,ï¿½ò¿½±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
             memcpy(pos_out, pos - 2, elen + 2);
             pos_out += (elen + 2);
             *ie_out_len += (elen + 2);
@@ -880,7 +880,7 @@ int32 hwifi_start_scan(struct cfg_struct *cfg, struct hwifi_scan_param_stru *par
 
     if (param->ssid_num > 0)
     {
-        /* GOÄ£Ê½ÅÐ¶Ï£¬·ÀÖ¹GOÄ£Ê½É¨ÃèÊ±¸²¸ÇÖ®Ç°ÉèÖÃµÄSSID */
+        /* GOÄ£Ê½ï¿½Ð¶Ï£ï¿½ï¿½ï¿½Ö¹GOÄ£Ê½É¨ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ö®Ç°ï¿½ï¿½ï¿½Ãµï¿½SSID */
         if ((!IS_P2P_ON(cfg)) || (!IS_AP(cfg)))
         {
             msg_size += sizeof(struct string_wid) + param->ssids[0].ssid_len;
@@ -894,7 +894,7 @@ int32 hwifi_start_scan(struct cfg_struct *cfg, struct hwifi_scan_param_stru *par
         /* 1:usered to set checksum */
         if (!IS_P2P_ON(cfg))
         {
-            /* P2P ¹Ø±ÕµÄÇé¿öÏÂÉ¨Ãè±¨ÎÄ²»´øP2P IE£¬ÐèÒª´ÓIEÐÅÏ¢ÖÐÉ¾³ý */
+            /* P2P ï¿½Ø±Õµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¨ï¿½è±¨ï¿½Ä²ï¿½ï¿½ï¿½P2P IEï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½IEï¿½ï¿½Ï¢ï¿½ï¿½É¾ï¿½ï¿½ */
             ie = kmalloc(param->ie_len, GFP_KERNEL);
             if (NULL == ie)
             {
@@ -970,7 +970,7 @@ int32 hwifi_start_scan(struct cfg_struct *cfg, struct hwifi_scan_param_stru *par
     /* fill scan ssid wid */
     if (param->ssid_num > 0)
     {
-        /* GOÄ£Ê½ÅÐ¶Ï£¬·ÀÖ¹GOÄ£Ê½É¨ÃèÊ±¸²¸ÇÖ®Ç°ÉèÖÃµÄSSID */
+        /* GOÄ£Ê½ï¿½Ð¶Ï£ï¿½ï¿½ï¿½Ö¹GOÄ£Ê½É¨ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ö®Ç°ï¿½ï¿½ï¿½Ãµï¿½SSID */
         if (!IS_P2P_ON(cfg) || !IS_AP(cfg))
         {
             struct string_wid       *ssid;       /* pointer to wid of ssid */
@@ -1008,7 +1008,7 @@ int32 hwifi_start_scan(struct cfg_struct *cfg, struct hwifi_scan_param_stru *par
 
         if (!IS_P2P_ON(cfg))
         {
-            /* p2p Î´¿ªÆô£¬ÔòÉ¾³ýP2P IE */
+            /* p2p Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½P2P IE */
             hwifi_fill_binary_wid(scan_ie, WID_IE, ie_len, (uint8 *)ie);
         }
         else
@@ -1052,7 +1052,7 @@ int32 hwifi_start_scan(struct cfg_struct *cfg, struct hwifi_scan_param_stru *par
     PRINT_SEND_CMD_RET("SCAN", ret);
     if (!IS_P2P_ON(cfg))
     {
-        /* returnÖ®Ç° ÐèÒªÊÇÊÍ·ÅieÄÚ´æ */
+        /* returnÖ®Ç° ï¿½ï¿½Òªï¿½ï¿½ï¿½Í·ï¿½ieï¿½Ú´ï¿½ */
         kfree(ie);
         ie = NULL;
     }
@@ -1410,7 +1410,7 @@ int32 hwifi_fit_cpufreq(struct cfg_struct *cfg, uint8 value)
     hwifi_fill_msg_hdr(&msg->msg_hdr, HOST_CMD_CONFIG, msg_size);
 
     /**
-     *ÉèÖÃfit_freq bin WID,wid³¤¶ÈÎª1Ê±£¬Îª½µÆµwid
+     *ï¿½ï¿½ï¿½ï¿½fit_freq bin WID,widï¿½ï¿½ï¿½ï¿½Îª1Ê±ï¿½ï¿½Îªï¿½ï¿½Æµwid
      */
     hwifi_fill_binary_wid(&msg->fit_freq, WID_FREQ_PLAN, WID_FIT_CPUFREQ_LEN, &value);
 
@@ -1424,7 +1424,7 @@ int32 hwifi_fit_cpufreq(struct cfg_struct *cfg, uint8 value)
 
     if (SUCC == ret)
     {
-        /* ±£´æcpuÆµÂÊ */
+        /* ï¿½ï¿½ï¿½ï¿½cpuÆµï¿½ï¿½ */
         g_pm_info->last_cpufreq = value;
     }
 
@@ -1477,7 +1477,7 @@ int32 hwifi_shutdown_RF(struct cfg_struct *cfg)
     hwifi_fill_msg_hdr(&msg->msg_hdr, HOST_CMD_CONFIG, msg_size);
 
     /**
-     *ÉèÖÃWID_FREQ_PLAN bin WID,wid³¤¶ÈÎª1²¢ÇÒÖµÎª0Ê±£¬Îªshutdown RF wid
+     *ï¿½ï¿½ï¿½ï¿½WID_FREQ_PLAN bin WID,widï¿½ï¿½ï¿½ï¿½Îª1ï¿½ï¿½ï¿½ï¿½ÖµÎª0Ê±ï¿½ï¿½Îªshutdown RF wid
      */
     hwifi_fill_binary_wid(&msg->RF_shutdown, WID_FREQ_PLAN, WID_SHUTDOWN_RF_LEN, &val);
 
@@ -1539,7 +1539,7 @@ int32 hwifi_shutdown_powersave(struct cfg_struct *cfg)
     hwifi_fill_msg_hdr(&msg->msg_hdr, HOST_CMD_CONFIG, msg_size);
 
     /**
-     *ÉèÖÃWID_FREQ_PLAN bin WID,wid³¤¶ÈÎª1²¢ÇÒÖµÎª0xFEÊ±£¬Îªshutdown powersave wid
+     *ï¿½ï¿½ï¿½ï¿½WID_FREQ_PLAN bin WID,widï¿½ï¿½ï¿½ï¿½Îª1ï¿½ï¿½ï¿½ï¿½ÖµÎª0xFEÊ±ï¿½ï¿½Îªshutdown powersave wid
      */
     hwifi_fill_binary_wid(&msg->shutdown_powersave, WID_FREQ_PLAN, WID_SHUTDOWN_POWERSAVE_LEN, &val);
 
@@ -1599,7 +1599,7 @@ int32 hwifi_set_bt_opt(struct cfg_struct *cfg, int value)
     hwifi_fill_msg_hdr(&msg->msg_hdr, HOST_CMD_CONFIG, msg_size);
 
     /**
-     *ÉèÖÃWID_FREQ_PLAN bin WID,wid³¤¶ÈÎª1
+     *ï¿½ï¿½ï¿½ï¿½WID_FREQ_PLAN bin WID,widï¿½ï¿½ï¿½ï¿½Îª1
      */
     hwifi_fill_char_wid(&msg->bt_opt, WID_CHAR_RESERVE, val);
 
@@ -1639,7 +1639,7 @@ STATIC void save_conn_ie(struct cfg_struct *cfg, uint8 *ie, int32 ie_len)
 
     if(cfg->conn.bss.assoc_ie_len && (NULL != cfg->conn.bss.assoc_ie))
     {
-        /* É¾³ý¾ÉµÄIE */
+        /* É¾ï¿½ï¿½ï¿½Éµï¿½IE */
         kfree(cfg->conn.bss.assoc_ie);
         cfg->conn.bss.assoc_ie = NULL;
         cfg->conn.bss.assoc_ie_len = 0;
@@ -1649,7 +1649,7 @@ STATIC void save_conn_ie(struct cfg_struct *cfg, uint8 *ie, int32 ie_len)
     {
         HWIFI_ASSERT(NULL != ie);
 
-        /* ±£´æ¹ØÁªAPµÄ¼ÓÃÜIEÐÅÏ¢ */
+        /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½APï¿½Ä¼ï¿½ï¿½ï¿½IEï¿½ï¿½Ï¢ */
         cfg->conn.bss.assoc_ie = (int8 *)kzalloc(ie_len, GFP_KERNEL);
         if (NULL == cfg->conn.bss.assoc_ie)
         {
@@ -1720,7 +1720,7 @@ int32 hwifi_start_conn(struct cfg_struct *cfg, struct hwifi_conn_param_stru *con
 
     if (!IS_P2P_ON(cfg))
     {
-        /* P2P ¹Ø±ÕµÄÇé¿öÏÂ¹ØÁªÇëÇó±¨ÎÄ²»´øP2P IE£¬ÐèÒª´ÓIEÐÅÏ¢ÖÐÉ¾³ý */
+        /* P2P ï¿½Ø±Õµï¿½ï¿½ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½P2P IEï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½IEï¿½ï¿½Ï¢ï¿½ï¿½É¾ï¿½ï¿½ */
         if ((NULL != connect_param->ie) && (0 != connect_param->ie_len))
         {
             no_p2p_ie = kmalloc(connect_param->ie_len, GFP_KERNEL);
@@ -1922,7 +1922,7 @@ int32 hwifi_start_conn(struct cfg_struct *cfg, struct hwifi_conn_param_stru *con
     PRINT_SEND_CMD_RET("CONN", ret);
     if (!IS_P2P_ON(cfg))
     {
-        /* returnÖ®Ç° ÐèÒªÊÇÊÍ·Åno_p2p_ieÄÚ´æ */
+        /* returnÖ®Ç° ï¿½ï¿½Òªï¿½ï¿½ï¿½Í·ï¿½no_p2p_ieï¿½Ú´ï¿½ */
         kfree(no_p2p_ie);
         no_p2p_ie = NULL;
     }
@@ -2149,11 +2149,11 @@ int32 hwifi_start_addset_beacon(struct cfg_struct *cfg, struct hwifi_beacon_para
     /* fill the msg header */
     beacon_msg_info = (struct beacon_msg *)msg;
     hwifi_fill_msg_hdr(&beacon_msg_info->msg_hdr, HOST_CMD_CONFIG, msg_size);
-    /* ap network,Ä¬ÈÏÖµÎª1 */
+    /* ap network,Ä¬ï¿½ï¿½ÖµÎª1 */
     hwifi_fill_char_wid(&beacon_msg_info->ap_network, WID_START_AP_NETWORK, 1);
     hwifi_fill_short_wid(&beacon_msg_info->interval, WID_BEACON_INTERVAL, beacon_param->interval);
     hwifi_fill_char_wid(&beacon_msg_info->dtim,WID_DTIM_PERIOD, beacon_param->dtim_period);
-    /* WID_11I_MODE,½Ó¿ÚÎÄµµÎªWID_11I_ENCYPT_MODE?? */
+    /* WID_11I_MODE,ï¿½Ó¿ï¿½ï¿½Äµï¿½ÎªWID_11I_ENCYPT_MODE?? */
     hwifi_fill_char_wid(&beacon_msg_info->encrypt_mode, WID_11I_MODE, beacon_param->crypto_mode);
     hwifi_fill_char_wid(&beacon_msg_info->pair_encrypt,WID_11I_PAIRWISE_CIPHER_MODE, beacon_param->pairwise_crypto);
     hwifi_fill_char_wid(&beacon_msg_info->group_encrypt,WID_11I_GROUP_CIPHER_MODE, beacon_param->group_crypto);
@@ -2493,10 +2493,10 @@ int32 wl_set_mac(struct cfg_struct *cfg, uint8* mac)
 void hwifi_get_rate_info(DEVICE_STATS_STRU stStatInfo, struct rate_info *rate_info)
 {
 
-    if(stStatInfo.ucTxRateIdx >> 4 == 0x8)/*²éÕÒµ½11nµÄËÙÂÊË÷Òý*/
+    if(stStatInfo.ucTxRateIdx >> 4 == 0x8)/*ï¿½ï¿½ï¿½Òµï¿½11nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
     {
         int index;
-        for(index = 0; index < sizeof(stTxRate)/sizeof(TX_RATE_STRU); index++) /*²é±íÆ¥Åä¶ÔÓ¦µÄËÙÂÊÖµ*/
+        for(index = 0; index < sizeof(stTxRate)/sizeof(TX_RATE_STRU); index++) /*ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ*/
         {
             if( stTxRate[index].ucTxRateIdx == stStatInfo.ucTxRateIdx)
             {
@@ -2518,7 +2518,7 @@ void hwifi_get_rate_info(DEVICE_STATS_STRU stStatInfo, struct rate_info *rate_in
             HWIFI_WARNING("hwifi_recv_stats_result:receive wrong ucTxRateIdx");
             }
         }
-    else /*·Ç11nµÄËÙÂÊË÷Òý¼´ÎªÆäËÙÂÊÖµ*/
+    else /*ï¿½ï¿½11nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ*/
     {
         rate_info->legacy = 10*(stStatInfo.ucTxRateIdx);
         rate_info->mcs = 0;
@@ -2561,12 +2561,12 @@ static int32 smooth_signal_rssi(struct cfg_struct *cfg, int32 rssi)
 {
     int32 factor;
     int32 delta;
-    /*¹æ±ÜÐ¾Æ¬bug£¬ÓÐÊ±device»áÉÏ±¨0Öµ£¬´Ë´¦½«0ÖµÆÁ±Î*/
+    /*ï¿½ï¿½ï¿½Ð¾Æ¬bugï¿½ï¿½ï¿½ï¿½Ê±deviceï¿½ï¿½ï¿½Ï±ï¿½0Öµï¿½ï¿½ï¿½Ë´ï¿½ï¿½ï¿½0Öµï¿½ï¿½ï¿½ï¿½*/
     if( 0 == rssi)
     {
         return cfg->latest_signal;
     }
-    /*È¡µ±Ç°ÖµºÍÀúÊ·ÖµµÄ²îÖµ£¬²îÖµÔÚ-10~10·¶Î§Íâ£¬È¡-10»ò10*/
+    /*È¡ï¿½ï¿½Ç°Öµï¿½ï¿½ï¿½ï¿½Ê·Öµï¿½Ä²ï¿½Öµï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½-10~10ï¿½ï¿½Î§ï¿½â£¬È¡-10ï¿½ï¿½10*/
     delta = rssi - cfg->latest_signal;
     if( delta > RELATIVE_VALUE_POS_H)
     {
@@ -2576,7 +2576,7 @@ static int32 smooth_signal_rssi(struct cfg_struct *cfg, int32 rssi)
     {
         delta = RELATIVE_VALUE_NEG_H;
     }
-    /*»ñÈ¡²îÖµ±ÈÖØÒò×Ó£¬1/5,1/3»ò1/2*/
+    /*ï¿½ï¿½È¡ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½1/5,1/3ï¿½ï¿½1/2*/
     if( delta > RELATIVE_VALUE_POS_M || delta < RELATIVE_VALUE_NEG_M )
     {
         factor = FACTOR_H;
@@ -2589,7 +2589,7 @@ static int32 smooth_signal_rssi(struct cfg_struct *cfg, int32 rssi)
     {
         factor = FACTOR_M;
     }
-    /*¼ÆËãÆ½»¬ºóµÄrssi*/
+    /*ï¿½ï¿½ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½rssi*/
     cfg->latest_signal = cfg->latest_signal + (delta*2 + ABS(delta,factor))/(factor*2);
     HWIFI_DEBUG("rssi=%d, cfg->latest_signal%d",rssi, cfg->latest_signal);
     return cfg->latest_signal;
@@ -2638,7 +2638,7 @@ int32 hwifi_recv_stats_result(struct cfg_struct *cfg, uint8 *buf)
 
     /* DTS2013112714803 Hi110x bug fix l00137985 2013/11/29 begin */
     stats_result.signal          = smooth_signal_rssi(cfg, msg->stStatInfo.cRssi);
-    /*Èç¹û»ñÈ¡µÄrssiÎªÕýÖµ£¬ÐèÐÞ¸ÄÎª-1ÉÏ±¨*/
+    /*ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½rssiÎªï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½Îª-1ï¿½Ï±ï¿½*/
     if(stats_result.signal > 0)
     {
         stats_result.signal = -1;
@@ -2931,7 +2931,7 @@ int32 hwifi_recv_conn_res(struct cfg_struct *cfg, uint8 *buf)
     /* DTS2014032905658 Hi110x bug fix l00225940 2014/4/2 begin */
     if (ASOC_STATUS_SUCC != pst_msg->stMsgHdr.usMsgSubStatus)
     {
-        strncpy(cfg->beacon_ie_country_code,INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN);
+        memcpy(cfg->beacon_ie_country_code,INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN);
         ret = hwifi_regdomain_update(cfg);
     }
     /* DTS2014032905658 Hi110x bug fix l00225940 2014/4/2 end */
@@ -2953,7 +2953,7 @@ int32 hwifi_connectting_fail_report_conn_res(struct cfg_struct *cfg, int32 conne
 
     connect_init_11b_params(cfg);
 
-    strncpy(cfg->beacon_ie_country_code,INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN);
+    memcpy(cfg->beacon_ie_country_code,INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN);
     ret = hwifi_regdomain_update(cfg);
 
     return ret;
@@ -3015,12 +3015,12 @@ int32 hwifi_report_diconnect_res(struct cfg_struct *cfg, uint16 reason)
     disconn_res.reason_code = reason;
 
     /* DTS2014092608049 Hi1101 bug fix d00223710 begin */
-    /* deviceÉÏ±¨È¥¹ØÁªºó,Á¢¼´É¾³ýÉ¨ÃèÁÐ±íÐÅÏ¢ */
+    /* deviceï¿½Ï±ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½É¨ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½Ï¢ */
     clean_scanned_bss_immediately(&cfg->scan.bss_mgmt);
     /* DTS2014092608049 Hi1101 bug fix d00223710 end */
 
 #ifdef WLAN_POWER_MANAGEMENT
-    /* È¥¹ØÁªÊ±£¬½«watchdog timerÉ¾³ý */
+    /* È¥ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½watchdog timerÉ¾ï¿½ï¿½ */
     if (g_powermgmt_switch)
     {
         if (cfg->hi110x_dev->pm_info != NULL)
@@ -3656,7 +3656,7 @@ int32 hwifi_cmd_add_key(struct cfg_struct *cfg, struct priv_key_param *key, int8
         {
             if(1 == pairwise)
             {
-                /* µ¥²¥Ìí¼ÓÍêkeyÐèÒªµ÷ÓÃ´Ëº¯ÊýÉúÐ§£¬×é²¥ÓÉhostapdÉÏ²ãµ÷ÓÃ */
+                /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½keyï¿½ï¿½Òªï¿½ï¿½ï¿½Ã´Ëºï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½é²¥ï¿½ï¿½hostapdï¿½Ï²ï¿½ï¿½ï¿½ï¿½ */
                 hwifi_cmd_set_defkey(cfg, key, mac_addr, index, pairwise);
             }
         }
@@ -4038,7 +4038,7 @@ int32 wl_get_upc_info(struct cfg_struct  *cfg)
     uint16                         msg_size;
     int32                          ret;
 
-    /*²éÑ¯WID upc */
+    /*ï¿½ï¿½Ñ¯WID upc */
     msg_size = sizeof(struct hwifi_query_msg_header) + sizeof(uint16);
     if (MAX_MSG_LEN < msg_size)
     {
@@ -4273,11 +4273,11 @@ int32 hwifi_proc_res_msg(struct cfg_struct *cfg, uint8 *buf)
 
     ret = SUCC;
 
-    /* ×î¶ÌµÄwidÊÇcharÀàÐÍµÄ£¬1´Î²éÑ¯¿ÉÉÏ±¨¶à¸öwid²éÑ¯½á¹û */
+    /* ï¿½ï¿½Ìµï¿½widï¿½ï¿½charï¿½ï¿½ï¿½ÍµÄ£ï¿½1ï¿½Î²ï¿½Ñ¯ï¿½ï¿½ï¿½Ï±ï¿½ï¿½ï¿½ï¿½widï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ */
     pos = (uint8 *)(msghdr->wid_list);
     while(msg_len >= sizeof(struct char_wid))
     {
-        /* ½âÎöTLV ¸ñÊ½µÄ²éÑ¯½á¹û,type:2×Ö½Ú£¬len:1×Ö½Ú£¬Value¸ù¾ÝlenÖµ¼ÆËã */
+        /* ï¿½ï¿½ï¿½ï¿½TLV ï¿½ï¿½Ê½ï¿½Ä²ï¿½Ñ¯ï¿½ï¿½ï¿½,type:2ï¿½Ö½Ú£ï¿½len:1ï¿½Ö½Ú£ï¿½Valueï¿½ï¿½ï¿½ï¿½lenÖµï¿½ï¿½ï¿½ï¿½ */
         wid = pos[0] | (pos[1] << 8);
         wid_value_len = pos[2];
 
@@ -4314,7 +4314,7 @@ int32 hwifi_proc_res_msg(struct cfg_struct *cfg, uint8 *buf)
             break;
         }
 
-        msg_len = msg_len - wid_value_len - 3; /* TLV ¸ñÊ½£¬TYPE ºÍ len Îª3×Ö½Ú */
+        msg_len = msg_len - wid_value_len - 3; /* TLV ï¿½ï¿½Ê½ï¿½ï¿½TYPE ï¿½ï¿½ len Îª3ï¿½Ö½ï¿½ */
         pos = pos + 3 + wid_value_len;
 
     }
@@ -4485,7 +4485,7 @@ int32 hwifi_proc_asyn_msg(struct cfg_struct *cfg, uint8 *buf)
             /* init device protocol */
             ret = hwifi_recv_init_result(cfg, buf);
             break;
-        /* Æô¶¯¼ÓÔØ²ßÂÔÐÞ¸Ä */
+        /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø²ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ */
         case DEVICE_STATUS_READY:/* DTS2012120100859 */
             /* device ready  */
             ret = hwifi_recv_status_ready(cfg, buf);
@@ -4616,7 +4616,7 @@ STATIC int32 wl_rx_cb(unsigned char main_type,unsigned char sub_type, struct sk_
         }
         if(!IS_STA(cfg))
         {
-            /* Ö»ÓÐSTAÄ£Ê½²ÉÓÃÐÄÌøÉÏ±¨staÍ³¼ÆÐÅÏ¢ */
+            /* Ö»ï¿½ï¿½STAÄ£Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½staÍ³ï¿½ï¿½ï¿½ï¿½Ï¢ */
             HWIFI_DEBUG("HCC_TYPE_BEATHEART packet,but not sta mode,ignore the info.");
             dev_kfree_skb_any(skb);
             return SUCC;
@@ -4776,11 +4776,11 @@ int32 hwifi_send_p2p_flag(struct cfg_struct *cfg, int32 flag)
     /* set the msg header */
     hwifi_fill_msg_hdr(&msg->msg_hdr, HOST_CMD_CONFIG, msg_size);
     /*added begin by lxm for DTS2013102507552*/
-    if( flag == 0)/*p2p¹Ø±Õ*/
+    if( flag == 0)/*p2pï¿½Ø±ï¿½*/
     {
         hwifi_fill_char_wid(&msg->p2p_gmode, WID_11G_OPERATING_MODE,cfg->sta_info.gmode);
     }
-    else/*p2p´ò¿ª*/
+    else/*p2pï¿½ï¿½*/
     {
         hwifi_fill_char_wid(&msg->p2p_gmode, WID_11G_OPERATING_MODE,HWIFI_MODE_G_ONLY);
     }
@@ -4928,9 +4928,9 @@ int32 wl_set_p2p_ie(struct cfg_struct *cfg,
 
     if ((0 == beacon_ie_len) && (0 == asoc_rsp_ie_len))
     {
-        /* STA´¦ÓÚP2P É¨Ãè×´Ì¬£¬Ö»»á¸üÐÂprobe_rsp_ieÐÅÏ¢¡£
-         * Èç¹ûËùÓÐIEÎª¿Õ£¬ÔòÇå¿ÕP2P ¼àÌý×´Ì¬ÉèÖÃµÄWPS/P2P IE £¬
-         * Èç¹ûÖ»ÓÐprobe response²»Îª¿Õ£¬ÔòÏÂ·¢¼àÌýWPS/P2P IE,ÓÃÓÚdevice»ØÓ¦probe responseÐ¯´ø´ËIE
+        /* STAï¿½ï¿½ï¿½ï¿½P2P É¨ï¿½ï¿½×´Ì¬ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½probe_rsp_ieï¿½ï¿½Ï¢ï¿½ï¿½
+         * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½IEÎªï¿½Õ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½P2P ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½Ãµï¿½WPS/P2P IE ï¿½ï¿½
+         * ï¿½ï¿½ï¿½Ö»ï¿½ï¿½probe responseï¿½ï¿½Îªï¿½Õ£ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½WPS/P2P IE,ï¿½ï¿½ï¿½ï¿½deviceï¿½ï¿½Ó¦probe responseÐ¯ï¿½ï¿½ï¿½ï¿½IE
          */
          msg_size = sizeof(struct hwifi_msg_header)
              + (sizeof(struct binary_wid) + 1)
@@ -4949,8 +4949,8 @@ int32 wl_set_p2p_ie(struct cfg_struct *cfg,
     }
     else
     {
-        /* GO¸üÐÂËùÓÐµÄP2P/WPS IE
-         * ËäÈ»GOÔÚ³õÊ¼»¯ºÍÈ¥³õÊ¼»¯Ê±Ò²»áÇå¿ÕËùÓÐµÄIEÐÅÏ¢,µ«ÓÉdevice²àÔÚÄ£Ê½ÇÐ»»¹ý³ÌÖÐ¸ºÔðÖ÷¶¯Çå¿Õ
+        /* GOï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½P2P/WPS IE
+         * ï¿½ï¿½È»GOï¿½Ú³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½Ê¼ï¿½ï¿½Ê±Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½IEï¿½ï¿½Ï¢,ï¿½ï¿½ï¿½ï¿½deviceï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
          */
         msg_size = sizeof(struct hwifi_msg_header)
              + (3 * (sizeof(struct binary_wid) + 1))
@@ -5299,7 +5299,7 @@ int32 wl_get_channel_info(struct cfg_struct  *cfg)
     uint16                         msg_size;
     int32                          ret;
 
-    /* ²éÑ¯µ±Ç°ÐÅµÀ£¬1¸ö²éÑ¯WIDºÅ */
+    /* ï¿½ï¿½Ñ¯ï¿½ï¿½Ç°ï¿½Åµï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½Ñ¯WIDï¿½ï¿½ */
     msg_size = sizeof(struct hwifi_query_msg_header) + sizeof(uint16);
     if (MAX_MSG_LEN < msg_size)
     {
@@ -5540,7 +5540,7 @@ int32 hwifi_recv_roam_report(struct cfg_struct *cfg, uint8 *buf)
     switch (roam_substatus)
     {
         case ROAM_SUB_STATUS_CFG_RESULT:
-            /* ÔÝÊ±²»×ö´¦Àí */
+            /* ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
             break;
 
         case ROAM_SUB_STATUS_TRIGGER:
@@ -5621,7 +5621,7 @@ int32 hwifi_start_roam_set_param(struct cfg_struct *cfg, struct roam_cfg_stru *c
 
     msg = (struct roam_cfg_msg *)skb_put(skb, sizeof(struct roam_cfg_msg));
 
-    /* TBD HOST_CMD_ROAMÐèÒª¶¨Òå */
+    /* TBD HOST_CMD_ROAMï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ */
     hwifi_fill_msg_hdr(&msg->msg_hdr, HOST_CMD_ROAM, msg_size);
 
     /* TBD fill cfg param */
@@ -5687,7 +5687,7 @@ int32 hwifi_start_roam_scan(struct cfg_struct *cfg, struct roam_scan_cfg_ch_stru
 
     msg = (struct roam_scan_cfg_ch_msg *)skb_put(skb, sizeof(struct roam_scan_cfg_ch_msg));
 
-    /* TBD HOST_CMD_ROAMÐèÒª¶¨Òå */
+    /* TBD HOST_CMD_ROAMï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ */
     hwifi_fill_msg_hdr(&msg->msg_hdr, HOST_CMD_ROAM, msg_size);
 
     /* TBD fill roam param */
@@ -5753,7 +5753,7 @@ int32 hwifi_start_roam_send_probe_req(struct cfg_struct *cfg, struct roam_scan_p
 
     msg = (struct roam_scan_probe_req_msg *)skb_put(skb, sizeof(struct roam_scan_probe_req_msg));
 
-    /* TBD HOST_CMD_ROAMÐèÒª¶¨Òå */
+    /* TBD HOST_CMD_ROAMï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ */
     hwifi_fill_msg_hdr(&msg->msg_hdr, HOST_CMD_ROAM, msg_size);
 
     /* TBD fill send probe req param */
@@ -5857,7 +5857,7 @@ int32 hwifi_start_roaming(struct cfg_struct *cfg, struct roam_roaming_stru *para
 /* DTS2014050806333 HI1101 bug fix 2014-6-13 end */
 
 
-    /* ÐèÒªbeacon³¤¶È */
+    /* ï¿½ï¿½Òªbeaconï¿½ï¿½ï¿½ï¿½ */
     msg_size = sizeof(struct roam_roaming_msg) + param->length;
 #ifdef __CHECKSUM__
     msg_size += sizeof(*checksum);
@@ -5871,7 +5871,7 @@ int32 hwifi_start_roaming(struct cfg_struct *cfg, struct roam_roaming_stru *para
 
     msg = (struct roam_roaming_msg *)skb_put(skb, sizeof(struct roam_roaming_msg) + param->length);
 
-    /* TBD HOST_CMD_ROAMÐèÒª¶¨Òå */
+    /* TBD HOST_CMD_ROAMï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ */
     hwifi_fill_msg_hdr(&msg->msg_hdr, HOST_CMD_ROAM, msg_size);
 
     /* TBD fill roam param */
@@ -5937,7 +5937,7 @@ int32 hwifi_start_roaming_timeout(struct cfg_struct *cfg, struct roam_roaming_ti
 
     msg = (struct roam_roaming_timeout_msg *)skb_put(skb, sizeof(struct roam_roaming_timeout_msg));
 
-    /* TBD HOST_CMD_ROAMÐèÒª¶¨Òå */
+    /* TBD HOST_CMD_ROAMï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ */
     hwifi_fill_msg_hdr(&msg->msg_hdr, HOST_CMD_ROAM, msg_size);
 
     /* TBD fill roam timeout param */
@@ -5997,7 +5997,7 @@ int32 hwifi_start_stay_home(struct cfg_struct *cfg, struct roam_stay_home_stru *
 
     msg = (struct roam_stay_home_channel_msg *)skb_put(skb, sizeof(struct roam_stay_home_channel_msg));
 
-    /* TBD HOST_CMD_ROAMÐèÒª¶¨Òå */
+    /* TBD HOST_CMD_ROAMï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ */
     hwifi_fill_msg_hdr(&msg->msg_hdr, HOST_CMD_ROAM, msg_size);
 
     /* TBD fill roam param */
@@ -6059,7 +6059,7 @@ int32 hwifi_recv_roam_scan_report(struct cfg_struct *cfg, uint8 *buf)
 
     HWIFI_DEBUG("Msg content: band = %d, channel = %d, rssi = %d\n", msg->scan_report.band, msg->scan_report.channel, msg->scan_report.rssi);
 
-    /* Èç¹ûÐÅµÀ·Ç·¨£¬Ö±½Ó·µ»Ø£¬²»´¦Àí */
+    /* ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ö±ï¿½Ó·ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     if (msg->scan_report.band >= ROAM_PARAM_BAND_BUTT)
     {
         HWIFI_ERROR("Band is invalid. band = %d\n", msg->scan_report.band);
@@ -6089,7 +6089,7 @@ int32 hwifi_recv_roam_scan_report(struct cfg_struct *cfg, uint8 *buf)
     }
 
     /* DTS2014050806333 HI1101 bug fix 2014-6-13 begin */
-    /* ¼ÓÃÜRSN/WPA IEÆ¥ÅäÅÐ¶Ï,Èç¹û¼ÓÃÜRSN/WPA IE²»Æ¥ÅäÔò·µ»Ø */
+    /* ï¿½ï¿½ï¿½ï¿½RSN/WPA IEÆ¥ï¿½ï¿½ï¿½Ð¶ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½RSN/WPA IEï¿½ï¿½Æ¥ï¿½ï¿½ï¿½ò·µ»ï¿½ */
     if(hwifi_roam_ie_is_mismatch(cfg, msg->scan_report.frame, msg->scan_report.length))
     {
         return SUCC;
@@ -6298,8 +6298,8 @@ int32 hwifi_recv_roam_new_ap_assoc_cmpl(struct cfg_struct *cfg, uint8 *buf)
  * Description  : enable or disable device report roam trigger event
  * Input        : cfg
                 : enabled : enabled or disabled
- *              : (10£ºÊÇ°µÆÁÏÂ·¢£¬±íÊ¾²»ÉÏ±¨ÂþÓÎÉ¨ÃèÊÂ¼þ)
- *              : (20£º±íÊ¾ÁÁÆÁÏÂ·¢£¬±íÊ¾ÖØÐÂÉÏ±¨ÂþÓÎÉ¨ÃèÊÂ¼þ)
+ *              : (10ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ï±ï¿½ï¿½ï¿½ï¿½ï¿½É¨ï¿½ï¿½ï¿½Â¼ï¿½)
+ *              : (20ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ï¿½ï¿½ï¿½ï¿½É¨ï¿½ï¿½ï¿½Â¼ï¿½)
  * Output       : None
  * Return Value : SUCC or failure code
  * Calls        : null
@@ -6364,7 +6364,7 @@ int32 hwifi_set_dev_roam_report_enabled(struct cfg_struct *cfg, uint8 enabled)
 /* DTS2015030605737 Hi1101 bug fix d00223710 20150311 begin */
 /*
  * Prototype    : hwifi_roam_calc_tx_failed_scale
- * Description  : ¼ÆËã·¢ËÍ±¨ÎÄÊ§°ÜÂÊ£¬Èç¹û¹ý¸ßÔò´¥·¢ÂþÓÎ
+ * Description  : ï¿½ï¿½ï¿½ã·¢ï¿½Í±ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ï¿½Ê£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ò´¥·ï¿½ï¿½ï¿½ï¿½ï¿½
  * Input        : struct cfg_struct *cfg
                 : uint32 tx_success_pkt
                 : uint32 tx_failed_pkt
@@ -6395,7 +6395,7 @@ void hwifi_roam_calc_tx_failed_scale(struct cfg_struct *cfg, uint32 tx_success_p
 
     if(!cfg->hi110x_dev->pm_info->connect_finished)
     {
-        /* Î´¹ØÁªÇé¿öÏÂ²»¼ÇÂ¼±¨ÎÄ·¢ËÍÍ³¼ÆÖµ */
+        /* Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â²ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½Í³ï¿½ï¿½Öµ */
         pst_roam_info->alg_param.tx_pkt_param.record_count = 0;
         pst_roam_info->alg_param.tx_pkt_param.tx_failed_trigger_flag = 0;
         return;
@@ -6415,7 +6415,7 @@ void hwifi_roam_calc_tx_failed_scale(struct cfg_struct *cfg, uint32 tx_success_p
             ||(pst_roam_info->alg_param.tx_pkt_param.tx_success_pkt[1] > tx_success_pkt)
             ||(pst_roam_info->alg_param.tx_pkt_param.tx_failed_pkt[1] > tx_failed_pkt))
     {
-        /* Èç¹ûdeviceÉÏ±¨×îÐÂ·¢ËÍ±¨ÎÄÍ³¼ÆµÍÓÚÉÏ1ÃëµÄ¼ÇÂ¼Öµ£¬ÔòËµÃ÷ÖØÐÂ¹ØÁª¹ýÐÂµÄAP,ÕâÀïÖØÐÂ¿ªÊ¼¼ÇÂ¼ */
+        /* ï¿½ï¿½ï¿½deviceï¿½Ï±ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½Í±ï¿½ï¿½ï¿½Í³ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½Ä¼ï¿½Â¼Öµï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½AP,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¿ï¿½Ê¼ï¿½ï¿½Â¼ */
         HWIFI_INFO("reset tx packet record,record_count=%d,tx_success_pkt[0]=%u,tx_failed_pkt[0]=%u,tx_success_pkt[1]=%u,tx_failed_pkt[1]=%u,tx_succss_pkt=%u,tx_failed_pkt=%u",
                     pst_roam_info->alg_param.tx_pkt_param.record_count,
                     pst_roam_info->alg_param.tx_pkt_param.tx_success_pkt[0],
@@ -6506,22 +6506,22 @@ int32 hwifi_pmf_send_nl_msg(struct cfg_struct *cfg, uint8 *buf, uint32 msg_len)
         return -EFAIL;
     }
 
-    /* ³õÊ¼»¯Ò»¸önetlinkÏûÏ¢Ê×²¿£¬TBD */
+    /* ï¿½ï¿½Ê¼ï¿½ï¿½Ò»ï¿½ï¿½netlinkï¿½ï¿½Ï¢ï¿½×²ï¿½ï¿½ï¿½TBD */
     nlh = nlmsg_put(skb, 0, 0, 0, msg_len, 0);
 
-    /* Ìî³äÊý¾ÝÇø */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     memcpy(NLMSG_DATA(nlh), buf, msg_len);
 
-    /* ÉèÖÃÏûÏ¢³¤¶È */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ */
     nlh->nlmsg_len = NLMSG_LENGTH(msg_len);
 
-    /* ÉèÖÃ¿ØÖÆ×Ö¶Î */
+    /* ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½Ö¶ï¿½ */
     NETLINK_CB(skb).portid = 0;
     NETLINK_CB(skb).dst_group = 0;
 
     HWIFI_INFO("[kernel space] skb->data:%s\n", (char *)NLMSG_DATA((struct nlmsghdr *)skb->data));
 
-    //·¢ËÍÊý¾Ý
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     retval = netlink_unicast(cfg->pmf_info.nl_sk, skb, cfg->pmf_info.user_pid, MSG_DONTWAIT);
 
     HWIFI_INFO("[kernel space] netlink_unicast return: %d\n", retval);
@@ -6555,7 +6555,7 @@ void hwifi_pmf_resv_nl_msg(struct sk_buff *skb)
 
     HWIFI_INFO("[Host][Driver], receive netlink msg from host app\n.");
 
-    /* TBD ÐèÒª¿¼ÂÇskbÔÚÊ²Ã´µØ·½ÊÍ·Å */
+    /* TBD ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½skbï¿½ï¿½Ê²Ã´ï¿½Ø·ï¿½ï¿½Í·ï¿½ */
     nl_skb = skb_get(skb);
     nl_hdr = (struct nlmsghdr *)skb->data;
 
@@ -6799,18 +6799,18 @@ void hwifi_pmf_exit(struct cfg_struct *cfg)
 }
 
 /*****************************************************************************
- º¯ Êý Ãû  : pmf_set_params
- ¹¦ÄÜÃèÊö  :
- ÊäÈë²ÎÊý  : ÎÞ
- Êä³ö²ÎÊý  : ÎÞ
- ·µ »Ø Öµ  :
- µ÷ÓÃº¯Êý  :
- ±»µ÷º¯Êý  :
+ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : pmf_set_params
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ ï¿½ï¿½ Öµ  :
+ ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½  :
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 
- ÐÞ¸ÄÀúÊ·      :
-  1.ÈÕ    ÆÚ   : 2013Äê2ÔÂ27ÈÕ
-    ×÷    Õß   : mayuan
-    ÐÞ¸ÄÄÚÈÝ   : ÐÂÉú³Éº¯Êý
+ ï¿½Þ¸ï¿½ï¿½ï¿½Ê·      :
+  1.ï¿½ï¿½    ï¿½ï¿½   : 2013ï¿½ï¿½2ï¿½ï¿½27ï¿½ï¿½
+    ï¿½ï¿½    ï¿½ï¿½   : mayuan
+    ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½ï¿½Éºï¿½ï¿½ï¿½
 
 *****************************************************************************/
 int32  pmf_set_params(struct cfg_struct *cfg)
@@ -6849,18 +6849,18 @@ int32  pmf_set_params(struct cfg_struct *cfg)
 
 
 /*****************************************************************************
- º¯ Êý Ãû  : pmf_param
- ¹¦ÄÜÃèÊö  :
- ÊäÈë²ÎÊý  : ÎÞ
- Êä³ö²ÎÊý  : ÎÞ
- ·µ »Ø Öµ  :
- µ÷ÓÃº¯Êý  :
- ±»µ÷º¯Êý  :
+ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : pmf_param
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ ï¿½ï¿½ Öµ  :
+ ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½  :
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 
- ÐÞ¸ÄÀúÊ·      :
-  1.ÈÕ    ÆÚ   : 2013Äê2ÔÂ26ÈÕ
-    ×÷    Õß   : mayuan
-    ÐÞ¸ÄÄÚÈÝ   : ÐÂÉú³Éº¯Êý
+ ï¿½Þ¸ï¿½ï¿½ï¿½Ê·      :
+  1.ï¿½ï¿½    ï¿½ï¿½   : 2013ï¿½ï¿½2ï¿½ï¿½26ï¿½ï¿½
+    ï¿½ï¿½    ï¿½ï¿½   : mayuan
+    ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½ï¿½Éºï¿½ï¿½ï¿½
 
 *****************************************************************************/
 int32 pmf_param(struct cfg_struct* cfg, int param_cmd , int32 *param_value, int32 *get)

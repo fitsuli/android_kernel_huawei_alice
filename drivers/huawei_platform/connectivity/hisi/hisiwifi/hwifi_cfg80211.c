@@ -86,12 +86,12 @@ struct hwifi_elements_stru
 #pragma pack()
 
 static const uint8 broadcast[6] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
-static const uint8 zeroaddr[6] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+//static const uint8 zeroaddr[6] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 
 
-uint32 band_5g_enabled = FALSE;  /* TBD 5GÊ¹ÄÜ¿ª¹Ø£¬µ±Ç°Ä¬ÈÏ¿ªÆô£¬·¢²¼Ê±ÐèÒªÐÞ¸ÄÎªÄ¬ÈÏ¹Ø±Õ */
+uint32 band_5g_enabled = FALSE;  /* TBD 5GÊ¹ï¿½Ü¿ï¿½ï¿½Ø£ï¿½ï¿½ï¿½Ç°Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Òªï¿½Þ¸ï¿½ÎªÄ¬ï¿½Ï¹Ø±ï¿½ */
 /* DTS2014070401143 Hi110x bug fix  luolingzhi/l00225940 2014/7/22  begin */
-uint8 g_ap_coex_2040m_enabled = 0;    /*ap Ä£Ê½ÏÂ·ÇÈÏÖ¤°æ±¾Ä¬ÈÏ 20M 40m¹²´æ¹Ø±Õ£¬ÈÏÖ¤°æ±¾Ä¬ÈÏ¿ªÆô */
+uint8 g_ap_coex_2040m_enabled = 0;    /*ap Ä£Ê½ï¿½Â·ï¿½ï¿½ï¿½Ö¤ï¿½æ±¾Ä¬ï¿½ï¿½ 20M 40mï¿½ï¿½ï¿½ï¿½Ø±Õ£ï¿½ï¿½ï¿½Ö¤ï¿½æ±¾Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½ */
 /* DTS2014070401143 Hi110x bug fix  luolingzhi/l00225940 2014/7/22  end */
 
 /* DTS2014072203281 Hi110x bug fix  luolingzhi/l00225940 2014/8/7  begin */
@@ -396,12 +396,12 @@ void wl_set_pwrm_late(struct work_struct * work)
     HWIFI_DEBUG("Set early suspend when timeout");
     hi110x_suspend_action(cfg->hi110x_dev->pm_info);
 
-    /* DTS2014012203891   Hi110x bug fix º¼ÌìÆæ 2014/01/23 begin */
+    /* DTS2014012203891   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2014/01/23 begin */
 
-    /* Èç¹ûAndroid¸ß¼¶Ñ¡ÏîÑ¡Ôñ:1¡¢Ê¼ÖÕ±£³Ö¹ØÁª 2¡¢½öÏÞ³äµçÊ±(³äµç×´Ì¬) */
+    /* ï¿½ï¿½ï¿½Androidï¿½ß¼ï¿½Ñ¡ï¿½ï¿½Ñ¡ï¿½ï¿½:1ï¿½ï¿½Ê¼ï¿½Õ±ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ 2ï¿½ï¿½ï¿½ï¿½ï¿½Þ³ï¿½ï¿½Ê±(ï¿½ï¿½ï¿½×´Ì¬) */
     if (g_keepconnect_switch)
     {
-        /* ÉèÖÃ×îÐ¡Ê¡µçÄ£Ê½ */
+        /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡Ê¡ï¿½ï¿½Ä£Ê½ */
         ret = hi110x_pm_powermode_set(cfg, HI110X_POWERMODE_MIN);
         if (ret < 0)
         {
@@ -411,7 +411,7 @@ void wl_set_pwrm_late(struct work_struct * work)
 
     return;
 
-    /* DTS2014012203891   Hi110x bug fix º¼ÌìÆæ 2014/01/23 end */
+    /* DTS2014012203891   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2014/01/23 end */
 }
 
 /*
@@ -537,7 +537,7 @@ STATIC int32 hwifi_cfg80211_scan(struct wiphy                *wiphy,
         */
         HWIFI_INFO("config ip address now,ignore background scan!");
         /* DTS2014031600309 HI1101 bug fix dengwenhua/d00223710 begin */
-        /* ×¢Òâ:²»ÄÜ·µ»Ø-EBUSY,-EBUSYÔÚÉÏ²ãwpa_supplicant¿´À´ÊÇ´¦ÓÚÉ¨ÃèÖÐ,Ó°ÏìÂß¼­ÅÐ¶Ï */
+        /* ×¢ï¿½ï¿½:ï¿½ï¿½ï¿½Ü·ï¿½ï¿½ï¿½-EBUSY,-EBUSYï¿½ï¿½ï¿½Ï²ï¿½wpa_supplicantï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ï¿½ï¿½É¨ï¿½ï¿½ï¿½ï¿½,Ó°ï¿½ï¿½ï¿½ß¼ï¿½ï¿½Ð¶ï¿½ */
         return -EPERM;
         /* DTS2014031600309 HI1101 bug fix dengwenhua/d00223710 end */
     }
@@ -575,7 +575,7 @@ STATIC int32 hwifi_cfg80211_scan(struct wiphy                *wiphy,
         /* DTS2014050806333 HI1101 bug fix 2014-6-13 end */
     	
     	/* DTS2014031600309 HI1101 bug fix dengwenhua/d00223710 begin */
-        /* ×¢Òâ:²»ÄÜ·µ»Ø-EBUSY,-EBUSYÔÚÉÏ²ãwpa_supplicant¿´À´ÊÇ´¦ÓÚÉ¨ÃèÖÐ,Ó°ÏìÂß¼­ÅÐ¶Ï */
+        /* ×¢ï¿½ï¿½:ï¿½ï¿½ï¿½Ü·ï¿½ï¿½ï¿½-EBUSY,-EBUSYï¿½ï¿½ï¿½Ï²ï¿½wpa_supplicantï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ï¿½ï¿½É¨ï¿½ï¿½ï¿½ï¿½,Ó°ï¿½ï¿½ï¿½ß¼ï¿½ï¿½Ð¶ï¿½ */
         return -EPERM;
         /* DTS2014031600309 HI1101 bug fix dengwenhua/d00223710 end */
     }
@@ -846,25 +846,25 @@ void hwifi_get_max_rate(struct cfg_struct *cfg, struct scanned_bss_info* bss_inf
     ext_supp_rate_ie = (struct hwifi_elements_stru  *)cfg80211_find_ie(WLAN_EID_EXT_SUPP_RATES, beacon_ie , beacon_ie_len);
     ht_ie            = (struct hwifi_elements_stru  *)cfg80211_find_ie(WLAN_EID_HT_CAPABILITY, beacon_ie , beacon_ie_len);
 
-    if( ht_ie )/*Èç¹ûÖ§³Öht*/
+    if( ht_ie )/*ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ht*/
     {
         rate_info->mcs = 7 ;
         rate_info->flags |= RATE_INFO_FLAGS_MCS;
-        rate_info->legacy = 10*65 ; /*ÄÚºË¸ù¾ÝmcsºÍflag¼ÆËã11nµÄËÙÂÊ*/
+        rate_info->legacy = 10*65 ; /*ï¿½ÚºË¸ï¿½ï¿½ï¿½mcsï¿½ï¿½flagï¿½ï¿½ï¿½ï¿½11nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
         ht_cap = WPA_GET_LE16(ht_ie->element_data);
 				
-        if((ht_cap & (u16)(1 << 1)) && cfg->sta_info.fc_enabled)/*bit1:Ö§³Ö40M´ø¿í*/
+        if((ht_cap & (u16)(1 << 1)) && cfg->sta_info.fc_enabled)/*bit1:Ö§ï¿½ï¿½40Mï¿½ï¿½ï¿½ï¿½*/
         {
             rate_info->flags |= RATE_INFO_FLAGS_40_MHZ_WIDTH;
         }
-        if(ht_cap & (u16)(1 << 5) )/*bit5:Ö§³Öshort GI*/
+        if(ht_cap & (u16)(1 << 5) )/*bit5:Ö§ï¿½ï¿½short GI*/
         {
             rate_info->flags |= RATE_INFO_FLAGS_SHORT_GI;
         }
 
 
     }
-    else/*²»Ö§³ÖhtµÄÇé¿ö*/
+    else/*ï¿½ï¿½Ö§ï¿½ï¿½htï¿½ï¿½ï¿½ï¿½ï¿½*/
     {
         int index = 0;
 
@@ -927,7 +927,7 @@ STATIC void save_conn_ap_frame(struct cfg_struct *cfg, struct scanned_bss_info* 
     
     if(cfg->conn.bss.mgmt_len && (NULL != cfg->conn.bss.mgmt))
     {
-        /* É¾³ý¾ÉµÄAP ÐÅÏ¢ */
+        /* É¾ï¿½ï¿½ï¿½Éµï¿½AP ï¿½ï¿½Ï¢ */
         kfree(cfg->conn.bss.mgmt);
         cfg->conn.bss.mgmt = NULL;
         cfg->conn.bss.mgmt_len = 0;
@@ -936,7 +936,7 @@ STATIC void save_conn_ap_frame(struct cfg_struct *cfg, struct scanned_bss_info* 
     if(0 < mgmt_len)
     {
         HWIFI_ASSERT(NULL != mgmt);
-        /* ±£´æAP beacon±¨ÎÄ»òprobe response±¨ÎÄ */
+        /* ï¿½ï¿½ï¿½ï¿½AP beaconï¿½ï¿½ï¿½Ä»ï¿½probe responseï¿½ï¿½ï¿½ï¿½ */
         cfg->conn.bss.mgmt = (struct ieee80211_mgmt *)kzalloc(mgmt_len, GFP_KERNEL);
         if (NULL == cfg->conn.bss.mgmt)
         {            
@@ -1024,7 +1024,7 @@ STATIC int32 hwifi_cfg80211_connect(struct wiphy                  *wiphy,
     /* DTS2013111305878 Hi110x bug fix 100225940 2013/11/21 end*/
     /* DTS2013090403988:solve signal icon display exception liuxiaojie wx164577 end */
     /* TS2013082207147 Hi110x bug fix l00137985 2013/11/11 begin */
-    /*»ñÈ¡»ù´¡ËÙÂÊ¼¯ºÏÀ©Õ¹ËÙÂÊ¼¯*/
+    /*ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½Ê¼ï¿½*/
      memset(&rate, 0, sizeof(rate));
      hwifi_get_max_rate(cfg, bss_info, &rate);
      cfg->rate.legacy = rate.legacy;
@@ -1034,7 +1034,7 @@ STATIC int32 hwifi_cfg80211_connect(struct wiphy                  *wiphy,
     conn_param.bss_info = bss_info;
 
 	/* DTS2014041800671 Hi1101 bug fix begin */
-	/* ×¢connect_finished²»ÄÜÔÚÆäËûµØ·½ÉèÖÃfalse£¬ÐèÑÏ¸ñÓëÄÚºËµØÖ·±ä¶¯±£³ÖÒ»ÖÂ */
+	/* ×¢connect_finishedï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½ï¿½falseï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ÚºËµï¿½Ö·ï¿½ä¶¯ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ */
     //cfg->hi110x_dev->pm_info->connect_finished = FALSE;
     /* DTS2014041800671 Hi1101 bug fix begin */
 
@@ -1149,8 +1149,8 @@ STATIC int32 hwifi_cfg80211_connect(struct wiphy                  *wiphy,
 
     if ((0 == conn_param.pairwise_crypto) && (0 == conn_param.group_crypto) && (conn_param.crypto_type & HWIFI_WPA))
     {
-        /* Èç¹ûµ¥²¥×é²¥¼ÓÃÜÐÅÏ¢Îª¿Õ£¬ÇÒcrypto_typeÎªwpa1£¬ÔòÖÃcrypto_typeÎª¿Õ£¬½â¾öwpa_supplicantµÄbug£¬¼´
-         * Èç¹ûÓÐwps IEÐÅÏ¢ÔªËØ£¬wpa_supplicant»áÖÃwpa versionÎª1£¬¶ø²»ÅÐ¶ÏÊÇ·ñÊµ¼Ê°üº¬wpa ie¡£
+        /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é²¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Îªï¿½Õ£ï¿½ï¿½ï¿½crypto_typeÎªwpa1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½crypto_typeÎªï¿½Õ£ï¿½ï¿½ï¿½ï¿½wpa_supplicantï¿½ï¿½bugï¿½ï¿½ï¿½ï¿½
+         * ï¿½ï¿½ï¿½ï¿½ï¿½wps IEï¿½ï¿½Ï¢Ôªï¿½Ø£ï¿½wpa_supplicantï¿½ï¿½ï¿½ï¿½wpa versionÎª1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Êµï¿½Ê°ï¿½ï¿½ï¿½wpa ieï¿½ï¿½
          */
         conn_param.crypto_type = 0;
     }
@@ -1192,10 +1192,10 @@ STATIC int32 hwifi_cfg80211_connect(struct wiphy                  *wiphy,
 
 
 #ifdef __ROAM__
-/* memset cfg->conn.bss Ç°ÊÍ·Åbss½á¹¹Ìå³ÉÔ±ÖÐ¶¯Ì¬ÉêµÄÄÚ´æ */
+/* memset cfg->conn.bss Ç°ï¿½Í·ï¿½bssï¿½á¹¹ï¿½ï¿½ï¿½Ô±ï¿½Ð¶ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ */
     if(NULL != cfg->conn.bss.mgmt)
     {
-        /* É¾³ý¾ÉµÄAP ÐÅÏ¢ */
+        /* É¾ï¿½ï¿½ï¿½Éµï¿½AP ï¿½ï¿½Ï¢ */
         kfree(cfg->conn.bss.mgmt);
         cfg->conn.bss.mgmt = NULL;
         cfg->conn.bss.mgmt_len = 0;
@@ -1203,7 +1203,7 @@ STATIC int32 hwifi_cfg80211_connect(struct wiphy                  *wiphy,
 
     if(NULL != cfg->conn.bss.assoc_ie)
     {
-        /* É¾³ý¾ÉµÄIE */
+        /* É¾ï¿½ï¿½ï¿½Éµï¿½IE */
         kfree(cfg->conn.bss.assoc_ie);
         cfg->conn.bss.assoc_ie = NULL;
         cfg->conn.bss.assoc_ie_len = 0;
@@ -1255,9 +1255,9 @@ STATIC int32 hwifi_cfg80211_connect(struct wiphy                  *wiphy,
          * connect.
          */
         /* DTS2013111106142 Hi110x bug fix l00225940 2013/11/13 */
-        /* DTS2013120502748   Hi110x bug fix º¼ÌìÆæ/hwx160629 2013/12/10 begin */
+        /* DTS2013120502748   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/hwx160629 2013/12/10 begin */
         ret = hwifi_regdomain_update(cfg);
-        /* DTS2013120502748   Hi110x bug fix º¼ÌìÆæ/hwx160629 2013/12/10 end */
+        /* DTS2013120502748   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/hwx160629 2013/12/10 end */
         if (ret != SUCC)
         {
             HWIFI_WARNING("start connect: Failed to update regdomain!");
@@ -1320,7 +1320,7 @@ STATIC int32 hwifi_cfg80211_disconnect(struct wiphy            *wiphy,
     wl_pwrm_enable(cfg, POWER_SAVE_DISABLE);
     
 	/* DTS2014041800671 Hi1101 bug fix begin */
-	/* ×¢connect_finished²»ÄÜÔÚÆäËûµØ·½ÉèÖÃfalse£¬ÐèÑÏ¸ñÓëÄÚºËµØÖ·±ä¶¯±£³ÖÒ»ÖÂ */
+	/* ×¢connect_finishedï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½ï¿½falseï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ÚºËµï¿½Ö·ï¿½ä¶¯ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ */
     //cfg->hi110x_dev->pm_info->connect_finished = FALSE;
     /* DTS2014041800671 Hi1101 bug fix begin */
 
@@ -1349,9 +1349,9 @@ STATIC int32 hwifi_cfg80211_disconnect(struct wiphy            *wiphy,
     * if disconnect actively, restore previous regulatory domain rules before
     * connect.
     */
-    /* DTS2013120502748   Hi110x bug fix º¼ÌìÆæ/hwx160629 2013/12/10 begin */
+    /* DTS2013120502748   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/hwx160629 2013/12/10 begin */
     /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 begin */
-    strncpy(cfg->beacon_ie_country_code, INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN);
+    memcpy(cfg->beacon_ie_country_code, INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN);
     /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 end */
 
     ret = hwifi_regdomain_update(cfg);
@@ -1359,7 +1359,7 @@ STATIC int32 hwifi_cfg80211_disconnect(struct wiphy            *wiphy,
     {
         HWIFI_WARNING("Failed to update regdomain!");
     }
-    /* DTS2013120502748   Hi110x bug fix º¼ÌìÆæ/hwx160629 2013/12/10 end */
+    /* DTS2013120502748   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/hwx160629 2013/12/10 end */
 
     /* send msg */
     ret = hwifi_start_disconn(cfg, &disconn_param);
@@ -1372,7 +1372,7 @@ STATIC int32 hwifi_cfg80211_disconnect(struct wiphy            *wiphy,
 #ifdef WLAN_POWER_MANAGEMENT
     if (g_powermgmt_switch)
     {
-        /* È¥¹ØÁªÊ±£¬½«watchdog timerÉ¾³ý */
+        /* È¥ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½watchdog timerÉ¾ï¿½ï¿½ */
         if (cfg->hi110x_dev->pm_info != NULL)
         {
             ret = hi110x_pm_stop_wdg(cfg->hi110x_dev->pm_info);
@@ -1516,12 +1516,12 @@ STATIC void fill_station_info(struct stats_struct *stats,  struct station_info  
         sinfo->filled |= STATION_INFO_TX_FAILED;
         sinfo->filled |= STATION_INFO_RX_DROP_MISC;
         sinfo->filled |= STATION_INFO_INACTIVE_TIME;
-        sinfo->inactive_time    = 0; /* ÓÉÓÚµ±Ç°device²»Ö§³Ö´ËÏîµÄÍ³¼Æ£¬Ä¬ÈÏÉèÖÃÎª0 */
+        sinfo->inactive_time    = 0; /* ï¿½ï¿½ï¿½Úµï¿½Ç°deviceï¿½ï¿½Ö§ï¿½Ö´ï¿½ï¿½ï¿½ï¿½Í³ï¿½Æ£ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0 */
 
         sinfo->tx_retries       = stats->tx_retries;
         /* DTS2014092409389 Hi1101 bug fix d00223710 20141016 begin */
-        /* µ±wifi¸ß¼¶Ñ¡Ïî:±Ü¿ª×´Ì¬²»¼ÑµÄÍøÂç ´ò¿ªÊ± */
-        /* ÔÚÇ¿ÐÅºÅÏÂ´ËÍ³¼Æ¿ÉÄÜ»áµ¼ÖÂandroidÉÏ²ãÎó±¨ÂÊÍ³¼Æ¹ý´ó×îÖÕµ¼ÖÂÇ¿ÖÆ¶ÏÍø,ÕâÀïÇå0¹æ±Ü´ËÎÊÌâ */
+        /* ï¿½ï¿½wifiï¿½ß¼ï¿½Ñ¡ï¿½ï¿½:ï¿½Ü¿ï¿½×´Ì¬ï¿½ï¿½ï¿½Ñµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ê± */
+        /* ï¿½ï¿½Ç¿ï¿½Åºï¿½ï¿½Â´ï¿½Í³ï¿½Æ¿ï¿½ï¿½Ü»áµ¼ï¿½ï¿½androidï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½Í³ï¿½Æ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½Ç¿ï¿½Æ¶ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½Ü´ï¿½ï¿½ï¿½ï¿½ï¿½ */
         sinfo->tx_failed        = 0;     //stats->tx_failed;
         /* DTS2014092409389 Hi1101 bug fix d00223710 20141016 end */
 
@@ -1599,7 +1599,7 @@ STATIC int32 hwifi_cfg80211_get_station(struct wiphy         *wiphy,
 
     if (IS_STA(cfg))
     {
-        /* STA mode,Ö±½Ó¶ÁÈ¡ÉÏ´ÎËæÐÄÌøÉÏ±¨µÄstaÐÅÏ¢ */
+        /* STA mode,Ö±ï¿½Ó¶ï¿½È¡ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ï¿½ï¿½staï¿½ï¿½Ï¢ */
         HWIFI_DEBUG("sta mode get station info direct!");
         stats->updated = TRUE;
         fill_station_info(stats, sinfo);
@@ -1949,7 +1949,7 @@ int hwifi_cfg80211_add_key( struct wiphy            *wiphy,
                 memcpy(cfg->key_mgmt.mgmt_mul_addr, mac_addr, 6);
             }
 
-            /* PMF¹¦ÄÜµ±Ç°Ã»ÓÐÔÚdevice²à×ö¼Ó½âÃÜ£¬±£´æÃÜÔ¿ºó£¬ÎÞÐèÏÂ·¢ÃÜÔ¿£¬Ö±½Ó·µ»Ø */
+            /* PMFï¿½ï¿½ï¿½Üµï¿½Ç°Ã»ï¿½ï¿½ï¿½ï¿½deviceï¿½ï¿½ï¿½ï¿½ï¿½Ó½ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½Ö±ï¿½Ó·ï¿½ï¿½ï¿½ */
             memcpy(key->key, params->key, params->key_len);
             key->key_len    = params->key_len;
             memcpy(key->seq, params->seq, params->seq_len);
@@ -2190,8 +2190,8 @@ int hwifi_cfg80211_set_default_key(struct  wiphy      *wiphy,
     }
 
 /* DTS2014062506177 HI1101 bug fix 2014-6-26 begin */
-/* 4´ÎÎÕÊÖ£¬ÏÈÉèÖÃÃÜÔ¿£¬ÔÙ·¢ËÍµÚËÄÖ¡¸øAP£¬Èç¹û´ËÊ±ÏÂ·¢Êý¾Ý£¬Ôò¶Ô·½ÎÞ·¨½âÃÜ */
-/* ÔÚwpa_supplicantÕæÕý³É¹¦ºó£¬ÏÂ·¢Êý¾Ý */
+/* 4ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½Ù·ï¿½ï¿½Íµï¿½ï¿½ï¿½Ö¡ï¿½ï¿½APï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Â·ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½Ô·ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ */
+/* ï¿½ï¿½wpa_supplicantï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ */
 #if 0
 #ifdef __ROAM__
     if (unicast)
@@ -2659,7 +2659,7 @@ int32 wpa_parse_wpa_ie_rsn(struct hwifi_elements_stru *hdr, struct hwifi_beacon_
 
     if (left >= RSN_SELECTOR_LEN)
     {
-        /* ×é²¥ÃÜÔ¿½âÎö */
+        /* ï¿½é²¥ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ */
         if (RSN_SELECTOR_GET(pos) == RSN_CIPHER_SUITE_TKIP)
         {
             data->group_crypto = HWIFI_TKIP;
@@ -2685,7 +2685,7 @@ int32 wpa_parse_wpa_ie_rsn(struct hwifi_elements_stru *hdr, struct hwifi_beacon_
     if (left >= 2)
     {
         data->pairwise_crypto = 0;
-        /* µ¥²¥ÃÜÔ¿¸öÊý */
+        /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ */
         count = WPA_GET_LE16(pos);
 
         pos += 2;
@@ -2699,7 +2699,7 @@ int32 wpa_parse_wpa_ie_rsn(struct hwifi_elements_stru *hdr, struct hwifi_beacon_
 
         for (i = 0; i < count; i++)
         {
-            /* µ¥²¥ÃÜÔ¿½âÎö */
+            /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ */
             if (RSN_SELECTOR_GET(pos) == RSN_CIPHER_SUITE_TKIP)
             {
                 data->pairwise_crypto |= HWIFI_TKIP;
@@ -2728,10 +2728,10 @@ int32 wpa_parse_wpa_ie_rsn(struct hwifi_elements_stru *hdr, struct hwifi_beacon_
 
     if (left >= 2)
     {
-        /* ½âÎöÈÏÖ¤ÀàÐÍ WPA-PSK or WPA-EAP */
+        /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ WPA-PSK or WPA-EAP */
         data->auth_type = 0;
 
-        /* Ö§³ÖµÄÈÏÖ¤ÀàÐÍ¸öÊý */
+        /* Ö§ï¿½Öµï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ */
         count = WPA_GET_LE16(pos);
         pos += 2;
         left -= 2;
@@ -2800,13 +2800,13 @@ static int32 wpa_parse_wpa_ie_wpa(const uint8 *ie, int32 ie_len, struct hwifi_be
 
     data->crypto_mode |= HWIFI_WPA;
 
-    /* posÇ°ÒÆ8¸ö×Ö½Ú£¬ÐÅÏ¢ÔªËØid 1¸ö×Ö½Ú£¬³¤¶È1¸ö×Ö½Ú£¬oui 4¸ö×Ö½Ú£¬version 2¸ö×Ö½Ú*/
+    /* posÇ°ï¿½ï¿½8ï¿½ï¿½ï¿½Ö½Ú£ï¿½ï¿½ï¿½Ï¢Ôªï¿½ï¿½id 1ï¿½ï¿½ï¿½Ö½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½Ö½Ú£ï¿½oui 4ï¿½ï¿½ï¿½Ö½Ú£ï¿½version 2ï¿½ï¿½ï¿½Ö½ï¿½*/
     pos = ie + 8;
     left = ie_len - 8;
 
     if (left >= WPA_SELECTOR_LEN)
     {
-        /* ×é²¥ÃÜÔ¿½âÎö */
+        /* ï¿½é²¥ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ */
         if (RSN_SELECTOR_GET(pos) == WPA_CIPHER_SUITE_TKIP)
         {
             data->group_crypto = HWIFI_TKIP;
@@ -2831,7 +2831,7 @@ static int32 wpa_parse_wpa_ie_wpa(const uint8 *ie, int32 ie_len, struct hwifi_be
 
     if (left >= 2)
     {
-         /* µ¥²¥ÃÜÔ¿½âÎö */
+         /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ */
         count = WPA_GET_LE16(pos);
         pos += 2;
         left -= 2;
@@ -2843,7 +2843,7 @@ static int32 wpa_parse_wpa_ie_wpa(const uint8 *ie, int32 ie_len, struct hwifi_be
 
         for (i = 0; i < count; i++)
         {
-            /* µ¥²¥ÃÜÔ¿½âÎö */
+            /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ */
             if (RSN_SELECTOR_GET(pos) == WPA_CIPHER_SUITE_TKIP)
             {
                 data->pairwise_crypto |= HWIFI_TKIP;
@@ -2869,7 +2869,7 @@ static int32 wpa_parse_wpa_ie_wpa(const uint8 *ie, int32 ie_len, struct hwifi_be
 
     if (left >= 2)
     {
-        /* ÈÏÖ¤ÀàÐÍ½âÎö */
+        /* ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½ */
         count = WPA_GET_LE16(pos);
         pos += 2;
         left -= 2;
@@ -2947,7 +2947,7 @@ static int32 parse_ie(const uint8 *ie, int32 ie_len, struct hwifi_beacon_param_s
             switch (oui)
             {
                 case WPA_IE_VENDOR_TYPE:
-                    /* ¼õ2ÊÇÎªÁË½«posÖ¸ÏòÕâ¸öIEµÄ ID */
+                    /* ï¿½ï¿½2ï¿½ï¿½Îªï¿½Ë½ï¿½posÖ¸ï¿½ï¿½ï¿½ï¿½ï¿½IEï¿½ï¿½ ID */
                     wpa_parse_wpa_ie_wpa(pos - 2, elen + 2, data);
                     break;
 
@@ -3050,14 +3050,14 @@ STATIC void hwifi_cfg80211_get_channel_info(struct cfg_struct *cfg, struct cfg80
 
     /*
     channel_info:
-    BIT15£º0->2.4G£¬1->5G
-    BIT9-8£º0->SCN£¬1->SCA£¬3->SCB£¨20MÇé¿öÉÏÉèÖÃÎªSCN£¬40MÇé¿öÑ¡ÔñSCA»òSCB£©
-    BIT7-0£ºÖ÷ÐÅµÀºÅ
-    Èç¹û²ÎÊýµÍ8BITSÅäÖÃÎª0£¬ÔòAPÔÚ½¨Á¢ÍøÂç¹ý³Ì±íÊ¾×Ô¶¯ÐÅµÀÑ¡Ôñ¡£
+    BIT15ï¿½ï¿½0->2.4Gï¿½ï¿½1->5G
+    BIT9-8ï¿½ï¿½0->SCNï¿½ï¿½1->SCAï¿½ï¿½3->SCBï¿½ï¿½20Mï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªSCNï¿½ï¿½40Mï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½SCAï¿½ï¿½SCBï¿½ï¿½
+    BIT7-0ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½
+    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½8BITSï¿½ï¿½ï¿½ï¿½Îª0ï¿½ï¿½ï¿½ï¿½APï¿½Ú½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½Ê¾ï¿½Ô¶ï¿½ï¿½Åµï¿½Ñ¡ï¿½ï¿½
     */
     if ((cfg->ap_info.auto_channel) && (!IS_P2P_ON(cfg)))
     {
-        /* auto channel µ±p2p¿ªÆô£¬Ã»ÓÐ×Ô¶¯ÐÅµÀ¹¦ÄÜ */
+        /* auto channel ï¿½ï¿½p2pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½ */
 	 beacon_param->channel = 0;
     }
     else
@@ -3171,7 +3171,7 @@ STATIC int32 hwifi_cfg80211_start_ap(struct wiphy *wiphy,
 
 	if (NL80211_HIDDEN_SSID_NOT_IN_USE == settings->hidden_ssid)
     {
-        /* Òþ²ØSSIDÁ½ÖÖÇé¿ö:(1)³¤¶ÈÎª0£¬(2)³¤¶ÈÎªÊµ¼Êssid³¤¶È£¬µ«ÄÚÈÝÎª¿Õ */
+        /* ï¿½ï¿½ï¿½ï¿½SSIDï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:(1)ï¿½ï¿½ï¿½ï¿½Îª0ï¿½ï¿½(2)ï¿½ï¿½ï¿½ï¿½ÎªÊµï¿½ï¿½ssidï¿½ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ */
 	      beacon_param.ssid_is_hidden = 0;
         }
 	else if ((NL80211_HIDDEN_SSID_ZERO_CONTENTS == settings->hidden_ssid) || (NL80211_HIDDEN_SSID_ZERO_LEN == settings->hidden_ssid))
@@ -3185,7 +3185,7 @@ STATIC int32 hwifi_cfg80211_start_ap(struct wiphy *wiphy,
 	ht_cap_ie = (struct hwifi_elements_stru*)cfg80211_find_ie(WLAN_EID_HT_CAPABILITY, settings->beacon.tail, settings->beacon.tail_len);
     if(ht_cap_ie)
     {
-        /* ht_capabilities_infoÔÚÇ°2¸ö×Ö½Ú */
+        /* ht_capabilities_infoï¿½ï¿½Ç°2ï¿½ï¿½ï¿½Ö½ï¿½ */
         ht_cap_info = WPA_GET_LE16(ht_cap_ie->element_data);
 
         HWIFI_INFO("ht_cap_len=%d,ht_capabilities_info=0x%04x",
@@ -3193,7 +3193,7 @@ STATIC int32 hwifi_cfg80211_start_ap(struct wiphy *wiphy,
 
         if((IEEE80211_HT_CAP_SGI_20 & ht_cap_info) || (IEEE80211_HT_CAP_SGI_40 & ht_cap_info))
         {
-            /* µ±Ç°device²»Çø±ðSGI_20£¬SGI_40£¬Ö»ÒªÓÐÒ»¸ö¿ªÆô£¬Ôò¶ÌGI¿ªÆô */
+            /* ï¿½ï¿½Ç°deviceï¿½ï¿½ï¿½ï¿½ï¿½ï¿½SGI_20ï¿½ï¿½SGI_40ï¿½ï¿½Ö»Òªï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½GIï¿½ï¿½ï¿½ï¿½ */
             short_gi_enabled = 1;
         }
         else
@@ -3217,7 +3217,7 @@ STATIC int32 hwifi_cfg80211_start_ap(struct wiphy *wiphy,
 	    rsn_ie = (struct hwifi_elements_stru*)cfg80211_find_ie(WLAN_EID_RSN, settings->beacon.tail, settings->beacon.tail_len);
         if (NULL != rsn_ie)
         {
-            /* ¸ù¾ÝRSN ÐÅÏ¢ÔªËØ½âÎö³öÈÏÖ¤ÀàÐÍ */
+            /* ï¿½ï¿½ï¿½ï¿½RSN ï¿½ï¿½Ï¢Ôªï¿½Ø½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ */
             ret = wpa_parse_wpa_ie_rsn(rsn_ie, &beacon_param);
             if (SUCC != ret)
             {
@@ -3226,7 +3226,7 @@ STATIC int32 hwifi_cfg80211_start_ap(struct wiphy *wiphy,
             }
         }
 
-        /* ²éÕÒwpaÐÅÏ¢ÔªËØ£¬²¢½âÎö³öÈÏÖ¤ÀàÐÍ£¬»ñÈ¡wps£¬p2pÐÅÏ¢ÔªËØ */
+        /* ï¿½ï¿½ï¿½ï¿½wpaï¿½ï¿½Ï¢Ôªï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½È¡wpsï¿½ï¿½p2pï¿½ï¿½Ï¢Ôªï¿½ï¿½ */
 	    ret = parse_ie(settings->beacon.tail, settings->beacon.tail_len, &beacon_param);
         if (SUCC != ret)
         {
@@ -3241,13 +3241,13 @@ STATIC int32 hwifi_cfg80211_start_ap(struct wiphy *wiphy,
     }
     else
     {
-        /* ÓÅÏÈÅÐ¶ÏÊÇ·ñÊÇwpa-pskÈÏÖ¤£¬Èç¹û²»ÊÇ£¬ÅÐ¶ÏÊÇ·ñÊÇwep¼ÓÃÜ */
+        /* ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½wpa-pskï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç£ï¿½ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½wepï¿½ï¿½ï¿½ï¿½ */
 	    mgmt = (struct ieee80211_mgmt *)settings->beacon.head;
         beacon_capability = OS_LE16_TO_CPU(mgmt->u.beacon.capab_info);
         HWIFI_DEBUG("Beacon_capability = 0x%.2x", beacon_capability);
         if(WLAN_CAPABILITY_PRIVACY & beacon_capability)
         {
-            /* WEP ¼ÓÃÜ·½Ê½ */
+            /* WEP ï¿½ï¿½ï¿½Ü·ï¿½Ê½ */
             key_index = cfg->key_mgmt.default_index;
             HWIFI_DEBUG("Wep key_index(%d)", key_index);
             if ((0 > key_index)|| (MAX_KEY_NUM < key_index))
@@ -3283,7 +3283,7 @@ STATIC int32 hwifi_cfg80211_start_ap(struct wiphy *wiphy,
 
     if (HWIFI_AUTHTYPE_SHARED_KEY == cfg->ap_info.dot11_auth_mode)
     {
-        /* Ö»ÄÜÎªWEP SHARE KEY */
+        /* Ö»ï¿½ï¿½ÎªWEP SHARE KEY */
         if ((HWIFI_WPA2 | HWIFI_WPA) & beacon_param.crypto_mode)
         {
             HWIFI_WARNING("Both user wep shared key and wpa or wpa2,set failed.");
@@ -3307,7 +3307,7 @@ STATIC int32 hwifi_cfg80211_start_ap(struct wiphy *wiphy,
         return -EFAIL;
     }
 
-    /* ¹ÜÖÆÓòÉèÖÃ±êÖ¾ */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã±ï¿½Ö¾ */
     cfg->beacon_set = TRUE;
 
     /* DTS2014041007097   Hi110x bug fix z00262551 zhouxinfeng begin */
@@ -3421,7 +3421,7 @@ int32  hwifi_cfg80211_change_bss(struct wiphy           *wiphy,
     {
         /* DTS2013121902757   Hi110x bug fix z00209041 20131218 begin */
         /**
-         * P2PÄ£Ê½ÅäÖÃÊ¡µçÄ£Ê½1£¬ÆÁÁÁÃð²»¸Ä±äÊ¡µçÄ£Ê½
+         * P2PÄ£Ê½ï¿½ï¿½ï¿½ï¿½Ê¡ï¿½ï¿½Ä£Ê½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ð²»¸Ä±ï¿½Ê¡ï¿½ï¿½Ä£Ê½
          */
         if (IS_P2P_ON(cfg))
         {
@@ -3433,13 +3433,13 @@ int32  hwifi_cfg80211_change_bss(struct wiphy           *wiphy,
             if(cfg->hi110x_dev->pm_info->in_suspend)
             {
                 /* DTS2013111801471  Hi110x bug fix z00209041 20131118 begin */
-                /* °µÆÁ,TBD:¸ù¾ÝÐèÇó¸Ä±ä,DTIM1¹¦ºÄ²»Âú×ãÒªÇó£¬¸ü¸ÄÎªDTIM3 */
+                /* ï¿½ï¿½ï¿½ï¿½,TBD:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½,DTIM1ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ó£¬¸ï¿½ï¿½ï¿½ÎªDTIM3 */
                 ps_mode = HI110X_POWERMODE_MAX;
                 /* DTS2013111801471  Hi110x bug fix z00209041 20131118 end */
             }
             else
             {
-                /* ÁÁÆÁ */
+                /* ï¿½ï¿½ï¿½ï¿½ */
                 ps_mode = HI110X_POWERMODE_MIN;
             }
         }
@@ -3453,7 +3453,7 @@ int32  hwifi_cfg80211_change_bss(struct wiphy           *wiphy,
     HWIFI_DEBUG("Cfg80211 set power save mode %u,screen_state=%d, manual_pwrm=0x%x,enabled=%d,timeout=%d",
                     ps_mode, cfg->hi110x_dev->pm_info->screen_state, cfg->sta_info.manual_pwrm, enabled, timeout);
 
-    /* Èç¹ûÉÏ²ãÓÐÐèÒª¹Ø±ÕÊ¡µçµÄ³¡¾°£¬ÔÚ¹Ø±ÕÊ¡µçÊ±£¬Í£Ö¹watchdog */
+    /* ï¿½ï¿½ï¿½ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ø±ï¿½Ê¡ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¹Ø±ï¿½Ê¡ï¿½ï¿½Ê±ï¿½ï¿½Í£Ö¹watchdog */
     if (false == ps_mode)
     {
         hi110x_pm_stop_wdg(cfg->hi110x_dev->pm_info);
@@ -3549,15 +3549,15 @@ int32    hwifi_cfg80211_mgmt_tx (struct wiphy               *wiphy,
     }
     else if(ieee80211_is_action(mgmt->frame_control))
     {
-        *cookie = cfg->send_action_id++;   /* cookieÖµÉÏ²ãµ÷ÓÃÐèÒªÅÐ¶ÏÊÇ·ñÊÇÕâ´ÎµÄ·¢ËÍµ¼ÖÂµÄcallback */
+        *cookie = cfg->send_action_id++;   /* cookieÖµï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ÎµÄ·ï¿½ï¿½Íµï¿½ï¿½Âµï¿½callback */
         if (*cookie == 0)
         {
             *cookie = cfg->send_action_id++;
         }
 
 		/* DTS2014022502794 Hi1101 bug fix d00223710 begin */
-		/* Îª±ÜÃâP2P Action±¨ÎÄ·¢³öºó£¬¶¨Ê±Æ÷¿ÉÄÜÂíÉÏ³¬Ê±µ¼ÖÂÎÞ·¨½ÓÊÕ¶Ô¶ËµÄAction±¨ÎÄµÄÎÊÌâ
-		 * Ã¿´Î·¢ËÍÍê³ÉAction±¨ÎÄºó£¬¸üÐÂ¼àÌý¶¨Ê±Æ÷Îª500ºÁÃë£¬ÒÔ±ãÓÐ×ã¹»Ê±¼äµÈ´ý¶Ô¶Ë»ØÓ¦Action±¨ÎÄ */
+		/* Îªï¿½ï¿½ï¿½ï¿½P2P Actionï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ó£¬¶ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï³ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½Õ¶Ô¶Ëµï¿½Actionï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½
+		 * Ã¿ï¿½Î·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Actionï¿½ï¿½ï¿½Äºó£¬¸ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Îª500ï¿½ï¿½ï¿½ë£¬ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ã¹»Ê±ï¿½ï¿½È´ï¿½ï¿½Ô¶Ë»ï¿½Ó¦Actionï¿½ï¿½ï¿½ï¿½ */
 		ret = mod_timer_pending(&(cfg->p2p_info.listen_timer), (jiffies + msecs_to_jiffies(500)));
 		HWIFI_DEBUG("mod_timer_pending ret = %d", ret);
 		/* DTS2014022502794 Hi1101 bug fix d00223710 end */
@@ -3636,8 +3636,8 @@ int32 hwifi_p2p_flag_set(struct cfg_struct *cfg, int32 flag)
     if (SUCC != ret)
     {
     	/* DTS2014031305198  Hi110x bug fix l00137985 2014/3/14 begin */
-		/* ±£³ÖÇý¶¯ÓëÉÏ²ãP2P×´Ì¬±êÖ¾Ò»ÖÂ,ºöÂÔ´Ë´íÎó£¬½ö±£Áô´òÓ¡ÐÅÏ¢
-		 * wlan up»áÖØÐÂÏÂ·¢´Ë±êÖ¾ */
+		/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï²ï¿½P2P×´Ì¬ï¿½ï¿½Ö¾Ò»ï¿½ï¿½,ï¿½ï¿½ï¿½Ô´Ë´ï¿½ï¿½ó£¬½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¡ï¿½ï¿½Ï¢
+		 * wlan upï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½Ë±ï¿½Ö¾ */
 		HWIFI_WARNING("Failed to set p2p flag to device.");
 		/* DTS2014031305198  Hi110x bug fix l00137985 2014/3/14 end */
     }
@@ -3763,19 +3763,19 @@ void hwifi_p2p_listen_complete(unsigned long handle)
         spin_unlock_bh(&cfg->p2p_info.timer_lock);
     }
 
-    /* Í¨Öªdevice¼àÌý×´Ì¬½áÊø */
+    /* Í¨Öªdeviceï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½ */
     ret = hwifi_cancel_p2p_listen(cfg);
     if (SUCC != ret)
     {
-        /* ËäÈ»ÏÂ·¢µ½deviceÈ¡Ïû¼àÌýÊ§°Ü£¬µ«ÒÀ¾ÉÒª·µ»Øµ½ÉÏ²ã£¬¶¨Ê±Æ÷Ö»»áµ÷ÓÃÒ»´Î */
+        /* ï¿½ï¿½È»ï¿½Â·ï¿½ï¿½ï¿½deviceÈ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Øµï¿½ï¿½Ï²ã£¬ï¿½ï¿½Ê±ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ */
         HWIFI_WARNING("hwifi_cancel_p2p_listen failed");
     }
-    /* ¼àÌý½áÊø£¬¼àÌý×´Ì¬ÉèÖÃÎªfalse */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½Îªfalse */
     cfg->p2p_info.find_listen_state = FALSE;
     cfg80211_remain_on_channel_expired(cfg->wdev, cfg->p2p_info.last_roc_id, &cfg->p2p_info.remain_on_chan,
          GFP_ATOMIC);
 }
-/* Start of zhanghua 00209041 2013-03-23 B295 ÔöÁ¿UDPÍÌÍÂÁ¿ÓÅ»¯Î¬²â */
+/* Start of zhanghua 00209041 2013-03-23 B295 ï¿½ï¿½ï¿½ï¿½UDPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å»ï¿½Î¬ï¿½ï¿½ */
 #ifdef WLAN_PERFORM_DEBUG
 static void dump_perform_cfg_info(void)
 {
@@ -3819,18 +3819,18 @@ static void dump_perform_tcp_info(struct hi110x_device* hi110x_dev)
 }
 
 /*****************************************************************************
- º¯ Êý Ãû  : wlan_set_and_enable_perform_debugging
- ¹¦ÄÜÃèÊö  : ÉèÖÃ²¢×Ô¶¯Ê¹ÄÜÐÔÄÜÎ¬²â
- ÊäÈë²ÎÊý  : uint8 *buf
- Êä³ö²ÎÊý  : ÎÞ
- ·µ »Ø Öµ  : void
- µ÷ÓÃº¯Êý  :
- ±»µ÷º¯Êý  :
+ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : wlan_set_and_enable_perform_debugging
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½ï¿½Ã²ï¿½ï¿½Ô¶ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : uint8 *buf
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ ï¿½ï¿½ Öµ  : void
+ ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½  :
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 
- ÐÞ¸ÄÀúÊ·      :
-  1.ÈÕ    ÆÚ   : 2013Äê3ÔÂ23ÈÕ
-    ×÷    Õß   : ÕÅì¿ 64406
-    ÐÞ¸ÄÄÚÈÝ   : ÐÂÉú³Éº¯Êý
+ ï¿½Þ¸ï¿½ï¿½ï¿½Ê·      :
+  1.ï¿½ï¿½    ï¿½ï¿½   : 2013ï¿½ï¿½3ï¿½ï¿½23ï¿½ï¿½
+    ï¿½ï¿½    ï¿½ï¿½   : ï¿½ï¿½ï¿½ 64406
+    ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½ï¿½Éºï¿½ï¿½ï¿½
 
 *****************************************************************************/
 void wlan_set_and_enable_perform_debugging(struct hi110x_device* hi110x_dev,uint8 *buf)
@@ -3844,10 +3844,10 @@ void wlan_set_and_enable_perform_debugging(struct hi110x_device* hi110x_dev,uint
     dump_perform_tcp_info(hi110x_dev);
     memcpy(g_perform_cfg_info, perform_info, sizeof(struct wlan_perform_cfg_interface));
 
-    /* Start of zhangwei 64406 2013-02-27 B295 ÔöÁ¿ÉÏÐÐ´òÓ¡ */
+    /* Start of zhangwei 64406 2013-02-27 B295 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½Ó¡ */
     g_perform_cfg_info->trigger_direction = g_perform_cfg_info->mpdu_pkt_num % 1000;
     g_perform_cfg_info->mpdu_pkt_num -= g_perform_cfg_info->trigger_direction;
-    /* End of zhangwei 64406 2013-02-27 B295 ÔöÁ¿ÉÏÐÐ´òÓ¡ */
+    /* End of zhangwei 64406 2013-02-27 B295 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½Ó¡ */
 #ifdef WLAN_PERFORM_OPT
     hi110x_dev->hcc->hcc_queues[HCC_TX].filter_info.ack_limit = g_perform_cfg_info->tx_ack_num;
     hi110x_dev->hcc->hcc_queues[HCC_RX].filter_info.ack_limit = g_perform_cfg_info->tx_ack_num;
@@ -3859,7 +3859,7 @@ void wlan_set_and_enable_perform_debugging(struct hi110x_device* hi110x_dev,uint
     }
     else
     {
-        hi110x_dev->hcc->sys_tcp_tx_ack_opt_enable = 0;/*tx_ack_numÎª0Ê±£¬¹Ø±ÕÓÅ»¯*/
+        hi110x_dev->hcc->sys_tcp_tx_ack_opt_enable = 0;/*tx_ack_numÎª0Ê±ï¿½ï¿½ï¿½Ø±ï¿½ï¿½Å»ï¿½*/
     }
 
     if (perform_info->drop_print)
@@ -3872,18 +3872,18 @@ void wlan_set_and_enable_perform_debugging(struct hi110x_device* hi110x_dev,uint
     dump_perform_statistic_info();
 }
 /*****************************************************************************
- º¯ Êý Ãû  : wlan_disable_perform_debugging
- ¹¦ÄÜÃèÊö  : ½ûÓÃÐÔÄÜµ÷²â
- ÊäÈë²ÎÊý  : uint8 *buf
- Êä³ö²ÎÊý  : ÎÞ
- ·µ »Ø Öµ  : void
- µ÷ÓÃº¯Êý  :
- ±»µ÷º¯Êý  :
+ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : wlan_disable_perform_debugging
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : uint8 *buf
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ ï¿½ï¿½ Öµ  : void
+ ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½  :
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 
- ÐÞ¸ÄÀúÊ·      :
-  1.ÈÕ    ÆÚ   : 2013Äê3ÔÂ23ÈÕ
-    ×÷    Õß   : ÕÅì¿ 64406
-    ÐÞ¸ÄÄÚÈÝ   : ÐÂÉú³Éº¯Êý
+ ï¿½Þ¸ï¿½ï¿½ï¿½Ê·      :
+  1.ï¿½ï¿½    ï¿½ï¿½   : 2013ï¿½ï¿½3ï¿½ï¿½23ï¿½ï¿½
+    ï¿½ï¿½    ï¿½ï¿½   : ï¿½ï¿½ï¿½ 64406
+    ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½ï¿½Éºï¿½ï¿½ï¿½
 
 *****************************************************************************/
 void wlan_disable_perform_debugging(uint8 *buf)
@@ -3906,7 +3906,7 @@ void wlan_disable_perform_debugging(uint8 *buf)
 
 }
 #endif
-/* End of zhanghua 00209041 2013-03-23 B295 ÔöÁ¿UDPÍÌÍÂÁ¿ÓÅ»¯Î¬²â */
+/* End of zhanghua 00209041 2013-03-23 B295 ï¿½ï¿½ï¿½ï¿½UDPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å»ï¿½Î¬ï¿½ï¿½ */
 
 /*
  * Prototype    : hwifi_get_active_status
@@ -3996,7 +3996,7 @@ int32 hwifi_p2p_discover_listen(struct cfg_struct *cfg, int32 channel, uint32 du
     }
 
     _timer = &cfg->p2p_info.listen_timer;
-    /* 100ºÁÃë£¬¶îÍâµÄ³¬Ê±Ê±ºò£¬sdio´«ÊäÒÔ¼°device²àÐÅµÀÇÐ»»Ê±¼ä */
+    /* 100ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½Ä³ï¿½Ê±Ê±ï¿½ï¿½sdioï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½deviceï¿½ï¿½ï¿½Åµï¿½ï¿½Ð»ï¿½Ê±ï¿½ï¿½ */
     INIT_TIMER(_timer, hwifi_p2p_listen_complete, duration_ms, 100);
 
     HWIFI_INFO("Succeed to set listen channel(%d),duration_ms:%u.\n",channel, (duration_ms + 100));
@@ -4052,8 +4052,8 @@ int32 hwifi_cfg80211_remain_on_channel(struct wiphy             *wiphy,
         return -EFAIL;
     }
 
-    /* ´Ë²ÎÊýÎªTRUEËµÃ÷ÊÇFIND½×¶ÎÏÂ·¢µÄ¼àÌý×´Ì¬£¬Èç¹ûµ±Ç°ÊÇGO»òCLIENTÄ£Ê½Ó¦×èÖ¹ÏÂ·¢µ½device²à
-     * ·ñÔòÊÇ·¢ËÍ¹ÜÀí±¨ÎÄÇÐ»»µ½Ö¸¶¨µÄ¼àÌýÐÅµÀ£¬ÐèÒªÏÂ·¢µ½device²à
+    /* ï¿½Ë²ï¿½ï¿½ï¿½ÎªTRUEËµï¿½ï¿½ï¿½ï¿½FINDï¿½×¶ï¿½ï¿½Â·ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½GOï¿½ï¿½CLIENTÄ£Ê½Ó¦ï¿½ï¿½Ö¹ï¿½Â·ï¿½ï¿½ï¿½deviceï¿½ï¿½
+     * ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Í¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Â·ï¿½ï¿½ï¿½deviceï¿½ï¿½
      */
     if (TRUE == cfg->p2p_info.find_listen_state)
     {
@@ -4119,7 +4119,7 @@ int32 hwifi_cfg80211_cancel_remain_on_channel(struct wiphy      *wiphy,
 
     cfg = wiphy_priv(wiphy);
 
-    /* cookieÖµ£¬listen channelÉèÖÃ±êÖ¾£¬ÔÚº¯Êýhwifi_cfg80211_remain_on_channelÉèÖÃ */
+    /* cookieÖµï¿½ï¿½listen channelï¿½ï¿½ï¿½Ã±ï¿½Ö¾ï¿½ï¿½ï¿½Úºï¿½ï¿½ï¿½hwifi_cfg80211_remain_on_channelï¿½ï¿½ï¿½ï¿½ */
     if (cfg->p2p_info.last_roc_id != cookie)
     {
         HWIFI_WARNING("It is not set listen channel before");
@@ -4206,19 +4206,19 @@ STATIC int32 hwifi_cfg80211_set_monitor_channel(struct wiphy *wiphy,
         return -EFAIL;
     }
 
-    /* Ä¬ÈÏdevice Îª20M£¬²»Ö§³Ö20M£¬40M¹²´æ */
+    /* Ä¬ï¿½ï¿½device Îª20Mï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½20Mï¿½ï¿½40Mï¿½ï¿½ï¿½ï¿½ */
     enable_20M_40M = 0;
 
     /*
     channel_info:
-    BIT15£º0->2.4G£¬1->5G
-    BIT9-8£º0->SCN£¬1->SCA£¬3->SCB£¨20MÇé¿öÉÏÉèÖÃÎªSCN£¬40MÇé¿öÑ¡ÔñSCA»òSCB£©
-    BIT7-0£ºÖ÷ÐÅµÀºÅ
-    Èç¹û²ÎÊýµÍ8BITSÅäÖÃÎª0£¬ÔòAPÔÚ½¨Á¢ÍøÂç¹ý³Ì±íÊ¾×Ô¶¯ÐÅµÀÑ¡Ôñ¡£
+    BIT15ï¿½ï¿½0->2.4Gï¿½ï¿½1->5G
+    BIT9-8ï¿½ï¿½0->SCNï¿½ï¿½1->SCAï¿½ï¿½3->SCBï¿½ï¿½20Mï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªSCNï¿½ï¿½40Mï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½SCAï¿½ï¿½SCBï¿½ï¿½
+    BIT7-0ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½
+    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½8BITSï¿½ï¿½ï¿½ï¿½Îª0ï¿½ï¿½ï¿½ï¿½APï¿½Ú½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½Ê¾ï¿½Ô¶ï¿½ï¿½Åµï¿½Ñ¡ï¿½ï¿½
     */
     if ((cfg->ap_info.auto_channel) && (!IS_P2P_ON(cfg)))
     {
-        /* auto channel µ±p2p¿ªÆô£¬Ã»ÓÐ×Ô¶¯ÐÅµÀ¹¦ÄÜ */
+        /* auto channel ï¿½ï¿½p2pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½ */
         channel_info = 0;
     }
     else
@@ -4379,7 +4379,7 @@ int32 hwifi_set_ssid(struct cfg_struct *cfg, int8 *ssid)
         cfg->ap_info.ssid_len = IEEE80211_MAX_SSID_LEN;
     }
 
-    strncpy(cfg->ap_info.ssid, ssid, cfg->ap_info.ssid_len);
+    memcpy(cfg->ap_info.ssid, ssid, cfg->ap_info.ssid_len);
 
     return SUCC;
 }
@@ -4946,7 +4946,7 @@ int32 wl_set_p2p_ps(struct cfg_struct *cfg, int32 ctwindow, int32 opps, int32 le
         return -EFAIL;
     }
 
-    /* legacy_ps ²»ÄÜ³¬¹ýÊý×émap_legacy_ps³¤¶È */
+    /* legacy_ps ï¿½ï¿½ï¿½Ü³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½map_legacy_psï¿½ï¿½ï¿½ï¿½ */
     if ((opps < PS_PARAM_NO_CHANGE) || (opps > ENABLED)
     || (ctwindow < PS_PARAM_NO_CHANGE) || (ctwindow > MAX_CTWINDOW)
     || (legacy_ps < PS_PARAM_NO_CHANGE) || (legacy_ps > 2))
@@ -5167,7 +5167,7 @@ struct cfg_struct* hwifi_cfg80211_alloc(struct hi110x_device* hi110x_dev, struct
         wiphy->bands[IEEE80211_BAND_5GHZ] = &hi110x_band_5ghz;        /* band information supported by 5G */
     }
 
-    wiphy->max_remain_on_channel_duration = 5000;                 /* 5000£¬5ÃëÊ±¼ä£¬×î³¤¼àÌýÊ±¼ä²Î¿¼Òµ½çÖµ */
+    wiphy->max_remain_on_channel_duration = 5000;                 /* 5000ï¿½ï¿½5ï¿½ï¿½Ê±ï¿½ä£¬ï¿½î³¤ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Î¿ï¿½Òµï¿½ï¿½Öµ */
 
     wiphy->signal_type                = CFG80211_SIGNAL_TYPE_MBM;
 
@@ -5188,13 +5188,13 @@ struct cfg_struct* hwifi_cfg80211_alloc(struct hi110x_device* hi110x_dev, struct
     country_code_point = hwifi_grec_point();
 
     /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 begin */
-    strncpy(cfg->current_country_code, country_code_point, COUNTRY_CODE_LEN);
-    strncpy(cfg->custom_country_code, country_code_point, COUNTRY_CODE_LEN);
+    memcpy(cfg->current_country_code, country_code_point, COUNTRY_CODE_LEN);
+    memcpy(cfg->custom_country_code, country_code_point, COUNTRY_CODE_LEN);
     /* DTS2013111108200 Hi110x bug fix z00217036 hangtianqi WX160629  2013/11/15 end */
 
     /* Init country code to invalid value */
-    strncpy(cfg->sim_country_code, INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN);
-    strncpy(cfg->beacon_ie_country_code, INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN);
+    memcpy(cfg->sim_country_code, INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN);
+    memcpy(cfg->beacon_ie_country_code, INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN);
     /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 end */
 
     /* DTS2014031708773  Hi1101 bug fix zhanglu/z00217036  2014/3/21 begin*/

@@ -685,7 +685,7 @@ STATIC uint8 hwifi_regdomain_isdefault(const uint8 *country_code)
 
     return FALSE;
 }
-/* DTS2013120502748   Hi110x bug fix º¼ÌìÆæ/hwx160629 2013/12/10 begin */
+/* DTS2013120502748   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/hwx160629 2013/12/10 begin */
 
 /*
  * Prototype    : hwifi_get_countrycode_by_priority
@@ -714,7 +714,7 @@ int32 hwifi_get_countrycode_by_priority(struct cfg_struct *cfg,uint8 *country_co
         /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 begin */
         if(strncmp(cfg->beacon_ie_country_code, INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN) != 0)
         {
-            strncpy(country_code, cfg->beacon_ie_country_code, COUNTRY_CODE_LEN);
+            memcpy(country_code, cfg->beacon_ie_country_code, COUNTRY_CODE_LEN);
             /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 end */
 
             HWIFI_INFO("Set country code by beacon ie : %c%c!",country_code[0],country_code[1]);
@@ -725,7 +725,7 @@ int32 hwifi_get_countrycode_by_priority(struct cfg_struct *cfg,uint8 *country_co
     /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 begin */
     if(strncmp(cfg->sim_country_code, INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN) != 0)
     {
-        strncpy(country_code, cfg->sim_country_code, COUNTRY_CODE_LEN);
+        memcpy(country_code, cfg->sim_country_code, COUNTRY_CODE_LEN);
         /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 end */
 
         HWIFI_INFO("Set country code by sim card : %c%c!",country_code[0],country_code[1]);
@@ -733,7 +733,7 @@ int32 hwifi_get_countrycode_by_priority(struct cfg_struct *cfg,uint8 *country_co
     /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 begin */
     else if(strncmp(cfg->custom_country_code, INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN) != 0)
     {
-        strncpy(country_code, cfg->custom_country_code, COUNTRY_CODE_LEN);
+        memcpy(country_code, cfg->custom_country_code, COUNTRY_CODE_LEN);
         /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 end */
 
         HWIFI_INFO("Set country code by Hisi custom infomation : %c%c!",country_code[0],country_code[1]);
@@ -741,7 +741,7 @@ int32 hwifi_get_countrycode_by_priority(struct cfg_struct *cfg,uint8 *country_co
     else
     {
         /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 begin */
-        strncpy(country_code, DEFAULT_COUNTRY_CODE, COUNTRY_CODE_LEN);
+        memcpy(country_code, DEFAULT_COUNTRY_CODE, COUNTRY_CODE_LEN);
         /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 end */
 
         HWIFI_INFO("Use default country code 99!");
@@ -750,7 +750,7 @@ int32 hwifi_get_countrycode_by_priority(struct cfg_struct *cfg,uint8 *country_co
     return SUCC;
 
 }
-/* DTS2013120502748   Hi110x bug fix º¼ÌìÆæ/hwx160629 2013/12/10 end */
+/* DTS2013120502748   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/hwx160629 2013/12/10 end */
 
 /* DTS2013121905027   Hi110x bug fix hWX160629 2013/12/23 begin */
 /*
@@ -798,8 +798,8 @@ const struct ieee80211_regdomain * hwifi_find_countrycode_regdom(struct cfg_stru
             /* if can not match country code regulatory domain,set to default 99 */
             regdom = &g_hwifi_regdom;
             /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 begin */
-            strncpy(cfg->current_country_code, "99", COUNTRY_CODE_LEN);
-            strncpy(cfg->custom_country_code, "99", COUNTRY_CODE_LEN);
+            memcpy(cfg->current_country_code, "99", COUNTRY_CODE_LEN);
+            memcpy(cfg->custom_country_code, "99", COUNTRY_CODE_LEN);
             /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 end */
         }
     }
@@ -841,7 +841,7 @@ int32 hwifi_regdomain_update(struct cfg_struct *cfg)
     HWIFI_ASSERT(NULL != cfg);
     HWIFI_ASSERT(NULL != cfg->wiphy);
 
-    /* DTS2013120502748   Hi110x bug fix º¼ÌìÆæ/hwx160629 2013/12/10 begin */
+    /* DTS2013120502748   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/hwx160629 2013/12/10 begin */
 
     ret = hwifi_get_countrycode_by_priority(cfg,country_code);
     if(-EFAIL == ret)
@@ -849,7 +849,7 @@ int32 hwifi_regdomain_update(struct cfg_struct *cfg)
         HWIFI_WARNING("Failed to set country code by priority!");
         return -EFAIL;
     }
-    /* DTS2013120502748   Hi110x bug fix º¼ÌìÆæ/hwx160629 2013/12/10 end */
+    /* DTS2013120502748   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/hwx160629 2013/12/10 end */
 
     if (!hwifi_regdomain_isalpha2(country_code) && !hwifi_regdomain_isdefault(country_code))
     {
@@ -876,7 +876,7 @@ int32 hwifi_regdomain_update(struct cfg_struct *cfg)
 
         /* update current country code */
         /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 begin */
-        strncpy(cfg->current_country_code, country_code, COUNTRY_CODE_LEN);
+        memcpy(cfg->current_country_code, country_code, COUNTRY_CODE_LEN);
         /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 end */
     }
     else
@@ -913,7 +913,7 @@ int32 hwifi_regdomain_update_by_ie(struct cfg_struct *cfg, uint8 *bss_mgmt, uint
     int32                        ret;
 
     HWIFI_ASSERT(NULL != cfg);
-    /* DTS2013120502748   Hi110x bug fix º¼ÌìÆæ/hwx160629 2013/12/10 begin */
+    /* DTS2013120502748   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/hwx160629 2013/12/10 begin */
 
     /* if g_countrycode_ie_flag is on,country code will always be updated by ie.*/
 
@@ -924,7 +924,7 @@ int32 hwifi_regdomain_update_by_ie(struct cfg_struct *cfg, uint8 *bss_mgmt, uint
         HWIFI_DEBUG("Can not update country code by ie when g_countrycode_ie_flag is off");
         return SUCC;
     }
-    /* DTS2013120502748   Hi110x bug fix º¼ÌìÆæ/hwx160629 2013/12/10 end */
+    /* DTS2013120502748   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/hwx160629 2013/12/10 end */
 
     mgmt = (struct ieee80211_mgmt *)bss_mgmt;
     if (NULL == mgmt)
@@ -943,9 +943,9 @@ int32 hwifi_regdomain_update_by_ie(struct cfg_struct *cfg, uint8 *bss_mgmt, uint
     {
         HWIFI_WARNING("Cannot find country in mgmt.");
         /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 begin */
-        /* DTS2013120502748   Hi110x bug fix º¼ÌìÆæ/hwx160629 2013/12/10 begin */
-        strncpy(cfg->beacon_ie_country_code, INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN);
-        /* DTS2013120502748   Hi110x bug fix º¼ÌìÆæ/hwx160629 2013/12/10 end */
+        /* DTS2013120502748   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/hwx160629 2013/12/10 begin */
+        memcpy(cfg->beacon_ie_country_code, INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN);
+        /* DTS2013120502748   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/hwx160629 2013/12/10 end */
         /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 end */
         
         /* if country_ie empty,keep current regulatory domain */
@@ -955,9 +955,9 @@ int32 hwifi_regdomain_update_by_ie(struct cfg_struct *cfg, uint8 *bss_mgmt, uint
     /* country_ie + 2, the start of country_ie data */
     /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 begin */
     country_code = country_ie + COUNTRY_CODE_LEN;
-    /* DTS2013120502748   Hi110x bug fix º¼ÌìÆæ/hwx160629 2013/12/10 begin */
-    strncpy(cfg->beacon_ie_country_code, country_code, COUNTRY_CODE_LEN);
-    /* DTS2013120502748   Hi110x bug fix º¼ÌìÆæ/hwx160629 2013/12/10 end */
+    /* DTS2013120502748   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/hwx160629 2013/12/10 begin */
+    memcpy(cfg->beacon_ie_country_code, country_code, COUNTRY_CODE_LEN);
+    /* DTS2013120502748   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/hwx160629 2013/12/10 end */
     /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 end */
 
     /* check current country code */

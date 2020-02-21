@@ -44,7 +44,7 @@ extern "C" {
 /*
  * 2 Global Variable Definition
  */
-/* Start of zhangwei 64406 2013-03-26 B295 Ôö¼ÓÔ¤±àÒëºê */
+/* Start of zhangwei 64406 2013-03-26 B295 ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½ */
 #ifdef WLAN_POWER_MANAGEMENT
 /*extern int32 g_sdio_status;*/
 
@@ -251,7 +251,7 @@ int32 hi110x_pm_dev_deinit(struct sdio_func *func)
         return -EFAIL;
     }
 
-    /* ÉèÖÃSDIO×´Ì¬ÒÔ¼°×ÜÏß×´Ì¬±êÖ¾ */
+    /* ï¿½ï¿½ï¿½ï¿½SDIO×´Ì¬ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½Ö¾ */
     bus_set_state(g_pm_info->hi110x_dev->hcc->io_dev, TRUE);
 
     sdio_release_host(func);
@@ -307,7 +307,7 @@ STATIC int32 hi110x_pm_sdio_init(struct sdio_func *func)
     return SUCC;
 }
 
-/* DTS2013120901517  Hi110x bug fix z00209041 ÈÕÆÚ£¨2013Äê/11ÔÂ/8ÈÕ£© begin */
+/* DTS2013120901517  Hi110x bug fix z00209041 ï¿½ï¿½ï¿½Ú£ï¿½2013ï¿½ï¿½/11ï¿½ï¿½/8ï¿½Õ£ï¿½ begin */
 /*
  * Prototype    : hi110x_sdio_reinit
  * Description  : reinit sdio
@@ -356,9 +356,9 @@ int32 hi110x_sdio_reinit(void)
             }
         }
 
-        /* sdio function1³õÊ¼»¯
-         * 1¡¢Ê¹ÄÜfuction1
-         * 2¡¢ÉèÖÃ¿é´óÐ¡
+        /* sdio function1ï¿½ï¿½Ê¼ï¿½ï¿½
+         * 1ï¿½ï¿½Ê¹ï¿½ï¿½fuction1
+         * 2ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½Ð¡
          */
         ret = hi110x_pm_sdio_init(func);
         if (ret < 0)
@@ -368,7 +368,7 @@ int32 hi110x_sdio_reinit(void)
             return ret;
         }
 
-        /* Ê¹ÄÜSDIOÖÐ¶Ï */
+        /* Ê¹ï¿½ï¿½SDIOï¿½Ð¶ï¿½ */
         ret = hi110x_pm_enable_sdio_isr(func);
         if (ret < 0)
         {
@@ -389,7 +389,7 @@ int32 hi110x_sdio_reinit(void)
     hi110x_gpio_intr_enable(1);
     return SUCC;
 }
-/* DTS2013120901517   Hi110x bug fix z00209041 ÈÕÆÚ£¨2013Äê/11ÔÂ/8ÈÕ£© end */
+/* DTS2013120901517   Hi110x bug fix z00209041 ï¿½ï¿½ï¿½Ú£ï¿½2013ï¿½ï¿½/11ï¿½ï¿½/8ï¿½Õ£ï¿½ end */
 
 /*
  * Prototype    : hi110x_pm_dev_wakeup
@@ -472,12 +472,12 @@ int32 hi110x_pm_dev_wakeup(void)
             }
         }
 
-        /* ÉèÖÃSDIO ×´Ì¬*/
+        /* ï¿½ï¿½ï¿½ï¿½SDIO ×´Ì¬*/
         /*g_sdio_status = TRUE;*/
 
-        /* sdio function1³õÊ¼»¯
-         * 1¡¢Ê¹ÄÜfuction1
-         * 2¡¢ÉèÖÃ¿é´óÐ¡
+        /* sdio function1ï¿½ï¿½Ê¼ï¿½ï¿½
+         * 1ï¿½ï¿½Ê¹ï¿½ï¿½fuction1
+         * 2ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½Ð¡
          */
         ret = hi110x_pm_sdio_init(func);
         if (ret < 0)
@@ -492,7 +492,7 @@ int32 hi110x_pm_dev_wakeup(void)
             return ret;
         }
 
-        /* Ê¹ÄÜSDIOÖÐ¶Ï */
+        /* Ê¹ï¿½ï¿½SDIOï¿½Ð¶ï¿½ */
         ret = hi110x_pm_enable_sdio_isr(func);
         if (ret < 0)
         {
@@ -506,7 +506,7 @@ int32 hi110x_pm_dev_wakeup(void)
             return ret;
         }
 
-        /* Æô¶¯Î¹¹·*/
+        /* ï¿½ï¿½ï¿½ï¿½Î¹ï¿½ï¿½*/
         if (g_pm_info)
         {
             hi110x_pm_start_wdg(g_pm_info);
@@ -620,12 +620,12 @@ retry:
             goto failed;
         }
 
-        /* ÉèÖÃSDIO×´Ì¬*/
+        /* ï¿½ï¿½ï¿½ï¿½SDIO×´Ì¬*/
         /*g_sdio_status = TRUE;*/
 
-        /* sdio function1³õÊ¼»¯
-         * 1¡¢Ê¹ÄÜfuction1
-         * 2¡¢ÉèÖÃ¿é´óÐ¡
+        /* sdio function1ï¿½ï¿½Ê¼ï¿½ï¿½
+         * 1ï¿½ï¿½Ê¹ï¿½ï¿½fuction1
+         * 2ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½Ð¡
          */
         ret = hi110x_pm_sdio_init(func);
         if(ret && !force_load)
@@ -651,7 +651,7 @@ retry:
         hi110x_gpio_intr_enable(TRUE);
         /* DTS2013120901517   Hi110x bug fix l00225847 20131210  end */
 
-        /* Ê¹ÄÜSDIOÖÐ¶Ï */
+        /* Ê¹ï¿½ï¿½SDIOï¿½Ð¶ï¿½ */
         ret = hi110x_pm_enable_sdio_isr(func);
         if (ret < 0)
         {
@@ -700,22 +700,22 @@ void hi110x_pm_feed_wdg(struct hi110x_pm_info *pm_info)
     cfg = pm_info->hi110x_dev->cfg;
     HWIFI_ASSERT(cfg != NULL);
 
-    /* DTS2013121206795   Hi110x bug fix z00209041 ÈÕÆÚ£¨2013Äê/11ÔÂ/8ÈÕ£© begin */
+    /* DTS2013121206795   Hi110x bug fix z00209041 ï¿½ï¿½ï¿½Ú£ï¿½2013ï¿½ï¿½/11ï¿½ï¿½/8ï¿½Õ£ï¿½ begin */
     if (!g_powermgmt_switch)
     {
         HWIFI_INFO("lower power switch is off");
         return;
     }
-    /* DTS2013121206795   Hi110x bug fix z00209041 ÈÕÆÚ£¨2013Äê/11ÔÂ/8ÈÕ£© end */
+    /* DTS2013121206795   Hi110x bug fix z00209041 ï¿½ï¿½ï¿½Ú£ï¿½2013ï¿½ï¿½/11ï¿½ï¿½/8ï¿½Õ£ï¿½ end */
 
     /**
-     * ÐèÒªÍ¬Ê±Âú×ãÁ½¸öÌõ¼þ²ÅÄÜÎ¹¹·:
-     * 1¡¢ÓÃ»§´¦ÓÚSTAÄ£Ê½
-     * 2¡¢¹ØÁª³É¹¦
+     * ï¿½ï¿½ÒªÍ¬Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¹ï¿½ï¿½:
+     * 1ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½STAÄ£Ê½
+     * 2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½
      */
-    /* DTS2013110501752   Hi110x bug fix ÕÅ»ª/z00209041 ÈÕÆÚ£¨2013Äê/11ÔÂ/8ÈÕ£© begin */
+    /* DTS2013110501752   Hi110x bug fix ï¿½Å»ï¿½/z00209041 ï¿½ï¿½ï¿½Ú£ï¿½2013ï¿½ï¿½/11ï¿½ï¿½/8ï¿½Õ£ï¿½ begin */
     if (IS_STA(cfg) && IS_CONNECTED(cfg) && IS_GET_IPADDR(pm_info))
-    /* DTS2013110501752   Hi110x bug fix ÕÅ»ª/z00209041 ÈÕÆÚ£¨2013Äê/11ÔÂ/8ÈÕ£© end */
+    /* DTS2013110501752   Hi110x bug fix ï¿½Å»ï¿½/z00209041 ï¿½ï¿½ï¿½Ú£ï¿½2013ï¿½ï¿½/11ï¿½ï¿½/8ï¿½Õ£ï¿½ end */
     {
         HWIFI_DEBUG("WiFi Feed Watchdog");
         /* DTS2015041605894 Hi1101 bug fix hwx212164 2015/04/16 begin */
@@ -733,7 +733,7 @@ void hi110x_pm_feed_wdg(struct hi110x_pm_info *pm_info)
     }
     else if (TRUE == IS_AP(cfg))
     {
-        /* DTS2013111802227 APË¯Ãß¹¦ÄÜ´ò¿ª */
+        /* DTS2013111802227 APË¯ï¿½ß¹ï¿½ï¿½Ü´ï¿½ */
         mod_timer(&pm_info->watchdog_timer, jiffies + g_watchdog_timeout * HZ);
     }
 }
@@ -763,7 +763,7 @@ void hi110x_pm_allow_sleep(struct hi110x_pm_info *pm_info)
           tx chan will wake up when have tx data transfer.*/
         hcc_set_tx_queue_status(pm_info->hi110x_dev->hcc, hcc_sleeping);
 
-        /* Í¨ÖªÂþÓÎÏÖÔÚÒÑ¾­ÎªÉîË¯Ãß×´Ì¬ */
+        /* Í¨Öªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½Îªï¿½ï¿½Ë¯ï¿½ï¿½×´Ì¬ */
         if (pm_info->get_deepsleep_state)
         {
             HWIFI_INFO("Notify roam,now Device is deep sleep");
@@ -963,11 +963,11 @@ int32 hi110x_reduce_freq_process(struct cfg_struct *cfg)
 
     last_cpufreq = g_pm_info->last_cpufreq;
     /**
-     * ¸÷¸öÆµÂÊÏÂÊÕ·¢µÄ×î´ó³ÐÔØÁ¿
-     * ÍÌÍÂÁ¿ MAXCAP_40MHZ_RATE...........cpuÆµÂÊ40MHz
-     * ÍÌÍÂÁ¿ 80MHZ_MAXCAP_RATE...........cpuÆµÂÊ80MHz
-     * ÍÌÍÂÁ¿ 160MHZ_MAXCAP_RATE..........cpuÆµÂÊ160MHz
-     * ÍÌÍÂÁ¿ 240MHZ_MAXCAP_RATE..........cpuÆµÂÊ240MHz
+     * ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½Õ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ MAXCAP_40MHZ_RATE...........cpuÆµï¿½ï¿½40MHz
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 80MHZ_MAXCAP_RATE...........cpuÆµï¿½ï¿½80MHz
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 160MHZ_MAXCAP_RATE..........cpuÆµï¿½ï¿½160MHz
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 240MHZ_MAXCAP_RATE..........cpuÆµï¿½ï¿½240MHz
      */
     switch (last_cpufreq)
     {
@@ -1015,10 +1015,10 @@ int32 hi110x_fitcpu_for_throughput(struct hi110x_sdio *hi_sdio, uint32 len, uint
     cfg = hi_sdio->hi110x_dev->cfg;
 
     /**
-     *¶¯Ì¬ÅäÖÃCPUÆµÂÊµÄ¼¸¸öÌõ¼þ
-      1¡¢Ë¯ÃßµÄGPIOÒý½ÅÎª¸ßµçÆ½
-      2¡¢Î´ÅäÖÃ¾²Ì¬CPUÆµÂÊ
-      3¡¢Íø¿¨Îªopen×´Ì¬
+     *ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½CPUÆµï¿½ÊµÄ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+      1ï¿½ï¿½Ë¯ï¿½ßµï¿½GPIOï¿½ï¿½ï¿½ï¿½Îªï¿½ßµï¿½Æ½
+      2ï¿½ï¿½Î´ï¿½ï¿½ï¿½Ã¾ï¿½Ì¬CPUÆµï¿½ï¿½
+      3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªopen×´Ì¬
      */
     if (g_wlan_info->wlan_gpio_state_get()
         && !g_cur_cpufreq
@@ -1490,7 +1490,7 @@ static int __init early_parse_run_mode_cmdline(char * p)
         printk("get run mode fail!");
         return 0;
     }
-    strncpy(g_run_mode, p, RUN_MODE_LEN);
+    memcpy(g_run_mode, p, RUN_MODE_LEN);
     return 0;
 }
 early_param("androidboot.swtype", early_parse_run_mode_cmdline);
@@ -1556,8 +1556,8 @@ int32 hi110x_set_suspend(struct hi110x_pm_info *pm_info, int32 value)
     }
 
     /**
-     * 1¡¢ÅÐ¶ÏµÍ¹¦ºÄµÄ×Ü¿ª¹ØÊÇ·ñ´ò¿ª
-     * 2¡¢ÅÐ¶ÏAndroidÉÏ²ãÊÇ·ñÓÐÑ¡ÔñÊ¼ÖÕ±£³Ö¹ØÁªºÍÕýÔÚ³äµçÊ±±£³Ö¹ØÁª
+     * 1ï¿½ï¿½ï¿½Ð¶ÏµÍ¹ï¿½ï¿½Äµï¿½ï¿½Ü¿ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½
+     * 2ï¿½ï¿½ï¿½Ð¶ï¿½Androidï¿½Ï²ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ê¼ï¿½Õ±ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú³ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½
      */
     cfg = pm_info->hi110x_dev->cfg;
 
@@ -1592,8 +1592,8 @@ int32 hi110x_set_suspend(struct hi110x_pm_info *pm_info, int32 value)
         if (IS_P2P_ON(cfg))
         {
             /**
-             * 1¡¢P2PÄ£Ê½ÅäÖÃÊ¡µçÄ£Ê½1£¬ÆÁÁÁÃð²»×ö¸Ä±ä
-             * 2¡¢ÆÁÃðÊ±²»×ö×é²¥Ö¡¹ýÂË
+             * 1ï¿½ï¿½P2PÄ£Ê½ï¿½ï¿½ï¿½ï¿½Ê¡ï¿½ï¿½Ä£Ê½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½
+             * 2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½é²¥Ö¡ï¿½ï¿½ï¿½ï¿½
              */
             ps_mode = (cfg->sta_info.manual_pwrm != 0xFF) ?
             cfg->sta_info.manual_pwrm : HI110X_POWERMODE_MIN;
@@ -1612,8 +1612,8 @@ int32 hi110x_set_suspend(struct hi110x_pm_info *pm_info, int32 value)
             {
                 /* set early suspended */
                 /**
-                 * 1¡¢°µÆÁSTAÄ£Ê½£¬enable packet filter
-                 * 2¡¢ÉèÖÃÊ¡µçÄ£Ê½2
+                 * 1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½STAÄ£Ê½ï¿½ï¿½enable packet filter
+                 * 2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¡ï¿½ï¿½Ä£Ê½2
                  */
                 ret = hwifi_set_pktfilter(cfg, GROUP_PKTFILTER_ON);
                 if (ret < 0)
@@ -2214,9 +2214,9 @@ void hi110x_pm_free(struct hi110x_pm_info *pm_info)
     HWIFI_INFO("Pm free done!");
 }
 
-/* Start of zhangwei 64406 2013-03-26 B295 Ôö¼ÓÔ¤±àÒëºê */
+/* Start of zhangwei 64406 2013-03-26 B295 ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½ */
 #endif
-/* End of zhangwei 64406 2013-03-26 B295 Ôö¼ÓÔ¤±àÒëºê */
+/* End of zhangwei 64406 2013-03-26 B295 ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½ */
 
 #ifdef __cplusplus
     #if __cplusplus

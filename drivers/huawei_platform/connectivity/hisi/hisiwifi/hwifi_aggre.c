@@ -56,7 +56,7 @@ unsigned long g_data_rate_up      = AGGR_RATE_UP*AGREE_DATE_TIMOUT;
 unsigned long g_ap_data_rate_down = AGGR_RATE_DOWN*AGREE_DATE_TIMOUT;
 unsigned long g_ap_data_rate_up   = AGGR_RATE_UP*AGREE_DATE_TIMOUT;
 
-/* DTS2013101203050 ¾ÛºÏ¸öÊý¶¯Ì¬µ÷Õû 2013/11/26  */
+/* DTS2013101203050 ï¿½ÛºÏ¸ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ 2013/11/26  */
 #define M40M_AGGR_NUM_RATE_UP              (50)
 #define M40M_AGGR_NUM_RATE_DOWN            (30)
 #define M20M_AGGR_NUM_RATE_UP              (25)
@@ -383,7 +383,8 @@ int32 hwifi_set_amsdu(struct cfg_struct *cfg, struct aggre_cfg_param *param)
 
     HWIFI_ASSERT(NULL != cfg);
 
-    if(param->amsdu_action_type == A_MSDU_START)
+    if(param->amsdu_action_type == A_MSDU_START)
+
     {
         msg_size = sizeof(struct set_start_amsdu_msg);
         if (msg_size > MAX_MSG_LEN)
@@ -1110,7 +1111,7 @@ int32 wl_aggre_mode_lock_set(struct cfg_struct *cfg, uint8 enabled)
     spin_lock_bh(&cfg->aggre_info.lock);
     do
     {
-        if(!enabled == cfg->aggre_info.aggr_start)
+        if((!enabled) == cfg->aggre_info.aggr_start)
         {
             HWIFI_DEBUG("agree already %s", !enabled?"start":"stop");
             ret = TRUE;
@@ -1132,7 +1133,7 @@ int32 wl_aggre_mode_lock_set(struct cfg_struct *cfg, uint8 enabled)
 }
 /* DTS2014020701562  Hi110x bug fix zhouxinfeng/z00262551 2014/2/27 end */
 
-/* DTS2013101203050 ¾ÛºÏ¸öÊý¶¯Ì¬µ÷Õû 2013/11/26 begin */
+/* DTS2013101203050 ï¿½ÛºÏ¸ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ 2013/11/26 begin */
 /*
  * Prototype    : wl_aggre_cfg_set
  * Description  : config ba session
@@ -1186,7 +1187,7 @@ int32  hwifi_dyn_aggre_num_set(struct cfg_struct *cfg, struct host_ba_aggre_num_
 
     return ret;
 }
-/* DTS2013101203050 ¾ÛºÏ¸öÊý¶¯Ì¬µ÷Õû 2013/11/26 end */
+/* DTS2013101203050 ï¿½ÛºÏ¸ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ 2013/11/26 end */
 
 
 /*
@@ -1559,7 +1560,7 @@ int32 hwifi_save_flow_info(struct sk_buff *skb, struct cfg_struct *cfg)
     return SUCC;
 }
 
-/* DTS2013101203050 ¾ÛºÏ¸öÊý¶¯Ì¬µ÷Õû 2013/11/26 begin */
+/* DTS2013101203050 ï¿½ÛºÏ¸ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ 2013/11/26 begin */
 void hwifi_prepare_aggr_parm(struct host_ba_aggre_num_param *ba_param, int32 max_aggr_num, uint8 method)
 {
     //ba_param->max_tx    = 2;
@@ -1571,7 +1572,7 @@ void hwifi_prepare_aggr_parm(struct host_ba_aggre_num_param *ba_param, int32 max
     ba_param->max_aggre_num = max_aggr_num / 2;
     ba_param->method        = method;
 }
-/* DTS2013101203050 ¾ÛºÏ¸öÊý¶¯Ì¬µ÷Õû 2013/11/26 end */
+/* DTS2013101203050 ï¿½ÛºÏ¸ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ 2013/11/26 end */
 
 /* DTS2014020701562  Hi110x bug fix zhouxinfeng/z00262551 2014/2/27 begin */
 /*
@@ -1624,7 +1625,7 @@ STATIC void hwifi_data_rate_timeout(unsigned long data)
     }
     else if(IS_AP(cfg))
     {
-        /* DTS2013102407178 sony lt18i¼æÈÝÐÔÎÊÌâÐÞ¸Ä 2013/11/26 */
+        /* DTS2013102407178 sony lt18iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ 2013/11/26 */
         if (cfg->aggre_info.rate <= g_ap_data_rate_down)
         {
             HWIFI_DEBUG("Rate Slow Down,Try to Stop aggre");
@@ -1645,13 +1646,13 @@ STATIC void hwifi_data_rate_timeout(unsigned long data)
         }
     }
 
-    /* DTS2013101203050 ¾ÛºÏ¸öÊý¶¯Ì¬µ÷Õû 2013/11/26 */
+    /* DTS2013101203050 ï¿½ÛºÏ¸ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ 2013/11/26 */
     HWIFI_DEBUG("g_use_dync_16vs8:%u",g_use_dync_16vs8);
     if((cfg->aggre_info.rate > g_data_rate_up) && (IS_STA(cfg)) && (g_use_dync_16vs8))
     {
         ht_40M_flag = cfg->rate.flags & RATE_INFO_FLAGS_40_MHZ_WIDTH;
 
-        /* ËµÃ÷Ö§³Ö40MÐÅµÀ */
+        /* Ëµï¿½ï¿½Ö§ï¿½ï¿½40Mï¿½Åµï¿½ */
         if (ht_40M_flag && cfg->sta_info.fc_enabled)
         {
             g_aggr_num_rate_up    = (M40M_AGGR_NUM_RATE_UP * 1000000 / 8)*10;
@@ -1663,7 +1664,7 @@ STATIC void hwifi_data_rate_timeout(unsigned long data)
             g_aggr_num_rate_down  = (M20M_AGGR_NUM_RATE_DOWN * 1000000 / 8)*10;
         }
 
-        /* °´10sÍ³¼Æ */
+        /* ï¿½ï¿½10sÍ³ï¿½ï¿½ */
         if(g_count_aggre < 10)
         {
             g_count_aggre++;

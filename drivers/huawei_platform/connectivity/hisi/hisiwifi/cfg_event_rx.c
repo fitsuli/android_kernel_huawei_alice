@@ -273,7 +273,7 @@ STATIC int32 hwifi_connect_result(struct cfg_struct             *cfg,
 #ifdef WLAN_POWER_MANAGEMENT
         if (g_powermgmt_switch)
         {
-            /* ¹ØÁª³É¹¦ºó£¬Æô¶¯watchdog timer */
+            /* ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½watchdog timer */
             if (cfg->hi110x_dev->pm_info != NULL)
             {
                 hi110x_pm_start_wdg(cfg->hi110x_dev->pm_info);
@@ -322,7 +322,7 @@ STATIC int32 hwifi_disconnect_result(struct cfg_struct               *cfg,
 
     HWIFI_INFO("device report disconnect, reason code:%u", event->reason_code);
 /* DTS2014062609777 Hi110x bug fix 100225940 2014/6/28 begin*/
-    /* ½â¾ödevice´¦ÀíÌ«Âýµ¼ÖÂÈ¥¹ØÁªÖ»É¨Ãè5GµÄÎÊÌâ */
+    /* ï¿½ï¿½ï¿½deviceï¿½ï¿½ï¿½ï¿½Ì«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½Ö»É¨ï¿½ï¿½5Gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     msleep(100);
 /* DTS2014062609777 Hi110x bug fix 100225940 2014/6/28 end*/
     /* report disconnect result */
@@ -336,12 +336,12 @@ STATIC int32 hwifi_disconnect_result(struct cfg_struct               *cfg,
      * if disconnect passively, restore previous regulatory domain rules before
      * connect.
      */
-    /* DTS2013120502748   Hi110x bug fix º¼ÌìÆæ/hwx160629 2013/12/10 begin */
+    /* DTS2013120502748   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/hwx160629 2013/12/10 begin */
     /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 begin */
-    strncpy(cfg->beacon_ie_country_code,INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN);
+    memcpy(cfg->beacon_ie_country_code,INVALID_COUNTRY_CODE, COUNTRY_CODE_LEN);
     /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/16 end */
     ret = hwifi_regdomain_update(cfg);
-    /* DTS2013120502748   Hi110x bug fix º¼ÌìÆæ/hwx160629 2013/12/10 end */
+    /* DTS2013120502748   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/hwx160629 2013/12/10 end */
     if (ret != SUCC)
     {
         HWIFI_WARNING("Failed to update regdomain!");
@@ -351,9 +351,9 @@ STATIC int32 hwifi_disconnect_result(struct cfg_struct               *cfg,
 #ifdef WLAN_ARRG_DYNAMIC_CONTROL
     hwifi_stop_timer(cfg);
 #endif
-    /* DTS2014012203891   Hi110x bug fix º¼ÌìÆæ hwx160629 2014/01/23 begin */
+    /* DTS2014012203891   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ hwx160629 2014/01/23 begin */
     cancel_delayed_work_sync(&cfg->pwrm_set_work);
-    /* DTS2014012203891   Hi110x bug fix º¼ÌìÆæ hwx160629 2014/01/23 end */
+    /* DTS2014012203891   Hi110x bug fix ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ hwx160629 2014/01/23 end */
 	/* DTS2014032401941  Hi110x bug fix zhouxinfeng/z00262551 2014/3/29 begin */
     hcc_net_work_detect_deinit(cfg->hi110x_dev->hcc);
     /* DTS2014032401941  Hi110x bug fix zhouxinfeng/z00262551 2014/3/29 end */
@@ -618,7 +618,7 @@ STATIC int32 hwifi_save_channel_info(struct cfg_struct *cfg, int8 *buf, int32 le
         return -EFAIL;
     }
 
-    /* deviceÐÅµÀÐÅÏ¢ÉÏ±¨£¬ÐÅµÀÐÅÏ¢³¤¶ÈÎª2×Ö½Ú£¬ÆäÖÐµÍ×Ö½Ú´ú±íÐÅµÀºÅ */
+    /* deviceï¿½Åµï¿½ï¿½ï¿½Ï¢ï¿½Ï±ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Îª2ï¿½Ö½Ú£ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½Ö½Ú´ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ */
     if (len != 2)
     {
         HWIFI_WARNING("Invalid length:%d is not equeue to 2!",len);
