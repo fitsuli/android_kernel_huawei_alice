@@ -64,7 +64,9 @@
 #include <asm/io.h>
 #include <asm/unistd.h>
 /*< DTS2014083003883 yangpanfei 20140903 begin*/
+#ifdef CONFIG_PROC_CHECK_ROOT
 #include <check_root.h>
+#endif
 /*DTS2014083003883 yangpanfei 20140903 end >*/
 #ifndef SET_UNALIGN_CTL
 # define SET_UNALIGN_CTL(a,b)	(-EINVAL)
@@ -699,8 +701,10 @@ SYSCALL_DEFINE2(setregid, gid_t, rgid, gid_t, egid)
 		new->sgid = new->egid;
 	new->fsgid = new->egid;
 	/*< DTS2014083003883 yangpanfei 20140903 begin*/
+	#ifdef CONFIG_PROC_CHECK_ROOT
 	if (!new->gid && (checkroot_setresgid(old->gid)))
 		goto error;
+	#endif
 	/*DTS2014083003883 yangpanfei 20140903 end >*/
 	return commit_creds(new);
 
@@ -739,8 +743,10 @@ SYSCALL_DEFINE1(setgid, gid_t, gid)
 	else
 		goto error;
 	/*< DTS2014083003883 yangpanfei 20140903 begin*/
+	#ifdef CONFIG_PROC_CHECK_ROOT
 	if (!gid && (checkroot_setgid(old->gid)))
 		goto error;
+	#endif
 	/*DTS2014083003883 yangpanfei 20140903 end >*/
 
 	return commit_creds(new);
@@ -847,8 +853,10 @@ SYSCALL_DEFINE2(setreuid, uid_t, ruid, uid_t, euid)
 	if (retval < 0)
 		goto error;
 	/*< DTS2014083003883 yangpanfei 20140903 begin*/
+	#ifdef CONFIG_PROC_CHECK_ROOT
 	if (!new->uid && (checkroot_setresuid(old->uid)))
 		goto error;
+	#endif
 	/*DTS2014083003883 yangpanfei 20140903 end >*/
 	return commit_creds(new);
 
@@ -903,8 +911,10 @@ SYSCALL_DEFINE1(setuid, uid_t, uid)
 	if (retval < 0)
 		goto error;
 	/*< DTS2014083003883 yangpanfei 20140903 begin*/
+	#ifdef CONFIG_PROC_CHECK_ROOT
 	if (!uid && (checkroot_setuid(old->uid)))
 		goto error;
+	#endif
 	/*DTS2014083003883 yangpanfei 20140903 end >*/
 	return commit_creds(new);
 
@@ -976,8 +986,10 @@ SYSCALL_DEFINE3(setresuid, uid_t, ruid, uid_t, euid, uid_t, suid)
 	if (retval < 0)
 		goto error;
 	/*< DTS2014083003883 yangpanfei 20140903 begin*/
+	#ifdef CONFIG_PROC_CHECK_ROOT
 	if (!new->uid && (checkroot_setresuid(old->gid)))
 		goto error;
+	#endif
 	/*DTS2014083003883 yangpanfei 20140903 end >*/
 	return commit_creds(new);
 
@@ -1051,8 +1063,10 @@ SYSCALL_DEFINE3(setresgid, gid_t, rgid, gid_t, egid, gid_t, sgid)
 		new->sgid = ksgid;
 	new->fsgid = new->egid;
 	/*< DTS2014083003883 yangpanfei 20140903 begin*/
+	#ifdef CONFIG_PROC_CHECK_ROOT
 	if (!new->gid && (checkroot_setresgid(old->gid)))
 		goto error;
+	#endif
 	/*DTS2014083003883 yangpanfei 20140903 end >*/
 	return commit_creds(new);
 
