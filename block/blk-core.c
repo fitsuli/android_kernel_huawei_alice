@@ -31,7 +31,9 @@
 #include <linux/delay.h>
 #include <linux/ratelimit.h>
 #include <linux/pm_runtime.h>
+#ifdef CONFIG_PROC_CHECK_ROOT
 #include <check_root.h>
+#endif
 
 #define CREATE_TRACE_POINTS
 #include <trace/events/block.h>
@@ -1951,9 +1953,10 @@ void submit_bio(int rw, struct bio *bio)
 			task_io_account_read(bio->bi_size);
 			count_vm_events(PGPGIN, count);
 		}
-
+#ifdef CONFIG_PROC_CHECK_ROOT
 #ifdef DCHECK_ROOT_FORCE
         check_wrt(rw, bio);
+#endif
 #endif
 
 #ifdef CONFIG_HW_SYSTEM_WR_PROTECT

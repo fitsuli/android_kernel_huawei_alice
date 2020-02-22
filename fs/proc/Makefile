@@ -38,7 +38,6 @@ proc-$(CONFIG_PROC_PAGE_MONITOR)	+= page.o
 proc-$(CONFIG_FEATURE_HUAWEI_EMERGENCY_DATA)  += emerg_data.o
 #/* END PN:DTS2014081505452,Added by chenyu, 2014-08-14*/
 #/*< DTS2014083003883 yangpanfei 20140903 begin*/
-proc-y	+= check_root.o
+proc-$(CONFIG_PROC_CHECK_ROOT)	+= check_root.o dcheck_root.o
 #/*DTS2014083003883 yangpanfei 20140903 end >*/
 proc-$(CONFIG_PROC_POSTFSDATA)         += post-fs-data.o
-proc-y	+= dcheck_root.o

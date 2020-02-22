@@ -1,13 +1,13 @@
 /*************************************************************************
-*   °æÈ¨ËùÓÐ(C) 1987-2010, ÉîÛÚ»ªÎª¼¼ÊõÓÐÏÞ¹«Ë¾.
+*   ï¿½ï¿½È¨ï¿½ï¿½ï¿½ï¿½(C) 1987-2010, ï¿½ï¿½ï¿½Ú»ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾.
 *
-*   ÎÄ ¼þ Ãû :  BSP_ICC.c
+*   ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ :  BSP_ICC.c
 *
-*   ×÷    Õß :  zhouluojun
+*   ï¿½ï¿½    ï¿½ï¿½ :  zhouluojun
 *
-*   Ãè    Êö :  ±¾ÎÄ¼þÖ÷ÒªÍê³É¹²ÏíÄÚ´æÍ¨µÀ¹ÜÀí£¬¶ÁÐ´½Ó¿Ú·â×°.
+*   ï¿½ï¿½    ï¿½ï¿½ :  ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Òªï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½Ú´ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½Ó¿Ú·ï¿½×°.
 *
-*   ÐÞ¸Ä¼ÇÂ¼ :  2011Äê1ÔÂ14ÈÕ  v1.00  zhouluojun  ´´½¨
+*   ï¿½Þ¸Ä¼ï¿½Â¼ :  2011ï¿½ï¿½1ï¿½ï¿½14ï¿½ï¿½  v1.00  zhouluojun  ï¿½ï¿½ï¿½ï¿½
 *************************************************************************/
 
 /*ICC_LOG_SAVE DTS:DTS2013060606474 modifier: zhanghaibo z00231199 begin*/
@@ -144,7 +144,7 @@ BSP_U8 icc_debug_print = FALSE;
 #define ICC_MEMCPY(dst,src,len)  memcpy(dst,src,len)
 
 /*Modify_for_c_reset, l00212112,20130511, starts*/
-/*Ccore reset,ÔÚcºË¸´Î»¹ý³ÌÖÐÓÃÓÚ¿ØÖÆÃ¿¸öchannelµÄ¿ª¹Ø*/
+/*Ccore reset,ï¿½ï¿½cï¿½Ë¸ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½channelï¿½Ä¿ï¿½ï¿½ï¿½*/
 BSP_BOOL    g_bCcoreReset_Channel[ICC_CHAN_NUM_MAX] = {BSP_FALSE};
 /*Modify_for_c_reset, l00212112,20130511, ends*/
 
@@ -314,15 +314,15 @@ void ICC_IntGen(void)
 
 #if(FEATURE_ICC_DEBUG == FEATURE_ON)
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_debug_print_send()
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_debug_print_send()
 *
-* ¹¦ÄÜÃèÊö  : ÉèÖÃÊÇ·ñ´òÓ¡Ê±¼ä´Á
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ó¡Ê±ï¿½ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  : 1£º´òÓ¡  0£º²»´òÓ¡
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : 1ï¿½ï¿½ï¿½ï¿½Ó¡  0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¡
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 
 BSP_VOID ICC_debug_print_send(BSP_U32 value)
@@ -335,15 +335,15 @@ BSP_VOID ICC_debug_print_send(BSP_U32 value)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_NotifyTarget
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_NotifyTarget
 *
-* ¹¦ÄÜÃèÊö  : ¸øÄ¿±ê´¦ÀíÆ÷·¢ËÍÖÐ¶ÏÐÅºÅ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½Ä¿ï¿½ê´¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Åºï¿½
 *
-* ÊäÈë²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_VOID ICC_NotifyTarget(ICC_CHAN_DEV_S *pChan, BSP_U32 signal)
 {
@@ -355,7 +355,7 @@ BSP_VOID ICC_NotifyTarget(ICC_CHAN_DEV_S *pChan, BSP_U32 signal)
     pChan->ptxSubChanInfo->u32Signal |= signal;
     ICC_SPIN_UNLOCK(&pChan->ptxSubChanInfo->u32SpinLock);
 
-    /* ´¥·¢¶ÔÓ¦µÄÖÐ¶Ï */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ð¶ï¿½ */
     ICC_IntGen();
 
     local_irq_restore(flag);
@@ -365,16 +365,16 @@ BSP_VOID ICC_NotifyTarget(ICC_CHAN_DEV_S *pChan, BSP_U32 signal)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_FIFOIdleSize
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_FIFOIdleSize
 *
-* ¹¦ÄÜÃèÊö  : ²éÑ¯Í¨µÀÖÐµÄ¿ÕÏÐÄÚ´æ´óÐ¡
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½Ñ¯Í¨ï¿½ï¿½ï¿½ÐµÄ¿ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½Ð¡
 *
-* ÊäÈë²ÎÊý  : pSubChan      ×ÓÍ¨µÀ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : pSubChan      ï¿½ï¿½Í¨ï¿½ï¿½
 *
-* Êä³ö²ÎÊý  : IdleSize1     ¿ÕÏÐbuffer1
-*             IdleSize2     ¿ÕÏÐbuffer2
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : IdleSize1     ï¿½ï¿½ï¿½ï¿½buffer1
+*             IdleSize2     ï¿½ï¿½ï¿½ï¿½buffer2
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_VOID ICC_FIFOIdleSize(ICC_SUB_CHAN_S *pSubChan, BSP_S32 *IdleSize1, BSP_S32 *IdleSize2)
 {
@@ -385,13 +385,13 @@ BSP_VOID ICC_FIFOIdleSize(ICC_SUB_CHAN_S *pSubChan, BSP_S32 *IdleSize1, BSP_S32 
 
     if (write < read)
     {
-        /* ¶ÁÖ¸Õë´óÓÚÐ´Ö¸Õë£¬Ö±½Ó¼ÆËã */
+        /* ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½Ð´Ö¸ï¿½ë£¬Ö±ï¿½Ó¼ï¿½ï¿½ï¿½ */
         *IdleSize1 = (BSP_S32)(read - write - 1);
         *IdleSize2 = 0;
     }
     else
     {
-        /* Ð´Ö¸Õë´óÓÚ¶ÁÖ¸Õë£¬ÐèÒª¿¼ÂÇ»Ø¾í */
+        /* Ð´Ö¸ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½Ö¸ï¿½ë£¬ï¿½ï¿½Òªï¿½ï¿½ï¿½Ç»Ø¾ï¿½ */
         if (read != start)
         {
             *IdleSize1 = (BSP_S32)(end - write + 1);
@@ -409,16 +409,16 @@ BSP_VOID ICC_FIFOIdleSize(ICC_SUB_CHAN_S *pSubChan, BSP_S32 *IdleSize1, BSP_S32 
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_FIFODataSize
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_FIFODataSize
 *
-* ¹¦ÄÜÃèÊö  : ²éÑ¯Í¨µÀÖÐµÄÓÐÐ§Êý¾ÝÄÚ´æ´óÐ¡
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½Ñ¯Í¨ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½Ð¡
 *
-* ÊäÈë²ÎÊý  : pSubChan      ×ÓÍ¨µÀ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : pSubChan      ï¿½ï¿½Í¨ï¿½ï¿½
 *
-* Êä³ö²ÎÊý  : DataSize1     ÓÐÐ§Êý¾Ýbuffer1
-*             DataSize2     ÓÐÐ§Êý¾Ýbuffer2
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : DataSize1     ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½buffer1
+*             DataSize2     ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½buffer2
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_VOID ICC_FIFODataSize(ICC_SUB_CHAN_S *pSubChan, BSP_S32 *s32DataSize1, BSP_S32 *s32DataSize2)
 {
@@ -429,13 +429,13 @@ BSP_VOID ICC_FIFODataSize(ICC_SUB_CHAN_S *pSubChan, BSP_S32 *s32DataSize1, BSP_S
 
     if (read <= write)
     {
-        /* Ð´Ö¸Õë´óÓÚ¶ÁÖ¸Õë£¬Ö±½Ó¼ÆËã */
+        /* Ð´Ö¸ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½Ö¸ï¿½ë£¬Ö±ï¿½Ó¼ï¿½ï¿½ï¿½ */
         *s32DataSize1 = (BSP_S32)(write - read);
         *s32DataSize2 = 0;
     }
     else
     {
-        /* ¶ÁÖ¸Õë´óÓÚÐ´Ö¸Õë£¬ÐèÒª¿¼ÂÇ»Ø¾í */
+        /* ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½Ð´Ö¸ï¿½ë£¬ï¿½ï¿½Òªï¿½ï¿½ï¿½Ç»Ø¾ï¿½ */
         *s32DataSize1 = (BSP_S32)(end - read + 1);
         *s32DataSize2 = (BSP_S32)(write - start);
     }
@@ -445,16 +445,16 @@ BSP_VOID ICC_FIFODataSize(ICC_SUB_CHAN_S *pSubChan, BSP_S32 *s32DataSize1, BSP_S
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_ListAdd
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_ListAdd
 *
-* ¹¦ÄÜÃèÊö  : ÏòÍ¨µÀÁ´±íÖÐÔö¼ÓÒ»¸ö½Úµã
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Úµï¿½
 *
-* ÊäÈë²ÎÊý  : pList         Á´±íÖ¸Õë
-*             pNode         Êý¾Ý½Úµã
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : pList         ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
+*             pNode         ï¿½ï¿½ï¿½Ý½Úµï¿½
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 ICC_ListAdd(ICC_CHAN_DEV_S **pList, ICC_CHAN_DEV_S *pNode)
 {
@@ -490,16 +490,16 @@ BSP_S32 ICC_ListAdd(ICC_CHAN_DEV_S **pList, ICC_CHAN_DEV_S *pNode)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_ListGet
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_ListGet
 *
-* ¹¦ÄÜÃèÊö  : ÔÚÍ¨µÀÁ´±íÖÐ²éÑ¯Ò»¸ö½Úµã
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½Ñ¯Ò»ï¿½ï¿½ï¿½Úµï¿½
 *
-* ÊäÈë²ÎÊý  : pList         Á´±íÖ¸Õë
-*             u32ChanId        Í¨µÀID
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : pList         ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
+*             u32ChanId        Í¨ï¿½ï¿½ID
 *
-* Êä³ö²ÎÊý  : pNode         ½ÚµãÖ¸Õë
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : pNode         ï¿½Úµï¿½Ö¸ï¿½ï¿½
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_VOID ICC_ListGet(ICC_CHAN_DEV_S *pList, BSP_U32 u32ChanId, ICC_CHAN_DEV_S **pNode)
 {
@@ -528,16 +528,16 @@ BSP_VOID ICC_ListGet(ICC_CHAN_DEV_S *pList, BSP_U32 u32ChanId, ICC_CHAN_DEV_S **
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_ListGetOut
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_ListGetOut
 *
-* ¹¦ÄÜÃèÊö  : ´ÓÍ¨µÀÁ´±íÖÐÈ¡³öÒ»¸ö½Úµã
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Úµï¿½
 *
-* ÊäÈë²ÎÊý  : pList         Á´±íÖ¸Õë
-*             u32ChanId        Í¨µÀID
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : pList         ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
+*             u32ChanId        Í¨ï¿½ï¿½ID
 *
-* Êä³ö²ÎÊý  : pNode         ½ÚµãÖ¸Õë
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : pNode         ï¿½Úµï¿½Ö¸ï¿½ï¿½
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_VOID ICC_ListGetOut(ICC_CHAN_DEV_S **pList, BSP_U32 u32ChanId, ICC_CHAN_DEV_S **pNode)
 {
@@ -555,7 +555,7 @@ BSP_VOID ICC_ListGetOut(ICC_CHAN_DEV_S **pList, BSP_U32 u32ChanId, ICC_CHAN_DEV_
         {
             *pNode = pCur;
 
-            /* É¾³ý½Úµã */
+            /* É¾ï¿½ï¿½ï¿½Úµï¿½ */
             if (pCur != pPre)
             {
                 pPre->next = pCur->next;
@@ -578,16 +578,16 @@ BSP_VOID ICC_ListGetOut(ICC_CHAN_DEV_S **pList, BSP_U32 u32ChanId, ICC_CHAN_DEV_
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_AllocChannel
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_AllocChannel
 *
-* ¹¦ÄÜÃèÊö  : ·ÖÅäÒ»¸öÍ¨µÀ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  : u32ChanId        Í¨µÀID
-*             pChanAttr        Í¨µÀÊôÐÔ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : u32ChanId        Í¨ï¿½ï¿½ID
+*             pChanAttr        Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 ICC_AllocChannel(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
 {
@@ -597,7 +597,7 @@ BSP_S32 ICC_AllocChannel(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
 
     pSmChan = &g_pstIccCtrlChan->astChanInfo[u32ChanId];
 
-    /* ·Ö±ðÉêÇë·¢ËÍºÍ½ÓÊÕÍ¨µÀ£¬infoºÍfifo·Ö¿ªÉêÇë */
+    /* ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ë·¢ï¿½ÍºÍ½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½infoï¿½ï¿½fifoï¿½Ö¿ï¿½ï¿½ï¿½ï¿½ï¿½ */
     pMem1 = BSP_SMALLOC(sizeof(ICC_SUB_CHAN_S), MEM_ICC_DDR_POOL);
     if(!pMem1)
     {
@@ -632,7 +632,7 @@ BSP_S32 ICC_AllocChannel(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
         return BSP_ERR_ICC_NO_MEM;
     }
 
-    /* ³õÊ¼»¯×´Ì¬ */
+    /* ï¿½ï¿½Ê¼ï¿½ï¿½×´Ì¬ */
     pSmChan->enState = ICC_CHAN_STATE_CLOSED;
     pSmChan->enMode = pChanAttr->enChanMode;
     pSmChan->u32Priority = pChanAttr->u32Priority;
@@ -641,7 +641,7 @@ BSP_S32 ICC_AllocChannel(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
     pSmChan->u32SubChanInfo[ICC_TAGET] = (BSP_U32)HISI_PA_ADDRESS(pMem2);
     pSmChan->bAlloc= BSP_TRUE;
 
-    /* ³õÊ¼»¯·¢ËÍÍ¨µÀ£¬·¢ËÍÍ¨µÀµÄFIFOÔÚÇ°£¬¶ÔÓ¦µÄFIFO sizeÊÇFIFOOutSize */
+    /* ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½FIFOï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½FIFO sizeï¿½ï¿½FIFOOutSize */
     pTxChan = pMem1;
     pTxChan->u32SubChanState = ICC_CHAN_STATE_CLOSED;
     pTxChan->u32Signal = 0;
@@ -652,7 +652,7 @@ BSP_S32 ICC_AllocChannel(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
     pTxChan->u32PhyRead = pTxChan->u32PhyStart;
     pTxChan->u32PhyWrite = pTxChan->u32PhyStart;
 
-    /* ³õÊ¼»¯½ÓÊÕÍ¨µÀ£¬½ÓÊÕÍ¨µÀµÄFIFOÔÚºó£¬¶ÔÓ¦µÄFIFO sizeÊÇFIFOInSize */
+    /* ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½FIFOï¿½Úºó£¬¶ï¿½Ó¦ï¿½ï¿½FIFO sizeï¿½ï¿½FIFOInSize */
     pRxChan = pMem2;
     pRxChan->u32SubChanState = ICC_CHAN_STATE_CLOSED;
     pRxChan->u32Signal = 0;
@@ -668,15 +668,15 @@ BSP_S32 ICC_AllocChannel(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_FreeChannel
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_FreeChannel
 *
-* ¹¦ÄÜÃèÊö  : ÊÍ·ÅÒ»¸öÍ¨µÀ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½Í·ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  : u32ChanId        Í¨µÀID
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : u32ChanId        Í¨ï¿½ï¿½ID
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_VOID ICC_FreeChannel(BSP_U32 u32ChanId)
 {
@@ -705,41 +705,41 @@ BSP_VOID ICC_FreeChannel(BSP_U32 u32ChanId)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_ResetChannel
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_ResetChannel
 *
-* ¹¦ÄÜÃèÊö  : ¸´Î»Í¨µÀ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½Î»Í¨ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  : pChan Ö¸ÏòÐèÒª¸´Î»µÄÍ¨µÀµÄÖ¸Õë
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : pChan Ö¸ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Î»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_VOID ICC_ResetChannel(ICC_CHAN_DEV_S *pChan)
 {
-    /* ¸´Î»Í¨µÀÓÉ·¢ËÍ¶ËÀ´Ö´ÐÐ£¬ÕâÑùÈÚºÏºÍÐ´²Ù×÷±£³Ö»¥³â */
+    /* ï¿½ï¿½Î»Í¨ï¿½ï¿½ï¿½É·ï¿½ï¿½Í¶ï¿½ï¿½ï¿½Ö´ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÚºÏºï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ */
     ICC_NotifyTarget(pChan, ICC_CHAN_SIGNAL_RESET);
     return;
 }
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_SetEventCB
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_SetEventCB
 *
-* ¹¦ÄÜÃèÊö  : ÉèÖÃ¶ÁÊý»Øµ÷º¯Êý
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  : u32ChanId        Í¨µÀID
-*             cb            ÊÂ¼þ»Øµ÷º¯Êý
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : u32ChanId        Í¨ï¿½ï¿½ID
+*             cb            ï¿½Â¼ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 ICC_SetEventCB(BSP_U32 u32ChanId, icc_event_cb cb)
 {
     ICC_CHAN_DEV_S  *pChan = BSP_NULL;
 
-    /* »ñÈ¡Í¨µÀ */
+    /* ï¿½ï¿½È¡Í¨ï¿½ï¿½ */
     ICC_ListGet(g_pstOpenList, u32ChanId, &pChan);
     if (BSP_NULL == pChan)
     {
@@ -754,22 +754,22 @@ BSP_S32 ICC_SetEventCB(BSP_U32 u32ChanId, icc_event_cb cb)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_SetReadCB
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_SetReadCB
 *
-* ¹¦ÄÜÃèÊö  : ÉèÖÃ¶ÁÊý»Øµ÷º¯Êý
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  : u32ChanId        Í¨µÀID
-*             cb            ÊÂ¼þ»Øµ÷º¯Êý
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : u32ChanId        Í¨ï¿½ï¿½ID
+*             cb            ï¿½Â¼ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 ICC_SetReadCB(BSP_U32 u32ChanId, icc_read_cb cb)
 {
     ICC_CHAN_DEV_S  *pChan = BSP_NULL;
 
-    /* »ñÈ¡Í¨µÀ */
+    /* ï¿½ï¿½È¡Í¨ï¿½ï¿½ */
     ICC_ListGet(g_pstOpenList, u32ChanId, &pChan);
     if (BSP_NULL == pChan)
     {
@@ -784,22 +784,22 @@ BSP_S32 ICC_SetReadCB(BSP_U32 u32ChanId, icc_read_cb cb)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_SetWriteCB
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_SetWriteCB
 *
-* ¹¦ÄÜÃèÊö  : ÉèÖÃÐ´Êý»Øµ÷º¯Êý
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  : u32ChanId        Í¨µÀID
-*             cb            ÊÂ¼þ»Øµ÷º¯Êý
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : u32ChanId        Í¨ï¿½ï¿½ID
+*             cb            ï¿½Â¼ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 ICC_SetWriteCB(BSP_U32 u32ChanId, icc_write_cb cb)
 {
     ICC_CHAN_DEV_S  *pChan = BSP_NULL;
 
-    /* »ñÈ¡Í¨µÀ */
+    /* ï¿½ï¿½È¡Í¨ï¿½ï¿½ */
     ICC_ListGet(g_pstOpenList, u32ChanId, &pChan);
     if (BSP_NULL == pChan)
     {
@@ -814,21 +814,21 @@ BSP_S32 ICC_SetWriteCB(BSP_U32 u32ChanId, icc_write_cb cb)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_GetChanState
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_GetChanState
 *
-* ¹¦ÄÜÃèÊö  : ²éÑ¯Í¨µÀ×´Ì¬
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½Ñ¯Í¨ï¿½ï¿½×´Ì¬
 *
-* ÊäÈë²ÎÊý  : u32ChanId        Í¨µÀID
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : u32ChanId        Í¨ï¿½ï¿½ID
 *
-* Êä³ö²ÎÊý  : state            ¸ÃÍ¨µÀ×´Ì¬
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : state            ï¿½ï¿½Í¨ï¿½ï¿½×´Ì¬
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 ICC_GetChanState(BSP_U32 u32ChanId, ICC_CHAN_STATE_E *state)
 {
     ICC_CHAN_DEV_S  *pChan = BSP_NULL;
 
-    /* »ñÈ¡Í¨µÀ */
+    /* ï¿½ï¿½È¡Í¨ï¿½ï¿½ */
     ICC_ListGet(g_pstOpenList, u32ChanId, &pChan);
     if (BSP_NULL == pChan)
     {
@@ -842,21 +842,21 @@ BSP_S32 ICC_GetChanState(BSP_U32 u32ChanId, ICC_CHAN_STATE_E *state)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_GetPriority
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_GetPriority
 *
-* ¹¦ÄÜÃèÊö  : »ñÈ¡Í¨µÀµÄÓÅÏÈ¼¶
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½È¡Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¼ï¿½
 *
-* ÊäÈë²ÎÊý  : u32ChanId        Í¨µÀID
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : u32ChanId        Í¨ï¿½ï¿½ID
 *
-* Êä³ö²ÎÊý  : priority         ¸ÃÍ¨µÀµÄÓÅÏÈ¼¶
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : priority         ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¼ï¿½
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 ICC_GetPriority(BSP_U32 u32ChanId, BSP_U32 *priority)
 {
     ICC_CHAN_DEV_S  *pChan = BSP_NULL;
 
-    /* »ñÈ¡Í¨µÀ */
+    /* ï¿½ï¿½È¡Í¨ï¿½ï¿½ */
     ICC_ListGet(g_pstOpenList, u32ChanId, &pChan);
     if (BSP_NULL == pChan)
     {
@@ -871,15 +871,15 @@ BSP_S32 ICC_GetPriority(BSP_U32 u32ChanId, BSP_U32 *priority)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_CopyDataOut
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_CopyDataOut
 *
-* ¹¦ÄÜÃèÊö  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ÊäÈë²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_VOID ICC_CopyDataOut(BSP_U8* pData, BSP_S32 size, BSP_U8* start, BSP_U8* read, BSP_S32 size1)
 {
@@ -901,15 +901,15 @@ BSP_VOID ICC_CopyDataOut(BSP_U8* pData, BSP_S32 size, BSP_U8* start, BSP_U8* rea
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_CopyDataIn
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_CopyDataIn
 *
-* ¹¦ÄÜÃèÊö  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ÊäÈë²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_VOID ICC_CopyDataIn(BSP_U8* pData, BSP_S32 size, BSP_U8* start, BSP_U8* write, BSP_S32 size1)
 {
@@ -930,15 +930,15 @@ BSP_VOID ICC_CopyDataIn(BSP_U8* pData, BSP_S32 size, BSP_U8* start, BSP_U8* writ
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_GetPacket
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_GetPacket
 *
-* ¹¦ÄÜÃèÊö  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ÊäÈë²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 ICC_GetPacket(ICC_CHAN_DEV_S *pChan)
 {
@@ -962,7 +962,7 @@ BSP_S32 ICC_GetPacket(ICC_CHAN_DEV_S *pChan)
     delta = (BSP_U32)pRead%4;
     if (delta)
     {
-        /* ¶ÁÖ¸Õë·Ç4×Ö½Ú¶ÔÆë£¬¶ÔÆëºó¿ªÊ¼¶ÁÈ¡Êý¾Ý */
+        /* ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½4ï¿½Ö½Ú¶ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ */
         delta = 4 - delta;
         pRead += delta;
         s32DataSize1-= delta;
@@ -977,13 +977,13 @@ BSP_S32 ICC_GetPacket(ICC_CHAN_DEV_S *pChan)
 
     if (s32ReadSize <= ICC_PACKET_HEADER_LEN)
     {
-        /* ³öÏÖ¸ñÊ½´íÎó£¬¸´Î»Í¨µÀ */
+        /* ï¿½ï¿½ï¿½Ö¸ï¿½Ê½ï¿½ï¿½ï¿½ó£¬¸ï¿½Î»Í¨ï¿½ï¿½ */
         ICC_ResetChannel(pChan);
         printk(KERN_ERR "BSP_MODU_ICC data size is not correct!.\n");
         return BSP_ERROR;
     }
 
-    /* packetÄ£Ê½ÐèÒªÏÈ½âÎö£¬¿½±´°üÍ·³öÀ´ */
+    /* packetÄ£Ê½ï¿½ï¿½Òªï¿½È½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ï¿½ */
     ICC_CopyDataOut((BSP_U8*)header, ICC_PACKET_HEADER_LEN, (BSP_U8*)(HISI_VA_ADDRESS((BSP_U32)pRxChan->u32PhyStart)),
                     pRead, s32DataSize1);
     s32PayLoadSize = header[1];
@@ -991,20 +991,20 @@ BSP_S32 ICC_GetPacket(ICC_CHAN_DEV_S *pChan)
 
     if (ICC_PACKET_HEADER != header[0])
     {
-        /* ³öÏÖ¸ñÊ½´íÎó£¬°üÍ·TAG²»ÕýÈ·£¬¸´Î»Í¨µÀ */
+        /* ï¿½ï¿½ï¿½Ö¸ï¿½Ê½ï¿½ï¿½ï¿½ó£¬°ï¿½Í·TAGï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½Î»Í¨ï¿½ï¿½ */
         ICC_ResetChannel(pChan);
         printk(KERN_ERR "BSP_MODU_ICC pakcet header is invalid!. header=0x%x\n", header[0]);
         return BSP_ERROR;
     }
     if (s32PacketSize > s32ReadSize)
     {
-        /* ³öÏÖ¸ñÊ½´íÎó£¬¸´Î»Í¨µÀ */
+        /* ï¿½ï¿½ï¿½Ö¸ï¿½Ê½ï¿½ï¿½ï¿½ó£¬¸ï¿½Î»Í¨ï¿½ï¿½ */
         ICC_ResetChannel(pChan);
         printk(KERN_ERR "BSP_MODU_ICC pakcet size is invalid!.\n");
         return BSP_ERROR;
     }
 
-    /* packetÓÐÐ§£¬¼ÇÂ¼µ±Ç°packetÐÅÏ¢ */
+    /* packetï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Ç°packetï¿½ï¿½Ï¢ */
     pChan->packet.data = (BSP_U32)HISI_PA_ADDRESS((unsigned long)(pRead + ICC_PACKET_HEADER_LEN));
     if (HISI_VA_ADDRESS((BSP_U32)pChan->packet.data) > HISI_VA_ADDRESS((BSP_U32)pRxChan->u32PhyEnd))
     {
@@ -1014,10 +1014,10 @@ BSP_S32 ICC_GetPacket(ICC_CHAN_DEV_S *pChan)
 
 
 #if(FEATURE_ICC_DEBUG == FEATURE_ON)
-    s32sendtime = header[2];        /*±£´æ·¢ËÍÊý¾ÝÊ±µÄÊ±¼ä´Á*/
-    s32gettime  = (BSP_S32)omTimerGet(); /*±£´æÊÕµ½Êý¾ÝÊ±µÄÊ±¼ä´Á*/
+    s32sendtime = header[2];        /*ï¿½ï¿½ï¿½æ·¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ê±ï¿½ï¿½ï¿½*/
+    s32gettime  = (BSP_S32)omTimerGet(); /*ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ê±ï¿½ï¿½ï¿½*/
 
-    /*´òÓ¡Êý¾Ý´«ÊäµÄÍ¨µÀºÍÊ±¼ä´Á*/
+    /*ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½*/
 
     if(TRUE == icc_debug_print)
     {
@@ -1029,15 +1029,15 @@ BSP_S32 ICC_GetPacket(ICC_CHAN_DEV_S *pChan)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_SendStream
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_SendStream
 *
-* ¹¦ÄÜÃèÊö  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ÊäÈë²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 ICC_SendStream(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
 {
@@ -1049,13 +1049,13 @@ BSP_S32 ICC_SendStream(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
 
     down(&pChan->semSync);
 
-    /* »ñÈ¡¿ÕÏÐbuffer´óÐ¡ */
+    /* ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½bufferï¿½ï¿½Ð¡ */
     /* BSP-693, modified by z67193 */
     local_irq_save(flags);
     ptxChan = pChan->ptxSubChanInfo;
     ICC_FIFOIdleSize(ptxChan, &s32IdleSize1, &s32IdleSize2);
 
-    /* ¿½±´Êý¾Ý */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     if (s32Size <= s32IdleSize1)
     {
         pWrite = (void *)HISI_VA_ADDRESS((BSP_U32)ptxChan->u32PhyWrite);
@@ -1077,14 +1077,14 @@ BSP_S32 ICC_SendStream(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
         ICC_FLUSH_CACHE(pStart, len);
     }
 
-    /* ¸üÐÂÐ´Ö¸Õë */
+    /* ï¿½ï¿½ï¿½ï¿½Ð´Ö¸ï¿½ï¿½ */
     ptxChan->u32PhyWrite += (BSP_U32)s32CopySize;
     if (HISI_VA_ADDRESS((BSP_U32)ptxChan->u32PhyWrite) > HISI_VA_ADDRESS((BSP_U32)ptxChan->u32PhyEnd))
     {
         ptxChan->u32PhyWrite -= ptxChan->u32FIFOsize;
     }
 
-    /* ¼ÇÂ¼·¢ËÍÍ¨µÀÐèÒªÔÙ´Î·¢ËÍÊý¾ÝµÄ´óÐ¡ */
+    /* ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Òªï¿½Ù´Î·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÝµÄ´ï¿½Ð¡ */
     pChan->ptxSubChanInfo->u32WriteNeedSize += (s32Size - s32CopySize);
 
     /* BSP-693, modified by z67193 */
@@ -1093,7 +1093,7 @@ BSP_S32 ICC_SendStream(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
     pChan->sDebug.u32SendTimes++;
     pChan->sDebug.u32SendBytes += s32CopySize;
 
-    /* Í¨Öª¶Ô·½ */
+    /* Í¨Öªï¿½Ô·ï¿½ */
     ICC_NotifyTarget(pChan, ICC_CHAN_SIGNAL_DATA);
 
     up(&pChan->semSync);
@@ -1102,14 +1102,14 @@ BSP_S32 ICC_SendStream(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
 }
 
 /*****************************************************************************
- º¯ Êý Ãû  : icc_file_stat
- ¹¦ÄÜÃèÊö  : »ñÈ¡ÎÄ¼þ×´Ì¬
- ÊäÈë²ÎÊý  : const  char *path
+ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : icc_file_stat
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½È¡ï¿½Ä¼ï¿½×´Ì¬
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : const  char *path
              struct stat *buf
- Êä³ö²ÎÊý  : ÎÞ
- ·µ »Ø Öµ  : int
- µ÷ÓÃº¯Êý  :
- ±»µ÷º¯Êý  :
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ ï¿½ï¿½ Öµ  : int
+ ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½  :
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 
 *****************************************************************************/
 static int icc_file_stat( const char *pathname, struct stat *pState )
@@ -1123,7 +1123,7 @@ static int icc_file_stat( const char *pathname, struct stat *pState )
        return BSP_ERROR;
     }
 
-    /* ¸Ä±äÄÚ´æ·ÃÎÊÈ¨ÏÞ */
+    /* ï¿½Ä±ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½ */
     fs = get_fs();
     set_fs(KERNEL_DS);
 
@@ -1144,14 +1144,14 @@ static int icc_file_stat( const char *pathname, struct stat *pState )
 }
 
 /*****************************************************************************
- º¯ Êý Ãû  : bsp_fopen
- ¹¦ÄÜÃèÊö  : ´ò¿ªÎÄ¼þ  µ÷ÓÃÕß²»ÄÜ·ÃÎÊ·µ»ØÖµÖµµÄ³ÉÔ±±äÁ¿
- ÊäÈë²ÎÊý  : const char *path
+ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : bsp_fopen
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½ï¿½Ä¼ï¿½  ï¿½ï¿½ï¿½ï¿½ï¿½ß²ï¿½ï¿½Ü·ï¿½ï¿½Ê·ï¿½ï¿½ï¿½ÖµÖµï¿½Ä³ï¿½Ô±ï¿½ï¿½ï¿½ï¿½
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : const char *path
              const char *mode
- Êä³ö²ÎÊý  : ÎÞ
- ·µ »Ø Öµ  : int
- µ÷ÓÃº¯Êý  :
- ±»µ÷º¯Êý  :
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ ï¿½ï¿½ Öµ  : int
+ ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½  :
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 
 *****************************************************************************/
 static int icc_file_fopen( const char *filename, int flags )
@@ -1165,11 +1165,11 @@ static int icc_file_fopen( const char *filename, int flags )
         return BSP_ERROR;
     }
 
-    /* ¸Ä±äÄÚ´æ·ÃÎÊÈ¨ÏÞ */
+    /* ï¿½Ä±ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½ */
     fs = get_fs();
     set_fs(KERNEL_DS);
 
-    /*¶ÔÓÚV9£¬ret Êµ¼ÊÀàÐÍÎªFILE*£¬µ±Ç°´«ÊäµØÖ·*/
+    /*ï¿½ï¿½ï¿½ï¿½V9ï¿½ï¿½ret Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªFILE*ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ö·*/
     ret = sys_open((const char __user *)filename, flags, /*S_IRWXU*/00664);
     if (ret < 0)
     {
@@ -1183,13 +1183,13 @@ static int icc_file_fopen( const char *filename, int flags )
 }
 
 /*****************************************************************************
- º¯ Êý Ãû  : bsp_fclose
- ¹¦ÄÜÃèÊö  : ¹Ø±ÕÎÄ¼þ
- ÊäÈë²ÎÊý  : int fd
- Êä³ö²ÎÊý  : ÎÞ
- ·µ »Ø Öµ  : int
- µ÷ÓÃº¯Êý  :
- ±»µ÷º¯Êý  :
+ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : bsp_fclose
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½Ø±ï¿½ï¿½Ä¼ï¿½
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : int fd
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ ï¿½ï¿½ Öµ  : int
+ ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½  :
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 
 *****************************************************************************/
 static int icc_file_fclose(unsigned int fd)
@@ -1197,7 +1197,7 @@ static int icc_file_fclose(unsigned int fd)
     int ret = 0;
     unsigned long fs;
 
-    /* ¸Ä±äÄÚ´æ·ÃÎÊÈ¨ÏÞ */
+    /* ï¿½Ä±ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½ */
     fs = get_fs();
     set_fs(KERNEL_DS);
 
@@ -1218,14 +1218,14 @@ static int icc_file_fclose(unsigned int fd)
 }
 
 /*****************************************************************************
- º¯ Êý Ãû  : bsp_rename
- ¹¦ÄÜÃèÊö  : ÎÄ¼þÖØÃüÃû
- ÊäÈë²ÎÊý  : const char * oldname
+ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : bsp_rename
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : const char * oldname
              const char * newname
- Êä³ö²ÎÊý  : ÎÞ
- ·µ »Ø Öµ  : int
- µ÷ÓÃº¯Êý  :
- ±»µ÷º¯Êý  :
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ ï¿½ï¿½ Öµ  : int
+ ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½  :
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 
 *****************************************************************************/
 static int icc_file_rename( const char * oldname, const char * newname )
@@ -1239,7 +1239,7 @@ static int icc_file_rename( const char * oldname, const char * newname )
         return BSP_ERROR;
     }
 
-    /* ¸Ä±äÄÚ´æ·ÃÎÊÈ¨ÏÞ */
+    /* ï¿½Ä±ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½ */
     fs = get_fs();
     set_fs(KERNEL_DS);
 
@@ -1260,13 +1260,13 @@ static int icc_file_rename( const char * oldname, const char * newname )
 }
 
 /*****************************************************************************
- º¯ Êý Ãû  : icc_file_remove
- ¹¦ÄÜÃèÊö  : É¾³ýÎÄ¼þ
- ÊäÈë²ÎÊý  : const char *pathname
- Êä³ö²ÎÊý  : ÎÞ
- ·µ »Ø Öµ  : int
- µ÷ÓÃº¯Êý  :
- ±»µ÷º¯Êý  :
+ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : icc_file_remove
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : É¾ï¿½ï¿½ï¿½Ä¼ï¿½
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : const char *pathname
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ ï¿½ï¿½ Öµ  : int
+ ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½  :
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 
 *****************************************************************************/
 static int icc_file_remove( const char *pathname )
@@ -1280,7 +1280,7 @@ static int icc_file_remove( const char *pathname )
        return BSP_ERROR;
     }
 
-    /* ¸Ä±äÄÚ´æ·ÃÎÊÈ¨ÏÞ */
+    /* ï¿½Ä±ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½ */
     fs = get_fs();
     set_fs(KERNEL_DS);
 
@@ -1301,16 +1301,16 @@ static int icc_file_remove( const char *pathname )
 }
 
 /*****************************************************************************
- º¯ Êý Ãû  : icc_file_fwrite
- ¹¦ÄÜÃèÊö  : Ð´ÎÄ¼þ
- ÊäÈë²ÎÊý  : void *ptr
+ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : icc_file_fwrite
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : Ð´ï¿½Ä¼ï¿½
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : void *ptr
              unsigned int size
              unsigned int nmemb
              FILE *stream
- Êä³ö²ÎÊý  : ÎÞ
- ·µ »Ø Öµ  : int
- µ÷ÓÃº¯Êý  :
- ±»µ÷º¯Êý  :
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ ï¿½ï¿½ Öµ  : int
+ ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½  :
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 
 *****************************************************************************/
 static int icc_file_fwrite( void *buf, unsigned int count, unsigned int fd )
@@ -1324,7 +1324,7 @@ static int icc_file_fwrite( void *buf, unsigned int count, unsigned int fd )
         return BSP_ERROR;
     }
 
-    /* ¸Ä±äÄÚ´æ·ÃÎÊÈ¨ÏÞ */
+    /* ï¿½Ä±ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½ */
     fs = get_fs();
     set_fs(KERNEL_DS);
 
@@ -1354,19 +1354,19 @@ static int icc_file_fwrite( void *buf, unsigned int count, unsigned int fd )
 }
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_a_core_LogFileSave
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_a_core_LogFileSave
 *
-* ¹¦ÄÜÃèÊö  : AºËlogÎÄ¼þ±£´æº¯Êý
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : Aï¿½ï¿½logï¿½Ä¼ï¿½ï¿½ï¿½ï¿½æº¯ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  : dirName :     logÎÄ¼þ±£´æÂ·¾¶
-              fileHeader :  logÎÄ¼þÎÄ¼þÃû
-              address :     ´ý±£´æÊý¾Ý
-              length :      Êý¾Ý³¤¶È
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : dirName :     logï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
+              fileHeader :  logï¿½Ä¼ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
+              address :     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+              length :      ï¿½ï¿½ï¿½Ý³ï¿½ï¿½ï¿½
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  : ÎÄ¼þ±£´æ×´Ì¬BSP_OK ¡¢ BSP_ERROR
-* ÐÞ¸ÄËµÃ÷: DTS:DTS2013060606474 modifier: yuanfang y00241633
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  : ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬BSP_OK ï¿½ï¿½ BSP_ERROR
+* ï¿½Þ¸ï¿½Ëµï¿½ï¿½: DTS:DTS2013060606474 modifier: yuanfang y00241633
 ************************************************************************/
 BSP_S32 ICC_a_core_LogFileSave(BSP_CHAR *dirName, BSP_CHAR *fileHeader, BSP_VOID*address, BSP_S32 length)
 {
@@ -1563,15 +1563,15 @@ BSP_S32 ICC_LogSave_Rev(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_SendPacket
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_SendPacket
 *
-* ¹¦ÄÜÃèÊö  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ÊäÈë²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 ICC_SendPacket(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
 {
@@ -1593,19 +1593,19 @@ BSP_S32 ICC_SendPacket(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
 
     down(&pChan->semSync);
 
-    /* »ñÈ¡¿ÕÏÐbuffer´óÐ¡ */
+    /* ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½bufferï¿½ï¿½Ð¡ */
     /* BSP-693, modified by z67193 */
     local_irq_save(flags);
     ptxChan = pChan->ptxSubChanInfo;
     ICC_FIFOIdleSize(ptxChan, &s32IdleSize1, &s32IdleSize2);
     s32IdleSize = s32IdleSize1 + s32IdleSize2;
 
-    /* ·¢ËÍpacketÐèÒª4×Ö½Ú¶ÔÆë */
+    /* ï¿½ï¿½ï¿½ï¿½packetï¿½ï¿½Òª4ï¿½Ö½Ú¶ï¿½ï¿½ï¿½ */
     pWrite = (BSP_U8*)(HISI_VA_ADDRESS((BSP_U32)ptxChan->u32PhyWrite));
     delta = (BSP_U32)pWrite % 4;
     if (delta)
     {
-    /* Ð´Ö¸Õë·Ç4×Ö½Ú¶ÔÆë£¬¶ÔÆëºó¿ªÊ¼Ð´ÈëÊý¾Ý */
+    /* Ð´Ö¸ï¿½ï¿½ï¿½4ï¿½Ö½Ú¶ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     delta = 4 - delta;
     pWrite += delta;
     s32IdleSize1 -= delta;
@@ -1684,7 +1684,7 @@ BSP_S32 ICC_SendPacket(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
         local_irq_restore(flags);
     }
 
-    /* ¿½±´°üÍ· */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í· */
     header[0] = ICC_PACKET_HEADER;
     header[1] = s32Size;
 
@@ -1707,7 +1707,7 @@ BSP_S32 ICC_SendPacket(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
         s32IdleSize1 = s32IdleSize2;
     }
 
-    /* ¿½±´Êý¾Ý */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     ICC_CopyDataIn(pData, s32Size, (BSP_U8*)(HISI_VA_ADDRESS((BSP_U32)ptxChan->u32PhyStart)), pWrite, s32IdleSize1);
     pWrite += s32Size;
     if (((unsigned long)pWrite) > HISI_VA_ADDRESS((BSP_U32)ptxChan->u32PhyEnd))
@@ -1721,7 +1721,7 @@ BSP_S32 ICC_SendPacket(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
 #endif
 /*ICC_LOG_SAVE DTS:DTS2013060606474 modifier: yuanfang y00241633 end*/
 
-    /* ¸üÐÂÐ´Ö¸Õë */
+    /* ï¿½ï¿½ï¿½ï¿½Ð´Ö¸ï¿½ï¿½ */
     ptxChan->u32PhyWrite = (BSP_U32)HISI_PA_ADDRESS(pWrite);
 
     pChan->sDebug.u32SendTimes++;
@@ -1733,7 +1733,7 @@ BSP_S32 ICC_SendPacket(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
     pChan->sDebug.u32IdleSize = s32IdleSize;
 #endif
 
-    /* Í¨Öª¶Ô·½ */
+    /* Í¨Öªï¿½Ô·ï¿½ */
     ICC_NotifyTarget(pChan, ICC_CHAN_SIGNAL_DATA);
 
     up(&pChan->semSync);
@@ -1741,15 +1741,15 @@ BSP_S32 ICC_SendPacket(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
 }
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_ReceiveStream
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_ReceiveStream
 *
-* ¹¦ÄÜÃèÊö  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ÊäÈë²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_VOID ICC_ReceiveStream(ICC_CHAN_DEV_S *pChan)
 {
@@ -1759,7 +1759,7 @@ BSP_VOID ICC_ReceiveStream(ICC_CHAN_DEV_S *pChan)
     ICC_FIFODataSize(pChan->prxSubChanInfo, &s32DataSize1, &s32DataSize2);
     pChan->sDebug.u32LastHaveBytes = s32DataSize1+s32DataSize2;
 
-    /* streamÄ£Ê½Ö±½Ó»Øµ÷ */
+    /* streamÄ£Ê½Ö±ï¿½Ó»Øµï¿½ */
     if (pChan->read_cb)
     {
         if (!g_IccStMode)
@@ -1781,26 +1781,26 @@ BSP_VOID ICC_ReceiveStream(ICC_CHAN_DEV_S *pChan)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_ReceivePacket
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_ReceivePacket
 *
-* ¹¦ÄÜÃèÊö  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ÊäÈë²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_VOID ICC_ReceivePacket(ICC_CHAN_DEV_S *pChan)
 {
     UDI_HANDLE handle;
 
-    /* ¿ÉÄÜ»º³åÁË¶à¸öpacket£¬Í¨¹ýÑ­»·ÒÀ´Î´¦Àí */
+    /* ï¿½ï¿½ï¿½Ü»ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½packetï¿½ï¿½Í¨ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ */
     while(pChan->prxSubChanInfo->u32PhyRead != pChan->prxSubChanInfo->u32PhyWrite)
     {
         if(BSP_OK == ICC_GetPacket(pChan))
         {
-            /* »Øµ÷Í¨ÖªÓÃ»§ */
+            /* ï¿½Øµï¿½Í¨Öªï¿½Ã»ï¿½ */
             if(pChan->read_cb)
             {
                 if(!g_IccStMode)
@@ -1833,15 +1833,15 @@ BSP_VOID ICC_ReceivePacket(ICC_CHAN_DEV_S *pChan)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_ReadStream
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_ReadStream
 *
-* ¹¦ÄÜÃèÊö  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ÊäÈë²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 ICC_ReadStream(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
 {
@@ -1889,7 +1889,7 @@ BSP_S32 ICC_ReadStream(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
         pChan->sDebug.u32LastReadBytes = s32CopySize;
 #endif
 
-        /* Èç¹ûFIFO¿Õ¼ä×ã¹»ÁË£¬Í¨Öª¶Ô·½CPU */
+        /* ï¿½ï¿½ï¿½FIFOï¿½Õ¼ï¿½ï¿½ã¹»ï¿½Ë£ï¿½Í¨Öªï¿½Ô·ï¿½CPU */
     if (pChan->prxSubChanInfo->u32WriteNeedSize > 0)
         {
         ICC_FIFOIdleSize(pChan->prxSubChanInfo, &s32IdleSize1, &s32IdleSize2);
@@ -1909,15 +1909,15 @@ BSP_S32 ICC_ReadStream(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_ReceivePacket
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_ReceivePacket
 *
-* ¹¦ÄÜÃèÊö  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ÊäÈë²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 ICC_ReadPacket(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
 {
@@ -1980,7 +1980,7 @@ BSP_S32 ICC_ReadPacket(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
             pRead -= pRxChan->u32FIFOsize;
         }
 
-        /* ¸üÐÂ×´Ì¬ */
+        /* ï¿½ï¿½ï¿½ï¿½×´Ì¬ */
         pChan->packet.data = (BSP_U32)BSP_NULL;
         pChan->packet.size = 0;
         pRxChan->u32PhyRead = (BSP_U32)HISI_PA_ADDRESS(pRead);
@@ -1989,7 +1989,7 @@ BSP_S32 ICC_ReadPacket(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
         pChan->sDebug.u32RecvTimes++;
         pChan->sDebug.u32RecvBytes += s32Size;
 #endif
-        /* Èç¹ûFIFO×ã¹»ÁË£¬Í¨Öª¶Ô·½CPU */
+        /* ï¿½ï¿½ï¿½FIFOï¿½ã¹»ï¿½Ë£ï¿½Í¨Öªï¿½Ô·ï¿½CPU */
         if (pChan->prxSubChanInfo->u32WriteNeedSize > 0)
         {
             ICC_FIFOIdleSize(pChan->prxSubChanInfo, &s32IdleSize1, &s32IdleSize2);
@@ -2009,15 +2009,15 @@ BSP_S32 ICC_ReadPacket(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_HandleEvent
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_HandleEvent
 *
-* ¹¦ÄÜÃèÊö  : ÊÂ¼þ´¦Àíº¯Êý
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_VOID ICC_HandleEvent(ICC_CHAN_DEV_S *pChan)
 {
@@ -2048,7 +2048,7 @@ BSP_VOID ICC_HandleEvent(ICC_CHAN_DEV_S *pChan)
         {
             g_UplayerChannel_CB.routine(g_UplayerChannel_CB.param);
         }
-        (void)tele_mntn_write_log(TELE_MNTN_ICC_WAKE_ACPU, sizeof(pChan->u32ChanID), &(pChan->u32ChanID));
+        //(void)tele_mntn_write_log(TELE_MNTN_ICC_WAKE_ACPU, sizeof(pChan->u32ChanID), &(pChan->u32ChanID));
         printk(KERN_ERR "%s:%d:icc wakeup channel_id:[%d]\n", __func__, __LINE__, pChan->u32ChanID);
     }
 #endif
@@ -2068,7 +2068,7 @@ BSP_VOID ICC_HandleEvent(ICC_CHAN_DEV_S *pChan)
 /*ICC_LOG_SAVE DTS:DTS2013060606474 modifier: zhanghaibo z00231199 end*/
     }
 
-    /* Ä¿±ê´¦ÀíÆ÷¹Ø±ÕÁËÍ¨µÀ */
+    /* Ä¿ï¿½ê´¦ï¿½ï¿½ï¿½ï¿½ï¿½Ø±ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ */
     if(ICC_CHAN_SIGNAL_CLOSE & u32Signal)
     {
         if(ICC_CHAN_STATE_CLOSED == pChan->prxSubChanInfo->u32SubChanState)
@@ -2090,7 +2090,7 @@ BSP_VOID ICC_HandleEvent(ICC_CHAN_DEV_S *pChan)
             }
         }
 
-        /* closeÖ®ºó£¬ºöÊÓÆäËûµÄÐÅºÅ */
+        /* closeÖ®ï¿½ó£¬ºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åºï¿½ */
         u32Signal = 0;
         pChan->ptxSubChanInfo->u32WriteNeedSize = 0;
 /*ICC_LOG_SAVE DTS:DTS2013060606474 modifier: zhanghaibo z00231199 begin*/
@@ -2100,11 +2100,11 @@ BSP_VOID ICC_HandleEvent(ICC_CHAN_DEV_S *pChan)
 
     if (ICC_CHAN_SIGNAL_RESET & u32Signal)
     {
-        /* ¸´Î»Í¨µÀµÄ¶ÁÐ´Ö¸Õë£¬Ö»¸´Î»·¢ËÍÍ¨µÀ */
+        /* ï¿½ï¿½Î»Í¨ï¿½ï¿½ï¿½Ä¶ï¿½Ð´Ö¸ï¿½ë£¬Ö»ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ */
         pChan->ptxSubChanInfo->u32PhyWrite = pChan->ptxSubChanInfo->u32PhyStart;
         pChan->ptxSubChanInfo->u32PhyRead = pChan->ptxSubChanInfo->u32PhyStart;
 
-        /* Í¨ÖªÉÏ²ã */
+        /* Í¨Öªï¿½Ï²ï¿½ */
         if (pChan->event_cb)
         {
             if (!g_IccStMode)
@@ -2132,7 +2132,7 @@ BSP_VOID ICC_HandleEvent(ICC_CHAN_DEV_S *pChan)
         }
         else
         {
-            /* packetÄ£Ê½ÐèÒªÏÈ½âÎö */
+            /* packetÄ£Ê½ï¿½ï¿½Òªï¿½È½ï¿½ï¿½ï¿½ */
             ICC_ReceivePacket(pChan);
         }
     }
@@ -2166,15 +2166,15 @@ BSP_VOID ICC_HandleEvent(ICC_CHAN_DEV_S *pChan)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_task
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_task
 *
-* ¹¦ÄÜÃèÊö  : ICCµÄÈÎÎñº¯Êý
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ICCï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 ICC_task(void)
 {
@@ -2186,7 +2186,7 @@ BSP_S32 ICC_task(void)
 
         for (pChan = g_pstOpenList; BSP_NULL != pChan ; pChan = pChanNext)
         {
-            /* ´¦ÀíeventÖÐ£¬¿ÉÒÔÒòÎªÓÅÏÈ¼¶µ÷Õûµ¼ÖÂÁ´±íË³Ðò¸Ä±ä */
+            /* ï¿½ï¿½ï¿½ï¿½eventï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½Ä±ï¿½ */
             pChanNext = pChan->next;
 
             if (pChan->prxSubChanInfo->u32Signal)
@@ -2217,7 +2217,7 @@ int icc_thread(void *__unused)
     do {
         for (pChan = g_pstOpenList; BSP_NULL != pChan ; pChan = pChanNext)
         {
-            /* ´¦ÀíeventÖÐ£¬¿ÉÒÔÒòÎªÓÅÏÈ¼¶µ÷Õûµ¼ÖÂÁ´±íË³Ðò¸Ä±ä */
+            /* ï¿½ï¿½ï¿½ï¿½eventï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½Ä±ï¿½ */
             pChanNext = pChan->next;
 
             if (pChan->prxSubChanInfo->u32Signal)
@@ -2239,21 +2239,21 @@ int icc_thread(void *__unused)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : ICC_HandleEvent
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : ICC_HandleEvent
 *
-* ¹¦ÄÜÃèÊö  : ICCµÄÖÐ¶Ï´¦Àíº¯Êý
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ICCï¿½ï¿½ï¿½Ð¶Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* Êä³ö²ÎÊý  :
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 static irqreturn_t ICC_IntHandle(int irq, void *dev_id)
 {
     wake_lock_timeout(&g_ulIccwakelock, HZ);
 
-    /* »½ÐÑICC TASK */
+    /* ï¿½ï¿½ï¿½ï¿½ICC TASK */
     thread_flag = 1;
     wake_up(&icc_wait);
     return IRQ_HANDLED;
@@ -2261,15 +2261,15 @@ static irqreturn_t ICC_IntHandle(int irq, void *dev_id)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : BSP_ICC_Init
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : BSP_ICC_Init
 *
-* ¹¦ÄÜÃèÊö  : ICC³õÊ¼»¯
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ICCï¿½ï¿½Ê¼ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  : ÎÞ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
 *
-* Êä³ö²ÎÊý  : ÎÞ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 BSP_ICC_Init(void)
 {
@@ -2285,16 +2285,16 @@ BSP_S32 BSP_ICC_Init(void)
 
     g_pstIccCtrlChan = (ICC_CTRL_CHAN_S*)HISI_VA_ADDRESS(MEMORY_AXI_ICC_ADDR);
 
-    /* ´´½¨Á´±í±£»¤ÐÅºÅÁ¿ */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åºï¿½ï¿½ï¿½ */
     sema_init(&g_semIccCtrl, SEM_FULL);
 
-    /* ´´½¨ÈÎÎñËøÐÅºÅÁ¿ */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åºï¿½ï¿½ï¿½ */
     sema_init(&g_semIccTask, SEM_EMPTY);
 
-    /* ´´½¨Í¨µÀÁ´±í±£»¤ÐÅºÅÁ¿ */
+    /* ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åºï¿½ï¿½ï¿½ */
     sema_init(&g_semIccList, SEM_FULL);
 
-    /* ´´½¨×ÊÔ´Ëø±£»¤ÐÅºÅÁ¿ */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åºï¿½ï¿½ï¿½ */
     sema_init(&g_semIpcSpinLock, SEM_FULL);
 
     wake_lock_init(&g_ulIccwakelock,WAKE_LOCK_SUSPEND,"Icc");
@@ -2365,16 +2365,16 @@ BSP_S32 BSP_ICC_Init(void)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : BSP_ICC_Open
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : BSP_ICC_Open
 *
-* ¹¦ÄÜÃèÊö  : ´ò¿ªÒ»¸öICCÍ¨µÀ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½Ò»ï¿½ï¿½ICCÍ¨ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  : u32ChanId        Í¨µÀID
-*             pChanAttr        Í¨µÀÊôÐÔ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : u32ChanId        Í¨ï¿½ï¿½ID
+*             pChanAttr        Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 *
-* Êä³ö²ÎÊý  : ÎÞ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 BSP_ICC_Open(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
 {
@@ -2430,7 +2430,7 @@ BSP_S32 BSP_ICC_Open(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
 
     down(&g_semIccCtrl);
 
-    /* ÏÈ¼ì²éÊÇ·ñÒÑ¾­´ò¿ª */
+    /* ï¿½È¼ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ */
     ICC_ListGet(g_pstOpenList, u32ChanId, &pChan);
     if (pChan)
     {
@@ -2439,7 +2439,7 @@ BSP_S32 BSP_ICC_Open(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
         return BSP_ERR_ICC_OPENED;
     }
 
-    /* ´´½¨Í¨µÀ½Úµã */
+    /* ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½Úµï¿½ */
     pChan = (ICC_CHAN_DEV_S*)kmalloc(sizeof(ICC_CHAN_DEV_S), GFP_KERNEL);
     if (!pChan)
     {
@@ -2452,13 +2452,13 @@ BSP_S32 BSP_ICC_Open(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
     sema_init(&pChan->semOpen, SEM_EMPTY);
     sema_init(&pChan->semRead, SEM_EMPTY);
 
-    /* ¶Ô¿ØÖÆÍ¨µÀ¼ÓËø */
+    /* ï¿½Ô¿ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     ICC_SPIN_LOCK(&g_pstIccCtrlChan->u32SpinLock);
 
-    /* ¼ì²éÍ¨µÀÊÇ·ñÒÑ¾­ÉêÇë */
+    /* ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ */
     if (BSP_FALSE == pSmChan->bAlloc)
     {
-        /* Èç¹û¶Ô·½»¹Ã»ÓÐÉêÇëÍ¨µÀ£¬Ö÷¶¯ÉêÇëÍ¨µÀ */
+        /* ï¿½ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ */
         ret = ICC_AllocChannel(u32ChanId, pChanAttr);
         if (BSP_OK != ret)
         {
@@ -2473,8 +2473,8 @@ BSP_S32 BSP_ICC_Open(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
     }
     else
     {
-        /* Èç¹û¶Ô·½Í¨µÀÒÑ¾­ÉêÇë£¬±È½ÏÍ¨µÀÊôÐÔ£¬
-        Èç¹ûIn/Out FIFOµÄsize²»ÏàµÈ£¬»òÕßÍ¨µÀÄ£¿é/ÓÅÏÈ¼¶²»ÏàµÈ£¬·µ»Ø´íÎó*/
+        /* ï¿½ï¿½ï¿½ï¿½Ô·ï¿½Í¨ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ë£¬ï¿½È½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ô£ï¿½
+        ï¿½ï¿½ï¿½In/Out FIFOï¿½ï¿½sizeï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½Ä£ï¿½ï¿½/ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½Ø´ï¿½ï¿½ï¿½*/
         if ( (pChanAttr->enChanMode != pSmChan->enMode)
         ||(pChanAttr->u32Priority != pSmChan->u32Priority)
         ||(pChanAttr->u32FIFOInSize != IO_TYPE(pSmChan->u32SubChanInfo[ICC_TAGET])->u32FIFOsize)
@@ -2506,7 +2506,7 @@ BSP_S32 BSP_ICC_Open(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
         }
     }
 
-    /* ³õÊ¼»¯Í¨µÀ½Úµã */
+    /* ï¿½ï¿½Ê¼ï¿½ï¿½Í¨ï¿½ï¿½ï¿½Úµï¿½ */
     pChan->u32ChanID = u32ChanId;
     pChan->u32Priority = pSmChan->u32Priority;
     pChan->enMode = pSmChan->enMode;
@@ -2537,20 +2537,20 @@ BSP_S32 BSP_ICC_Open(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
     pChan->sDebug.u32NoticeEnough = 0;
     pChan->sDebug.u32RecvEnough = 0;
 
-    /* ÅÐ¶ÏÄ¿±ê´¦ÀíÆ÷Í¨µÀµÄ×´Ì¬ */
+    /* ï¿½Ð¶ï¿½Ä¿ï¿½ê´¦ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½×´Ì¬ */
     if(ICC_CHAN_STATE_OPENED == pChan->prxSubChanInfo->u32SubChanState)
     {
         pSmChan->enState = ICC_CHAN_STATE_OPENED;
 
-        /* ¼ÓÈëÁ´±í */
+        /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
         (BSP_VOID)ICC_ListAdd(&g_pstOpenList, pChan);
 /*ICC_LOG_SAVE DTS:DTS2013060606474 modifier: zhanghaibo z00231199 begin*/
         if(pChan->u32ChanID != CHAN_ID_21 && pChan->u32ChanID != CHAN_ID_22)
             ICC_CreateChanDev(pChan->u32ChanID);
 /*ICC_LOG_SAVE DTS:DTS2013060606474 modifier: zhanghaibo z00231199 end*/
-        /* ÊÍ·Å¿ØÖÆÍ¨µÀ×ÔÐýËø */
+        /* ï¿½Í·Å¿ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
         ICC_SPIN_UNLOCK(&g_pstIccCtrlChan->u32SpinLock);
-        /* Í¨Öª¶Ô·½ */
+        /* Í¨Öªï¿½Ô·ï¿½ */
         ICC_NotifyTarget(pChan, ICC_CHAN_SIGNAL_OPEN);
 
         up(&g_semIccCtrl);
@@ -2562,21 +2562,21 @@ BSP_S32 BSP_ICC_Open(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
     }
     else
     {
-        /* ¼ÓÈëÁ´±í */
+        /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
         (BSP_VOID)ICC_ListAdd(&g_pstOpenList, pChan);
 /*ICC_LOG_SAVE DTS:DTS2013060606474 modifier: zhanghaibo z00231199 begin*/
         if(pChan->u32ChanID != CHAN_ID_21 && pChan->u32ChanID != CHAN_ID_22 )
             ICC_CreateChanDev(pChan->u32ChanID);
 /*ICC_LOG_SAVE DTS:DTS2013060606474 modifier: zhanghaibo z00231199 end*/
-        /* ÊÍ·Å¿ØÖÆÍ¨µÀ×ÔÐýËø */
+        /* ï¿½Í·Å¿ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
         ICC_SPIN_UNLOCK(&g_pstIccCtrlChan->u32SpinLock);
-        /* Í¨Öª¶Ô·½ */
+        /* Í¨Öªï¿½Ô·ï¿½ */
         ICC_NotifyTarget(pChan, ICC_CHAN_SIGNAL_OPEN);
 
-        /* ×èÈûµÈ´ý */
+        /* ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½ */
         if (0 != down_timeout(&pChan->semOpen, msecs_to_jiffies(pChanAttr->u32TimeOut * 10)))
         {
-            /* ÍË³öÁ´±í */
+            /* ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ */
             ICC_ListGetOut(&g_pstOpenList, pChan->u32ChanID, &pChan);
             ICC_DestroyChanDev(pChan->u32ChanID);
             ICC_FreeChannel(pChan->u32ChanID);
@@ -2596,7 +2596,7 @@ BSP_S32 BSP_ICC_Open(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
         }
         else
         {
-            /* ÍË³öÁ´±í */
+            /* ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ */
             ICC_ListGetOut(&g_pstOpenList, pChan->u32ChanID, &pChan);
 /*ICC_LOG_SAVE DTS:DTS2013060606474 modifier: zhanghaibo z00231199 begin*/
             ICC_DestroyChanDev(pChan->u32ChanID);
@@ -2612,15 +2612,15 @@ BSP_S32 BSP_ICC_Open(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : BSP_ICC_Close
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : BSP_ICC_Close
 *
-* ¹¦ÄÜÃèÊö  : ¹Ø±ÕÒ»¸öICCÍ¨µÀ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½Ø±ï¿½Ò»ï¿½ï¿½ICCÍ¨ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  : u32ChanId    Í¨µÀID
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : u32ChanId    Í¨ï¿½ï¿½ID
 *
-* Êä³ö²ÎÊý  : ÎÞ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 BSP_ICC_Close(BSP_U32 u32ChanId)
 {
@@ -2647,7 +2647,7 @@ BSP_S32 BSP_ICC_Close(BSP_U32 u32ChanId)
         return BSP_ERR_ICC_INVALID_CHAN;
     }
 
-    /* »ñÈ¡Í¨µÀ */
+    /* ï¿½ï¿½È¡Í¨ï¿½ï¿½ */
     ICC_ListGetOut(&g_pstOpenList, u32ChanId, &pChan);
     if (BSP_NULL == pChan)
     {
@@ -2663,18 +2663,18 @@ BSP_S32 BSP_ICC_Close(BSP_U32 u32ChanId)
     pSmChan = &g_pstIccCtrlChan->astChanInfo[u32ChanId];
     if (ICC_CHAN_STATE_CLOSEING == pSmChan->enState)
     {
-        /* Èç¹û¶Ô·½ÒÑ¹Ø±Õ£¬ÏÈÊÍ·Å¹²ÏíÄÚ´æÖÐµÄÍ¨µÀ */
+        /* ï¿½ï¿½ï¿½ï¿½Ô·ï¿½ï¿½Ñ¹Ø±Õ£ï¿½ï¿½ï¿½ï¿½Í·Å¹ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½Ðµï¿½Í¨ï¿½ï¿½ */
         ICC_FreeChannel(u32ChanId);
 
         ICC_SPIN_UNLOCK(pChan->pSpinLock);
     }
     else
     {
-        /* ¸üÐÂ×´Ì¬ */
+        /* ï¿½ï¿½ï¿½ï¿½×´Ì¬ */
         pChan->ptxSubChanInfo->u32SubChanState = ICC_CHAN_STATE_CLOSED;
         pSmChan->enState = ICC_CHAN_STATE_CLOSEING;
         ICC_SPIN_UNLOCK(pChan->pSpinLock);
-        /* Í¨Öª¶Ô·½ */
+        /* Í¨Öªï¿½Ô·ï¿½ */
         ICC_NotifyTarget(pChan, ICC_CHAN_SIGNAL_CLOSE);
     }
 
@@ -2688,17 +2688,17 @@ BSP_S32 BSP_ICC_Close(BSP_U32 u32ChanId)
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : BSP_ICC_Write
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : BSP_ICC_Write
 *
-* ¹¦ÄÜÃèÊö  : ÏòICCÍ¨µÀÖÐÐ´ÈëÊý¾Ý
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½ICCÍ¨ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  : u32ChanId    Í¨µÀID
-*             data      Êý¾ÝÖ¸Õë
-*             size      Êý¾Ý´óÐ¡
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : u32ChanId    Í¨ï¿½ï¿½ID
+*             data      ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
+*             size      ï¿½ï¿½ï¿½Ý´ï¿½Ð¡
 *
-* Êä³ö²ÎÊý  : ÎÞ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 BSP_ICC_Write(BSP_U32 u32ChanId, BSP_U8* pData, BSP_S32 s32Size)
 {
@@ -2706,7 +2706,7 @@ BSP_S32 BSP_ICC_Write(BSP_U32 u32ChanId, BSP_U8* pData, BSP_S32 s32Size)
     BSP_S32 s32CopySize;
     BSP_S32 s32ErrorNum=0;
 
-    /* Î´³õÊ¼»¯£¬²»ÄÜÐ´ÈëÊý¾Ý */
+    /* Î´ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     if (BSP_FALSE == g_stIccDev.bInit)
     {
         s32ErrorNum=BSP_ERR_ICC_NOT_INIT;
@@ -2737,7 +2737,7 @@ BSP_S32 BSP_ICC_Write(BSP_U32 u32ChanId, BSP_U8* pData, BSP_S32 s32Size)
         goto errorExit;
     }
 
-    /* »ñÈ¡Í¨µÀ */
+    /* ï¿½ï¿½È¡Í¨ï¿½ï¿½ */
     ICC_ListGet(g_pstOpenList, u32ChanId, &pChan);
     if (BSP_NULL == pChan)
     {
@@ -2745,7 +2745,7 @@ BSP_S32 BSP_ICC_Write(BSP_U32 u32ChanId, BSP_U8* pData, BSP_S32 s32Size)
         goto errorExit;
     }
 /*Modify_for_c_reset, l00212112,20130511, starts*/
-/*Èç¹ûCºË¸´Î»£¬Ôò·µ»Ø*/
+/*ï¿½ï¿½ï¿½Cï¿½Ë¸ï¿½Î»ï¿½ï¿½ï¿½ò·µ»ï¿½*/
     if (BSP_TRUE == g_bCcoreReset_Channel[pChan->u32ChanID])
     {
         s32ErrorNum=BSP_ERR_ICC_CCORE_RESETTING;
@@ -2785,16 +2785,16 @@ errorExit:
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : BSP_ICC_Read
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : BSP_ICC_Read
 *
-* ¹¦ÄÜÃèÊö  : ¿ØÖÆÃüÁî
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  : u32ChanId    Í¨µÀID
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : u32ChanId    Í¨ï¿½ï¿½ID
 *
 *
-* Êä³ö²ÎÊý  : ÎÞ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 BSP_ICC_Read(BSP_U32 u32ChanId, BSP_U8* pData, BSP_S32 s32Size)
 {
@@ -2802,7 +2802,7 @@ BSP_S32 BSP_ICC_Read(BSP_U32 u32ChanId, BSP_U8* pData, BSP_S32 s32Size)
     BSP_S32 s32CopySize;
     BSP_S32 s32ErrorNum=0;
 
-    /* Î´³õÊ¼»¯£¬²»ÄÜÐ´ÈëÊý¾Ý */
+    /* Î´ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     if (BSP_FALSE == g_stIccDev.bInit)
     {
         s32ErrorNum=BSP_ERR_ICC_NOT_INIT;
@@ -2827,7 +2827,7 @@ BSP_S32 BSP_ICC_Read(BSP_U32 u32ChanId, BSP_U8* pData, BSP_S32 s32Size)
         goto errorExit;
     }
 
-    /* »ñÈ¡Í¨µÀ */
+    /* ï¿½ï¿½È¡Í¨ï¿½ï¿½ */
     ICC_ListGet(g_pstOpenList, u32ChanId, &pChan);
     if (BSP_NULL == pChan)
     {
@@ -2861,17 +2861,17 @@ errorExit:
 
 
 /*****************************************************************************
-* º¯ Êý Ãû  : BSP_ICC_Ioctl
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : BSP_ICC_Ioctl
 *
-* ¹¦ÄÜÃèÊö  : ¿ØÖÆÃüÁî
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  : u32ChanId    Í¨µÀID
-*             cmd       ¿ØÖÆÃüÁî
-*             param     ¿ØÖÆÃüÁîµÄ²ÎÊý
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : u32ChanId    Í¨ï¿½ï¿½ID
+*             cmd       ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+*             param     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
 *
-* Êä³ö²ÎÊý  : ÎÞ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_S32 BSP_ICC_Ioctl(BSP_U32 u32ChanId, BSP_U32 cmd, BSP_VOID *param)
 {
@@ -2930,15 +2930,15 @@ BSP_S32 BSP_ICC_Ioctl(BSP_U32 u32ChanId, BSP_U32 cmd, BSP_VOID *param)
 }
 /*Modify_for_c_reset, l00212112,20130511, starts*/
 /*****************************************************************************
-* º¯ Êý Ãû  : BSP_ICC_ResetFun
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : BSP_ICC_ResetFun
 *
-* ¹¦ÄÜÃèÊö  : ¸´Î»ICC
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½Î»ICC
 *
-* ÊäÈë²ÎÊý  : ÎÞ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
 *
-* Êä³ö²ÎÊý  : ÎÞ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
 *
-* ·µ »Ø Öµ  :
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  :
 *****************************************************************************/
 BSP_VOID BSP_ICC_ResetFun(void)
 {
@@ -2946,7 +2946,7 @@ BSP_VOID BSP_ICC_ResetFun(void)
     ICC_CHAN_DEV_S  *pChanNext = BSP_NULL;
     UDI_HANDLE      handle = 0;
 
-    /*²éÑ¯Í¨µÀÁ´±í£¬½«ËùÓÐ´ò¿ªµÄÍ¨µÀÊÜµ½µÄÐÅºÅÉèÖÃÎª¸´Î»ÐÅºÅ*/
+    /*ï¿½ï¿½Ñ¯Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ò¿ªµï¿½Í¨ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½Åºï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Î»ï¿½Åºï¿½*/
     for (pChan = g_pstOpenList; BSP_NULL != pChan;pChan = pChanNext)
     {
         g_bCcoreReset_Channel[pChan->u32ChanID] = BSP_TRUE;
@@ -2962,7 +2962,7 @@ BSP_VOID BSP_ICC_ResetFun(void)
                 (BSP_VOID)pChan->event_cb(pChan->u32ChanID, ICC_EVENT_RESET, 0);
             }
         }
-        /*Çå³ýÍ¨µÀÀïÃæµÄÏûÏ¢ÄÚÈÝ*/
+        /*ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½*/
         if (BSP_NULL != pChan->ptxSubChanInfo)
         {
             if (BSP_NULL != (BSP_U8*)pChan->ptxSubChanInfo->u32PhyStart)
@@ -2970,7 +2970,7 @@ BSP_VOID BSP_ICC_ResetFun(void)
                 ICC_MEMSET((BSP_VOID*)HISI_VA_ADDRESS((BSP_U32)pChan->ptxSubChanInfo->u32PhyStart)
                     , 0, pChan->ptxSubChanInfo->u32FIFOsize);
             }
-            /*¸´Î»Í¨µÀµÄ¶ÁÐ´Ö¸Õë¡¢×´Ì¬*/
+            /*ï¿½ï¿½Î»Í¨ï¿½ï¿½ï¿½Ä¶ï¿½Ð´Ö¸ï¿½ë¡¢×´Ì¬*/
             pChan->ptxSubChanInfo->u32PhyWrite = pChan->ptxSubChanInfo->u32PhyStart;
             pChan->ptxSubChanInfo->u32PhyRead = pChan->ptxSubChanInfo->u32PhyStart;
             pChan->ptxSubChanInfo->u32WriteNeedSize = 0;
@@ -2982,13 +2982,13 @@ BSP_VOID BSP_ICC_ResetFun(void)
             {
                 ICC_MEMSET((BSP_VOID*)HISI_VA_ADDRESS((BSP_U32)pChan->prxSubChanInfo->u32PhyStart), 0, pChan->prxSubChanInfo->u32FIFOsize);
             }
-            /*¸´Î»Í¨µÀµÄ¶ÁÐ´Ö¸Õë¡¢×´Ì¬*/
+            /*ï¿½ï¿½Î»Í¨ï¿½ï¿½ï¿½Ä¶ï¿½Ð´Ö¸ï¿½ë¡¢×´Ì¬*/
             pChan->prxSubChanInfo->u32PhyWrite = pChan->prxSubChanInfo->u32PhyStart;
             pChan->prxSubChanInfo->u32PhyRead = pChan->prxSubChanInfo->u32PhyStart;
             pChan->prxSubChanInfo->u32WriteNeedSize = 0;
         }
 
-        /*ÇÐ»»ÏÂÒ»¸öchannel*/
+        /*ï¿½Ð»ï¿½ï¿½ï¿½Ò»ï¿½ï¿½channel*/
         pChanNext = pChan->next;
     }
     return;
@@ -3073,17 +3073,17 @@ BSP_S32 ICC_ShowChanAll(void)
     return 0;
 }
 
-/*portlandC55 VoLTE£¬ÎªIMS VOIP·â×°½Ó¿ÚÒÔ¼°ICCÍ¨µÀ£¬begin*/
+/*portlandC55 VoLTEï¿½ï¿½ÎªIMS VOIPï¿½ï¿½×°ï¿½Ó¿ï¿½ï¿½Ô¼ï¿½ICCÍ¨ï¿½ï¿½ï¿½ï¿½begin*/
 
 /************************************************************************
- * º¯ Êý Ãû  : mdrv_icc_open
- * ¹¦ÄÜÃèÊö  : 
- * ÊäÈë²ÎÊý  :
- *            u32ChanId: ICC Âß¼­Í¨µÀºÅ
- *            pChanAttr: ICC Í¨µÀÊôÐÔ£¬º¯ÊýÄÚÖ»ÓÃÆäÖµ
- * Êä³ö²ÎÊý  : ÎÞ
- * ·µ »Ø Öµ  :  0          ²Ù×÷³É¹¦¡£
- *             ÆäËû        ²Ù×÷Ê§°Ü¡£
+ * ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : mdrv_icc_open
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : 
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
+ *            u32ChanId: ICC ï¿½ß¼ï¿½Í¨ï¿½ï¿½ï¿½ï¿½
+ *            pChanAttr: ICC Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ô£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½Öµ
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ * ï¿½ï¿½ ï¿½ï¿½ Öµ  :  0          ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½
+ *             ï¿½ï¿½ï¿½ï¿½        ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü¡ï¿½
  **************************************************************************/
 int mdrv_icc_open(unsigned int u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
 {
@@ -3114,15 +3114,15 @@ int mdrv_icc_open(unsigned int u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
     return BSP_ERROR;
 }
 /************************************************************************
- * º¯ Êý Ãû  : mdrv_icc_read
- * ¹¦ÄÜÃèÊö  : 
- * ÊäÈë²ÎÊý  :
- *            u32ChanId: ICC Âß¼­Í¨µÀºÅ
- *            pData:     Êý¾Ý´æ·ÅµØÖ·
- *            s32Size:   »Øµ÷º¯Êý·µ»ØµÄÊý¾Ý³¤¶È
- * Êä³ö²ÎÊý  : pData       Êý¾Ý
- * ·µ »Ø Öµ  : ÕýÖµ        Êý¾Ý³¤¶È¡£
- *             ÆäËû        ²Ù×÷Ê§°Ü¡£
+ * ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : mdrv_icc_read
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : 
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
+ *            u32ChanId: ICC ï¿½ß¼ï¿½Í¨ï¿½ï¿½ï¿½ï¿½
+ *            pData:     ï¿½ï¿½ï¿½Ý´ï¿½Åµï¿½Ö·
+ *            s32Size:   ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½Ý³ï¿½ï¿½ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : pData       ï¿½ï¿½ï¿½ï¿½
+ * ï¿½ï¿½ ï¿½ï¿½ Öµ  : ï¿½ï¿½Öµ        ï¿½ï¿½ï¿½Ý³ï¿½ï¿½È¡ï¿½
+ *             ï¿½ï¿½ï¿½ï¿½        ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü¡ï¿½
  **************************************************************************/
 int mdrv_icc_read(unsigned int u32ChanId, unsigned char* pData, int s32Size)
 {
@@ -3144,15 +3144,15 @@ int mdrv_icc_read(unsigned int u32ChanId, unsigned char* pData, int s32Size)
 }
 
 /************************************************************************
- * º¯ Êý Ãû  : mdrv_icc_write
- * ¹¦ÄÜÃèÊö  : 
- * ÊäÈë²ÎÊý  :
- *            u32ChanId: ICC Âß¼­Í¨µÀºÅ
- *            pData:     Êý¾Ý´æ·ÅµØÖ·
- *            s32Size:   Êý¾Ý³¤¶È
- * Êä³ö²ÎÊý  : ÎÞ
- * ·µ »Ø Öµ  : Óës32SizeÏàµÈ  ²Ù×÷³É¹¦¡£
- *             ÆäËû           ²Ù×÷Ê§°Ü¡£
+ * ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : mdrv_icc_write
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : 
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  :
+ *            u32ChanId: ICC ï¿½ß¼ï¿½Í¨ï¿½ï¿½ï¿½ï¿½
+ *            pData:     ï¿½ï¿½ï¿½Ý´ï¿½Åµï¿½Ö·
+ *            s32Size:   ï¿½ï¿½ï¿½Ý³ï¿½ï¿½ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ * ï¿½ï¿½ ï¿½ï¿½ Öµ  : ï¿½ï¿½s32Sizeï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½
+ *             ï¿½ï¿½ï¿½ï¿½           ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü¡ï¿½
  **************************************************************************/
 int mdrv_icc_write(unsigned int u32ChanId, unsigned char* pData, int s32Size)
 {
@@ -3172,7 +3172,7 @@ int mdrv_icc_write(unsigned int u32ChanId, unsigned char* pData, int s32Size)
     printk(KERN_ERR "mdrv_icc_write channel[%d] invalid.\n",u32ChanId);
     return BSP_ERROR;
 }
-/*portlandC55 VoLTE£¬ÎªIMS VOIPÐÂÔö½Ó¿ÚÒÔ¼°ICCÍ¨µÀ£¬end*/
+/*portlandC55 VoLTEï¿½ï¿½ÎªIMS VOIPï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½ï¿½Ô¼ï¿½ICCÍ¨ï¿½ï¿½ï¿½ï¿½end*/
 
 
 

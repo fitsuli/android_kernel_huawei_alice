@@ -79,3 +79,10 @@ config PROC_APP_INFO
 	default y
 	help
 	set data ready flag to kernel.
+
+config PROC_CHECK_ROOT
+ 	default n
+	depends on PROC_FS
+	bool "Enable check_root" if EXPERT
+ 	help
+	  Say N if unsure, I don't know WTF is this
