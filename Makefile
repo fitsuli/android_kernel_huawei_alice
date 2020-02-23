@@ -389,6 +389,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 # Disable some GCC warnings
 KBUILD_CFLAGS   += $(call cc-disable-warning,int-to-pointer-cast,)
 KBUILD_CFLAGS   += $(call cc-disable-warning,pointer-to-int-cast,)
+KBUILD_CFLAGS   += $(call cc-disable-warning,format,)
 
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
