@@ -25,7 +25,9 @@ TRACE_EVENT(sched_task_queued,
 	TP_fast_assign(
 		memcpy(__entry->comm, t->comm, TASK_COMM_LEN);
 		__entry->pid = t->pid;
+		#ifdef CONFIG_SCHEDSTATS
 		__entry->pcount = t->sched_info.pcount;
+		#endif
 		__entry->cpuinfo = cpuinfo;
 	),
 
@@ -50,7 +52,9 @@ TRACE_EVENT(sched_task_dequeued,
 	TP_fast_assign(
 		memcpy(__entry->comm, t->comm, TASK_COMM_LEN);
 		__entry->pid = t->pid;
+		#ifdef CONFIG_SCHEDSTATS
 		__entry->pcount = t->sched_info.pcount;
+		#endif
 		__entry->cpuinfo = cpuinfo;
 	),
 
@@ -75,7 +79,9 @@ TRACE_EVENT(sched_task_arrive,
 	TP_fast_assign(
 		memcpy(__entry->comm, t->comm, TASK_COMM_LEN);
 		__entry->pid = t->pid;
+		#ifdef CONFIG_SCHEDSTATS
 		__entry->pcount = t->sched_info.pcount;
+		#endif
 		__entry->cpuinfo = cpuinfo;
 	),
 
@@ -101,7 +107,9 @@ TRACE_EVENT(sched_task_depart,
 	TP_fast_assign(
 		memcpy(__entry->comm, t->comm, TASK_COMM_LEN);
 		__entry->pid = t->pid;
+		#ifdef CONFIG_SCHEDSTATS
 		__entry->pcount = t->sched_info.pcount;
+		#endif
 		__entry->cpuinfo = cpuinfo;
 		__entry->state = t->state;
 	),
