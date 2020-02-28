@@ -4,7 +4,7 @@
 
 DWCPATH= drivers/usb/susb/dwc_common_port
 
-ccflags-y	+= -DDEBUG
+#ccflags-y	+= -DDEBUG
 
 # Use one of the following flags to compile the software in host-only or
 # device-only mode.
