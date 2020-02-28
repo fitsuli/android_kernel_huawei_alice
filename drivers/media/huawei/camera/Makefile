@@ -1,6 +1,6 @@
-ifneq ($(TARGET_BUILD_VARIANT),user)
-    EXTRA_CFLAGS += -DDEBUG_HISI_CAMERA
-endif
+#ifneq ($(TARGET_BUILD_VARIANT),user)
+#EXTRA_CFLAGS += -DDEBUG_HISI_CAMERA
+#endif
 obj-y += hwcam_usrdev.o hwcam_cfgdev.o hwcam_cfgpipeline.o hwcam_cfgstream.o
 obj-$(CONFIG_COMPAT) += hwcam_compat32.o
 CFLAGS_hwcam_cfgdev.o = -I$(src)
