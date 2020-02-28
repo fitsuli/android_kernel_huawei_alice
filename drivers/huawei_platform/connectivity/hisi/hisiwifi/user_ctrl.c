@@ -1043,10 +1043,10 @@ STATIC ssize_t set_certify_powermode(struct device *dev, struct device_attribute
     }
     printk(KERN_INFO"\n");
 
-    /* ÈÏÖ¤Ä£Ê½ÏÂ
-     * 1¡¢ÉèÖÃ¹Ø±ÕµÍ¹¦ºÄ
-     * 2¡¢ÅäÖÃÐ­Òé½ÚÄÜ
-     * 3¡¢ÅäÖÃ240MHz CPUÆµÂÊ
+    /* ï¿½ï¿½Ö¤Ä£Ê½ï¿½ï¿½
+     * 1ï¿½ï¿½ï¿½ï¿½ï¿½Ã¹Ø±ÕµÍ¹ï¿½ï¿½ï¿½
+     * 2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð­ï¿½ï¿½ï¿½ï¿½ï¿½
+     * 3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½240MHz CPUÆµï¿½ï¿½
      */
      if (g_hi110x_dev->cfg != NULL)
      {
@@ -1057,17 +1057,17 @@ STATIC ssize_t set_certify_powermode(struct device *dev, struct device_attribute
 
             if (powermode)
             {
-                /* ¹Ø±Õhips¿ª¹Ø */
+                /* ï¿½Ø±ï¿½hipsï¿½ï¿½ï¿½ï¿½ */
                 hwifi_set_hips_switch(g_hi110x_dev->cfg, 0);
             }
             else
             {
-                /* ÖØÐÂ´ò¿ªhips¿ª¹Ø */
+                /* ï¿½ï¿½ï¿½Â´ï¿½hipsï¿½ï¿½ï¿½ï¿½ */
                 hwifi_set_hips_switch(g_hi110x_dev->cfg, 1);
             }
              hwifi_set_powermode(g_hi110x_dev->cfg, powermode);
 
-             /* Èç¹ûÅäÖÃÊ¡µçÄ£Ê½0£¬ÅäÖÃDeviceÏàÓ¦µÄÄ£Ê½ */
+             /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¡ï¿½ï¿½Ä£Ê½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Deviceï¿½ï¿½Ó¦ï¿½ï¿½Ä£Ê½ */
              if (0 == powermode)
              {
                  HWIFI_INFO("shutdown powersave now...");
@@ -1145,10 +1145,10 @@ STATIC ssize_t set_high_throughput_mode(struct device *dev, struct device_attrib
     }
     printk(KERN_INFO"\n");
 
-    /* ÐÔÄÜÄ£Ê½ÏÂ
-     * 1¡¢ÉèÖÃ¹Ø±ÕµÍ¹¦ºÄ
-     * 2¡¢ÉèÖÃ¹Ø±ÕÐ­Òé½ÚÄÜ
-     * 3¡¢ÅäÖÃ240MHz CPUÆµÂÊ
+    /* ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½
+     * 1ï¿½ï¿½ï¿½ï¿½ï¿½Ã¹Ø±ÕµÍ¹ï¿½ï¿½ï¿½
+     * 2ï¿½ï¿½ï¿½ï¿½ï¿½Ã¹Ø±ï¿½Ð­ï¿½ï¿½ï¿½ï¿½ï¿½
+     * 3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½240MHz CPUÆµï¿½ï¿½
      */
      if (g_hi110x_dev->cfg != NULL)
      {
@@ -1211,10 +1211,10 @@ STATIC ssize_t set_normal_mode(struct device *dev, struct device_attribute *attr
     }
     printk(KERN_INFO"\n");
 
-    /* Õý³£Ä£Ê½ÏÂ
-     * 1¡¢ÉèÖÃ´ò¿ªµÍ¹¦ºÄ
-     * 2¡¢Ð­Òé½ÚÄÜ¸ù¾Ý¾ßÌåÓ¦ÓÃ³¡¾°ÉèÖÃ
-     * 3¡¢ÅäÖÃ240MHz CPUÆµÂÊ
+    /* ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½
+     * 1ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ò¿ªµÍ¹ï¿½ï¿½ï¿½
+     * 2ï¿½ï¿½Ð­ï¿½ï¿½ï¿½ï¿½Ü¸ï¿½ï¿½Ý¾ï¿½ï¿½ï¿½Ó¦ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     * 3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½240MHz CPUÆµï¿½ï¿½
      */
      if (g_hi110x_dev->cfg != NULL)
      {
@@ -1300,7 +1300,7 @@ STATIC ssize_t set_cur_cpufreq(struct device *dev, struct device_attribute *attr
     printk(KERN_INFO"\n");
 
 
-    /* Èç¹ûÃüÁîÐÐÅäÖÃcpuÆµÂÊ */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½cpuÆµï¿½ï¿½ */
    printk(KERN_ERR"fit cpu frequency by user object");
    if (cur_cpufreq)
    {
@@ -1505,12 +1505,12 @@ STATIC ssize_t set_android_sleep_policy(struct device *dev, struct device_attrib
 
     if (g_powermgmt_switch)
     {
-        /* ´ÓAndroidÉÏ²ã¶ÁÈëË¯Ãß²ßÂÔ
-         * 0:´Ó²»       17·ÖÖÓÈ¥¹ØÁª
-         * 1:½öÏÞ³äµçÊ± ²åUSB³äµçÊ±£¬Ê¼ÖÕ±£³Ö¹ØÁª,°Î³ýUSBÊ±£¬°´"´Ó²»"µÄ²ßÂÔÀ´
-         * 2:Ê¼ÖÕ       Ê¼ÖÕ±£³Ö¹ØÁª
+        /* ï¿½ï¿½Androidï¿½Ï²ï¿½ï¿½ï¿½ï¿½Ë¯ï¿½ß²ï¿½ï¿½ï¿½
+         * 0:ï¿½Ó²ï¿½       17ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½
+         * 1:ï¿½ï¿½ï¿½Þ³ï¿½ï¿½Ê± ï¿½ï¿½USBï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ê¼ï¿½Õ±ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½,ï¿½Î³ï¿½USBÊ±ï¿½ï¿½ï¿½ï¿½"ï¿½Ó²ï¿½"ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½
+         * 2:Ê¼ï¿½ï¿½       Ê¼ï¿½Õ±ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½
          * PS:
-         * ³äµç»òÕßÑ¡Ê¼ÖÕ±£³Ö¹ØÁª£¬ÐèÒª½«×é²¥Ö¡¹ýÂË¹Øµô£¬Í¬Ê±ÅäDTIM1
+         * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡Ê¼ï¿½Õ±ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½é²¥Ö¡ï¿½ï¿½ï¿½Ë¹Øµï¿½ï¿½ï¿½Í¬Ê±ï¿½ï¿½DTIM1
          */
         new_policy = buf[0];
 
@@ -1584,10 +1584,10 @@ STATIC ssize_t set_watchdog_timeout(struct device *dev, struct device_attribute 
     }
     else if (watchdog_timeout < MIN_WATCHDOG_TIMEOUT)
     {
-    /* DTS2013110501752   Hi110x bug fix ÕÅ»ª/z00209041 ÈÕÆÚ£¨2013Äê/11ÔÂ/8ÈÕ£© start */
+    /* DTS2013110501752   Hi110x bug fix ï¿½Å»ï¿½/z00209041 ï¿½ï¿½ï¿½Ú£ï¿½2013ï¿½ï¿½/11ï¿½ï¿½/8ï¿½Õ£ï¿½ start */
         HWIFI_WARNING("watchdogtimeout value is too small, set to Default");
         g_watchdog_timeout = DEFAULT_WATCHDOG_TIMEOUT;
-    /* DTS2013110501752   Hi110x bug fix ÕÅ»ª/z00209041 ÈÕÆÚ£¨2013Äê/11ÔÂ/8ÈÕ£© end */
+    /* DTS2013110501752   Hi110x bug fix ï¿½Å»ï¿½/z00209041 ï¿½ï¿½ï¿½Ú£ï¿½2013ï¿½ï¿½/11ï¿½ï¿½/8ï¿½Õ£ï¿½ end */
     }
     else
     {
@@ -1922,7 +1922,9 @@ STATIC ssize_t get_hcc_peak_stat(struct device *dev, struct device_attribute *at
         return snprintf(buf, PAGE_SIZE-1, "g_hi110x_dev is null!\n");
     }
     ret += snprintf(buf + ret, PAGE_SIZE-1, "log had been moved to kernel kmsg\n");
+    #ifdef HCC_DEBUG
     hcc_debug_peak_show(g_hi110x_dev->hcc, &log);
+    #endif
     return ret;
 }
 STATIC DEVICE_ATTR(peak_stat, S_IRUGO | S_IWUSR, get_hcc_peak_stat, set_hcc_peak_stat);
@@ -2881,9 +2883,9 @@ failed_hcc_obj:
 failed_hcc_filter_group:
 #ifdef HCC_DEBUG
     sysfs_remove_group(g_sysfs_hi110x, &hcc_debug_attribute_group);
-#endif
 failed_hcc_debug_group:
     kobject_put(g_sysfs_hi110x);
+#endif
 failed_g_sysfs_hi110x_obj:
     HWIFI_ERROR("userctrl init erro=%d", ret);
     return ret;
