@@ -9,3 +9,5 @@ subdir-ccflags-y   			+= -I$(srctree)/drivers/hisi/modem_hi6xxx/config/nvim/incl
 
 obj-$(CONFIG_HISI_BALONG_MODEM_HI6XXX)  += drv/
 obj-$(CONFIG_HISI_BALONG_MODEM_HI6XXX)  += oam/ ps/ taf/
+
+subdir-ccflags-y += -Os
