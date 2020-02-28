@@ -1660,6 +1660,7 @@ data_release:
 		}
 		synaptics_fw_data_s3718_release();
 	}
+	#ifdef RED_REMOTE
 	if(1 != rmi4_data->synaptics_chip_data->unite_cap_test_interface) {
 		if (SYNAPTICS_S3207 == rmi4_data->synaptics_chip_data->ic_type) {
 			retval =synaptics_rmi4_f54_s3207_init(rmi4_data,synaptics_sett_param_regs->module_name); // for test report function
@@ -1668,6 +1669,7 @@ data_release:
 			}
 		}
 	}
+	#endif
 	return retval;
 }
 

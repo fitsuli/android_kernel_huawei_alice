@@ -1224,10 +1224,11 @@ static int bq_bci_battery_probe(struct platform_device *pdev)
     if (!battery_dclient) {
        battery_dclient = dsm_register_client(&dsm_battery);
     }
-#endif
+
     if (!charge_monitor_dclient) {
         charge_monitor_dclient = dsm_register_client(&dsm_charge_monitor);
     }
+#endif
 
     return 0;
 
