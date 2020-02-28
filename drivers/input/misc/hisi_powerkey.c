@@ -55,6 +55,8 @@ extern void set_watchdog_resetflag(void);
 #define POWER_KEY_RELEASE	(0)
 #define POWER_KEY_PRESS		(1)
 
+extern void (*arm_pm_restart)(char str, const char *cmd);
+
 #if defined (CONFIG_HUAWEI_DSM)
 #define PRESS_KEY_INTERVAL	(80)   //the minimum press interval
 #define STATISTIC_INTERVAL	(60) 	//the statistic interval for key event
@@ -64,7 +66,6 @@ static int powerkey_press_count;
 static unsigned long powerkey_last_press_time;
 static struct timer_list dsm_powerkey_timer; //used to reset the statistic variable
 /* DTS2016041906941 yanghaizhou 20160426 begin */
-extern void (*arm_pm_restart)(char str, const char *cmd);
 /* DTS2016041906941 yanghaizhou 20160426 end */
 
 static struct dsm_dev dsm_power_key = {
