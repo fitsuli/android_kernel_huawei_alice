@@ -20,7 +20,7 @@
 #include <linux/platform_device.h>
 #include <huawei_platform/touthscreen/huawei_touchscreen.h>
 
-#define RED_REMOTE
+#undef RED_REMOTE
 #define X_RES	1080
 #define Y_RES	1920
 
