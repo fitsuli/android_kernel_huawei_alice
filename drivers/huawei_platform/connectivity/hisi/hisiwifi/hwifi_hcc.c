@@ -1555,11 +1555,11 @@ int hcc_tx(struct hcc_handler *hcc, uint8 mtype, uint8 stype, struct sk_buff *sk
     queue_ind = hcc_get_tx_pkt_queue_ind(hcc, mtype, skb);
 
 #ifdef WLAN_PERFORM_OPT
-    /*ÇåÁãcb*/
+    /*ï¿½ï¿½ï¿½ï¿½cb*/
     memset (&(skb->cb), 0, sizeof(skb->cb));
 #endif
 
-/* Start of zhangwei 64406 2013-03-27 B295 Ôö¼ÓÔ¤±àÒëºê */
+/* Start of zhangwei 64406 2013-03-27 B295 ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½ */
 #ifdef WLAN_PERFORM_DEBUG
     if (HCC_TYPE_DATA == mtype)
     {
@@ -1576,7 +1576,7 @@ int hcc_tx(struct hcc_handler *hcc, uint8 mtype, uint8 stype, struct sk_buff *sk
         }
     }
 #endif
-    /* End of zhangwei 64406 2013-03-27 B295 Ôö¼ÓÔ¤±àÒëºê */
+    /* End of zhangwei 64406 2013-03-27 B295 ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½ */
 
      /*
      * caculate net packet num for flow control,
@@ -1591,7 +1591,7 @@ int hcc_tx(struct hcc_handler *hcc, uint8 mtype, uint8 stype, struct sk_buff *sk
 /* DTS2014010801661 Hi110x bug fix hongjiujin/hkf74032 2014/1/8 begin */
 #ifdef WLAN_PERFORM_OPT
 
-    /*Èç¹ûÊÇ¸ßÓÅÏÈ¼¶Êý¾Ý£¬¸ÄÐ´subtype£¬¹©dev×öÌØÊâ´¦Àí*/
+    /*ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½Ð´subtypeï¿½ï¿½ï¿½ï¿½devï¿½ï¿½ï¿½ï¿½ï¿½â´¦ï¿½ï¿½*/
     if (DATA_HI_QUEUE == queue_ind)
     {
         stype = HCC_TX_HI_SUBTYPE;
@@ -1851,7 +1851,8 @@ STATIC inline int32 expand_assemble_info_space(struct sk_buff* skb)
         hdr      = *((struct hcc_header *)skb->data);
         new_hdr  = (struct hcc_header *)(__skb_push(skb, HCC_ASSEMBLE_INFO_SIZE));
         *new_hdr = hdr;
-        new_hdr->option = 1;
+        new_hdr->option = 1;
+
     }
     else
     {
@@ -2081,7 +2082,7 @@ STATIC uint32 fill_packet_assemble_info_sg(struct hcc_handler *hcc, struct sk_bu
         if (((next_assemble_cnt - 1) == idx)
             || (skb_queue_is_last(queue,next_skb)))
         {
-            /*FIXEME? TBD Òì³£´¦Àí£¬·ÖÅä¾ÛºÏÐÅÏ¢¿Õ¼äÊ§°ÜÏÂÒ»°üÓ¦¸Ãµ¥°ü·¢ËÍ£next_assemble_cnt=0
+            /*FIXEME? TBD ï¿½ì³£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ûºï¿½ï¿½ï¿½Ï¢ï¿½Õ¼ï¿½Ê§ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ó¦ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£next_assemble_cnt=0
             idx = 0, option=0*/
             expand_assemble_info_space(next_skb);
            /* break in next loop */
@@ -2805,7 +2806,7 @@ STATIC int hcc_send_tx_queue_assemble(struct hcc_handler *hcc, hcc_queue_type ty
             hcc->assembled_cnt = 0;
             break;
         }
-        /* Start of zhanghua 00209041 2013-03-23 B295 ÔöÁ¿UDPÍÌÍÂÁ¿ÓÅ»¯Î¬²â */
+        /* Start of zhanghua 00209041 2013-03-23 B295 ï¿½ï¿½ï¿½ï¿½UDPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å»ï¿½Î¬ï¿½ï¿½ */
     #ifdef WLAN_PERFORM_DEBUG
         if ((g_perform_cfg_info->trigger_mode) && ((Hi1101_TX == g_perform_cfg_info->trigger_direction)||(Hi1101_ALL == g_perform_cfg_info->trigger_direction)))
         {
@@ -2845,7 +2846,7 @@ STATIC int hcc_send_tx_queue_assemble(struct hcc_handler *hcc, hcc_queue_type ty
         g_perform_statistic->tx_work_sched_num ++;
     }
 #endif
-    /* End of zhanghua 00209041 2013-03-23 B295 ÔöÁ¿UDPÍÌÍÂÁ¿ÓÅ»¯Î¬²â */
+    /* End of zhanghua 00209041 2013-03-23 B295 ï¿½ï¿½ï¿½ï¿½UDPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å»ï¿½Î¬ï¿½ï¿½ */
 
     return trans_len;
 }
@@ -3305,7 +3306,7 @@ STATIC int32 hcc_send_hi_ctrl_packets(struct hcc_handler* hcc)
 
     while (1)
     {
-        /* »ñÈ¡¶ÓÁÐÖÐÈ«²¿Êý¾Ý */
+        /* ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
         spin_lock_bh(&hcc->hcc_queues[HCC_TX].queues[CTRL_QUEUE].data_queue_lock);
         skb_queue_splice_tail_init(&hcc->hcc_queues[HCC_TX].queues[CTRL_QUEUE].data_queue, &skb_queue_temp);
         spin_unlock_bh(&hcc->hcc_queues[HCC_TX].queues[CTRL_QUEUE].data_queue_lock);
@@ -3358,7 +3359,7 @@ STATIC int hcc_transfer_process(struct hcc_handler *hcc)
     uint32 ret = 0;
     uint32 dyn_pri_enable;
 
-    /*HCC_FLUSH_ALL Ä¬ÈÏ×î´ó¸öÊý·¢ËÍ£¬¾ßÌåÒ»´Î·¢ËÍ¶àÉÙ¸öSKB ´ýÊµ²âµ÷Õû*/
+    /*HCC_FLUSH_ALL Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Î·ï¿½ï¿½Í¶ï¿½ï¿½Ù¸ï¿½SKB ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½*/
     HWIFI_BUG_ON(!hcc);
 
     if(HI_MODE_STA == hcc->hi110x_dev->mode.current_mode )
@@ -4368,6 +4369,7 @@ void hcc_trans_stat_dump(struct hcc_handler  *hcc, hwifi_union_log* log)
     HWIFI_UNION_PRINT(log, "tx:total count:%d\n",
                      atomic_read(&hcc->hcc_queues[HCC_TX].count));
     HWIFI_UNION_PRINT(log,"hcc channel stat:\n");
+    #ifdef HCC_DEBUG
     HWIFI_UNION_PRINT(log,"hcc_tx_count \t[%d]\n",
                     atomic_read(&hcc->debug.hcc_tx_count));
     HWIFI_UNION_PRINT(log,"hcc_single_count \t[%d]\n",
@@ -4396,6 +4398,7 @@ void hcc_trans_stat_dump(struct hcc_handler  *hcc, hwifi_union_log* log)
          total_len += len;
     }
     HWIFI_UNION_PRINT(log,"rx queues total count[%lu]\n", total_len);
+    #endif
     /*dump_kernel_interrupts(loglevel);*/
 
     for(j=0; j < HCC_DIR_COUNT; j++)
@@ -4448,7 +4451,9 @@ STATIC int hwifi_hcc_log_dump(hwifi_union_log* log)
         HWIFI_UNION_PRINT(log, "hcc is null!");
         return 0;
     }
+    #ifdef HCC_DEBUG
     hcc_debug_peak_show(hcc, log);
+    #endif
     hcc_dev_excpt_info_dump(hcc, log);
     hcc_dev_flow_ctrl_info_dump(hcc, log);
     hcc_trans_stat_dump(hcc, log);
@@ -4671,9 +4676,9 @@ struct hcc_handler* hcc_alloc(struct hi110x_device *hi110x_dev, struct iodevice 
     for (i = 0; i < HCC_QUEUE_COUNT; i++)
     {
         skb_queue_head_init(&hcc->hcc_queues[HCC_TX].queues[i].data_queue);
-        /* Start of zhangwei 64406 2013-03-26 B295 Ôö¼ÓÍ¬²½±£»¤»úÖÆ */
+        /* Start of zhangwei 64406 2013-03-26 B295 ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
         spin_lock_init(&hcc->hcc_queues[HCC_TX].queues[i].data_queue_lock);
-        /* End of zhangwei 64406 2013-03-26 B295 Ôö¼ÓÍ¬²½±£»¤»úÖÆ */
+        /* End of zhangwei 64406 2013-03-26 B295 ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
         hcc->hcc_queues[HCC_TX].queues[i].filter = NULL;
 
         /*hcc rx queue init*/
@@ -4746,7 +4751,8 @@ struct hcc_handler* hcc_alloc(struct hi110x_device *hi110x_dev, struct iodevice 
     hcc_assemble_count = MIN(hcc_assemble_count, (uint32)HCC_MAX_ASSEMBLE_NUM);
     HWIFI_PERFORM("Hcc max assemble count %u", hcc_assemble_count);
     /* DTS2015092203763  Hi1101 bug fix  2015/9/28 begin */
-    hcc->tx_buf_size = HCC_MAX_ASSEMBLE_NUM * SINGLE_PACKET_MAX_SIZE;
+    hcc->tx_buf_size = HCC_MAX_ASSEMBLE_NUM * SINGLE_PACKET_MAX_SIZE;
+
     /* DTS2015092203763  Hi1101 bug fix  2015/9/28 end */
     HWIFI_INFO("Hcc max tx buf size %u", hcc->tx_buf_size);
     hwifi_union_log_register(&hwifi_hcc_log, (void*)hcc);
@@ -4799,7 +4805,7 @@ struct hcc_handler* hcc_alloc(struct hi110x_device *hi110x_dev, struct iodevice 
 
     /*Init transfer wait event.*/
     init_waitqueue_head(&hcc->transfer_wait_queue);
-    /*´´½¨·¢ËÍÏß³Ì*/
+    /*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½*/
     hcc->hcc_transfer_task = hi110x_thread_create(hcc_trans_thread,
                         (struct hcc_handler*)hcc,
                        NULL,
