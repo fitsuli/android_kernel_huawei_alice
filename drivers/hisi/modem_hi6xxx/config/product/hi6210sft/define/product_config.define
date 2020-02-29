@@ -580,7 +580,7 @@ CFG_FEATURE_PTM                                 = FEATURE_ON
 CFG_FEATURE_VSIM                                = FEATURE_OFF
 
 # A/C�˽���
-CFG_FEATURE_DELAY_MODEM_INIT                    = FEATURE_ON
+CFG_FEATURE_DELAY_MODEM_INIT                    = FEATURE_OFF
 
 CFG_FEATURE_GUBBP_HANDSHAKE                     = FEATURE_ON
 
@@ -734,13 +734,13 @@ CFG_FEATURE_VOICE_UP                         = FEATURE_OFF
 CFG_FEATURE_PMU_SMARTSTAR                    = FEATURE_ON
 
 # V9R1��������������η���SRAM���ƺ�
-CFG_FEATURE_SRAM_400K                           = FEATURE_OFF
 
 #V8R1 DSDS���Կ���
 CFG_FEATURE_DSDS                    = FEATURE_ON
 
 #V8R1 ��ģ������TAS���Կ���
 CFG_FEATURE_TAS                     = FEATURE_OFF
+
 
 #SVLTE ���������Կ���
 CFG_FEATURE_SOCP_ON_DEMAND			= FEATURE_OFF
@@ -754,7 +754,6 @@ CFG_FEATURE_CL_INTERWORK                     = FEATURE_OFF
 
 # HISOCKET����
 CFG_FEATURE_HISOCKET                           = FEATURE_OFF
-
 CFG_FEATURE_CL_INTERWORK            = FEATURE_ON
 
 CFG_FEATURE_MULTI_CHANNEL		= FEATURE_ON
@@ -762,6 +761,7 @@ CFG_FEATURE_MULTI_CHANNEL		= FEATURE_ON
 #2014.8.15 add by z00282933 for DTS2014072404244
 #DFSͬ��/�첽���ýӿ����Ժ�,FEATURE_ONΪʹ��ͬ�����ýӿ�
 CFG_FEATURE_DFS_SYNC                            =FEATURE_OFF
+
 
 # GU��������ģ����
 CFG_FEATURE_GU_DSP_SPLIT                = FEATURE_ON
