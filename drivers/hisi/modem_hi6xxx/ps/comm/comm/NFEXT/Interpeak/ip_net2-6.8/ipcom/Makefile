@@ -31,7 +31,7 @@ endif
 ifeq ($(IPGMAKE),yes)
 
 # IPBUILD = debug | speed | debugspeed | size
-IPBUILD	= debug
+IPBUILD	= size
 
 # IPVERBOSE = no | yes
 IPVERBOSE = no

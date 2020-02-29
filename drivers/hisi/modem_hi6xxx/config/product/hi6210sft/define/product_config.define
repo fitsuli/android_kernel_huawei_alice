@@ -153,7 +153,7 @@ CFG_TL_PHY_FEATURE_LTE_LCS  = NO
 
 # [gu_platform]
 ####################################################################
-#Î´ÐÞ¸Ä
+#Î´ï¿½Þ¸ï¿½
 #CFG_GU_INC_PATH =COMM_CODE_GU/Balong_GU_Inc/GUL_CS
 #CFG_GU_INC_PATH =COMM_CODE_GU/Balong_GU_Inc/GUL_CS
 #CFG_GU_PRODUCT_VERSION =VERSION_V7R1
@@ -194,9 +194,9 @@ CFG_HIFI_LINK_DIR_NAME			=hifi_ld_SFT
 CFG_XTENSA_CORE_HIFI            =Balong_V8R1_HiFi
 # gu zsp ld file
 #CFG_ZSP_LINK_FILE_NAME			=ZSP_V7R1.ld
-# gu zsp ¶¨ÒåÐ¾Æ¬ÐÍºÅ£ºÎª0±íÊ¾HI6920ES£¬Îª1±íÊ¾HI6756CS£¬Îª2±íÊ¾HI6920CS£¬Îª3±íÊ¾HI6758CS£¬Îª4±íÊ¾HI6620CS£¬Îª5±íÊ¾ÆäËû
+# gu zsp ï¿½ï¿½ï¿½ï¿½Ð¾Æ¬ï¿½ÍºÅ£ï¿½Îª0ï¿½ï¿½Ê¾HI6920ESï¿½ï¿½Îª1ï¿½ï¿½Ê¾HI6756CSï¿½ï¿½Îª2ï¿½ï¿½Ê¾HI6920CSï¿½ï¿½Îª3ï¿½ï¿½Ê¾HI6758CSï¿½ï¿½Îª4ï¿½ï¿½Ê¾HI6620CSï¿½ï¿½Îª5ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
 CFG_ZSP_DSP_CHIP_BB_TYPE		=4
-# gu zsp ¶¨Òå²úÆ·ÐÎÌ¬£ºÎª0±íÊ¾Stick£¬Îª1±íÊ¾E5£¬Îª2±íÊ¾Phone£¬Îª3±íÊ¾E353£¬Îª4±íÊ¾UDP
+# gu zsp ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ì¬ï¿½ï¿½Îª0ï¿½ï¿½Ê¾Stickï¿½ï¿½Îª1ï¿½ï¿½Ê¾E5ï¿½ï¿½Îª2ï¿½ï¿½Ê¾Phoneï¿½ï¿½Îª3ï¿½ï¿½Ê¾E353ï¿½ï¿½Îª4ï¿½ï¿½Ê¾UDP
 CFG_ZSP_DSP_PRODUCT_FORM		=1
 
 # [bsp_comm_feature_info]:
@@ -208,12 +208,12 @@ CFG_FEATURE_BOARD_STUB_BJ_UDP = YES
 # ASIC_DIR: v7r1/v7r1_pilot/pv500    TODO: macros need to be cleaned.
 CFG_BSP_ASIC_DIR_NAME=v7r1
 
-# TODO:what ? NO»áµ¼ÖÂÁ¬½Ó²»Í¨¹ý
+# TODO:what ? NOï¿½áµ¼ï¿½ï¿½ï¿½ï¿½ï¿½Ó²ï¿½Í¨ï¿½ï¿½
 CFG_PRODUCT_CFG_ENABLE_BUILD_VARS=YES
-# TODO:ÐèÒªÉ¾³ý bsp acoreÔÚÊ¹ÓÃ
+# TODO:ï¿½ï¿½ÒªÉ¾ï¿½ï¿½ bsp acoreï¿½ï¿½Ê¹ï¿½ï¿½
 CFG_PRODUCT_CFG_PRODUCT_TYPE_HI6920CS_UDP=YES
 
-# ±àÒëacore WIFI ko
+# ï¿½ï¿½ï¿½ï¿½acore WIFI ko
 CFG_FEATURE_WIFI_ON = NO
 
 # component enable
@@ -273,7 +273,8 @@ CFG_RTOSCK_CCORE_LINK_LD_SCRIPT	        =ld_rtosck_link.ld
 CFG_BOOTROM_INCLUDE              = NO
 
 # acore check libs
-CFG_ACORE_CHECK_LIBS		   = boot.img system.img vmlinux kernel isp.bin  nvme.img ptable.img ramdisk.img ramdisk-recovery.img recovery.img userdata.img cache.img dump.img fastboot1.img fastboot2.img mnvm1.img mnvm2.img  modemlog.img dt.img 
+CFG_ACORE_CHECK_LIBS		   = boot.img system.img vmlinux kernel isp.bin  nvme.img ptable.img ramdisk.img ramdisk-recovery.img recovery.img userdata.img cache.img dump.img fastboot1.img fastboot2.img mnvm1.img mnvm2.img  modemlog.img dt.img
+ 
 # ccore check libs
 CFG_CCORE_CHECK_LIBS		   = balong_mcore.elf balong_mcore.bin  guhifi_mcore.bin  dsp.img
 
@@ -317,7 +318,7 @@ ENV_PRODUCT_CFG_DEV_USE_DRX              = YES; NO;  NO;  NO
 ENV_PRODUCT_CFG_ENABLE_TEST_CODE         = NO;  NO;  NO;  NO  
 CFG_PRODUCT_CFG_ENABLE_TEST_CODE				= NO
 
-# ¹ý¶É°æ±¾¿ª¹Ø
+# ï¿½ï¿½ï¿½É°æ±¾ï¿½ï¿½ï¿½ï¿½
 CFG_PTABLE_TRANSITION	=NO
 
 # Ptable transition version Configuration:mcore,acore,bootrom,bootloader
@@ -336,13 +337,13 @@ ENV_PRODUCT_CFG_DEV_USE_DDR1           = NO ;  NO ;  NO ;  YES
 ENV_PRODUCT_CFG_DEV_USE_ABBIN          = YES;  NO ;  NO ;  NO                                        
 ENV_VERSION_E5_HW_TEST   = NO;  NO;  NO;  NO  
 
-# THUMB Ö¸Áî±àÒë¿ª¹Ø
+# THUMB Ö¸ï¿½ï¿½ï¿½ï¿½ë¿ªï¿½ï¿½
 CFG_THUMB_COMPILE = YES
 
 #####################################################################
 # GU COMMON FEATURE CONFIG                                          #
 #####################################################################
-# ¿ª¹ØÌØÐÔ±äÁ¿  
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½  
 CFG_FEATURE_ON                                  = 1
 CFG_FEATURE_OFF                                 = 0
 
@@ -351,7 +352,7 @@ CFG_MEMORY_SIZE_64M                             = 2
 CFG_MEMORY_SIZE_128M                            = 3
 CFG_MEMORY_SIZE_256M                            = 4
 CFG_MEMORY_SIZE_512M                            = 5
-# Ð­ÒéÕ»°æ±¾  
+# Ð­ï¿½ï¿½Õ»ï¿½æ±¾  
 CFG_PS_PTL_VER_DANAMIC                          = 20
 
 CFG_PS_PTL_VER_PRE_R99                          = (-2)
@@ -365,31 +366,31 @@ CFG_PS_PTL_VER_R8                               = 5
 CFG_PS_PTL_VER_R9                               = 6
 CFG_PS_UE_REL_VER                               = PS_PTL_VER_R9
 
-# GSM Í¨ÐÅ½ÓÈë¼¼ÊõÄ£Ê½  
+# GSM Í¨ï¿½Å½ï¿½ï¿½ë¼¼ï¿½ï¿½Ä£Ê½  
 CFG_FEATURE_UE_MODE_G                           = FEATURE_ON
 
-# WCDMA Í¨ÐÅ½ÓÈë¼¼ÊõÄ£Ê½  
+# WCDMA Í¨ï¿½Å½ï¿½ï¿½ë¼¼ï¿½ï¿½Ä£Ê½  
 CFG_FEATURE_UE_MODE_W                           = FEATURE_ON
 
-# GÐ¡Çø¹ã²¥  
+# GÐ¡ï¿½ï¿½ï¿½ã²¥  
 CFG_FEATURE_GCBS                                = FEATURE_ON
 
-# WÐ¡Çø¹ã²¥  
+# WÐ¡ï¿½ï¿½ï¿½ã²¥  
 CFG_FEATURE_WCBS                                = FEATURE_ON
 
-# Ö§³ÖAP  
+# Ö§ï¿½ï¿½AP  
 CFG_FEATURE_AP                                  = FEATURE_OFF
 
-# Ö§³Ö PTABLE UDP  
+# Ö§ï¿½ï¿½ PTABLE UDP  
 CFG_FEATURE_PTABLE_UDP                          = FEATURE_ON
 
-# Ö§³ÖSTICK  
+# Ö§ï¿½ï¿½STICK  
 CFG_FEATURE_STICK                               = FEATURE_OFF
 
-# Ö§³ÖE5  
+# Ö§ï¿½ï¿½E5  
 CFG_FEATURE_E5                                  = FEATURE_OFF
 
-# Ö§³ÖE5_UDP  
+# Ö§ï¿½ï¿½E5_UDP  
 CFG_FEATURE_E5_UDP                              = FEATURE_OFF
 
 # Lighting Card  
@@ -398,7 +399,7 @@ CFG_FEATURE_HILINK                              = FEATURE_OFF
 # Security Boot  
 CFG_FEATURE_SEC_BOOT                            = FEATURE_OFF
 
-# ÊÇ·ñÖ§³Ö¶àÄ£  
+# ï¿½Ç·ï¿½Ö§ï¿½Ö¶ï¿½Ä£  
 CFG_FEATURE_LTE                                 = FEATURE_ON
 
 CFG_FEATURE_CSD                                 = FEATURE_OFF
@@ -425,8 +426,8 @@ CFG_FEATURE_KEYBOARD                            = FEATURE_OFF
 #charge 
 CFG_FEATURE_CHARGE                              = FEATURE_OFF
 
-#ICC¿ÉÎ¬¿É²â²âÊÔ´ò×® 
-CFG_FEATURE_ICC_DEBUG                           = FEATURE_ON
+#ICCï¿½ï¿½Î¬ï¿½É²ï¿½ï¿½ï¿½Ô´ï¿½×® 
+CFG_FEATURE_ICC_DEBUG                           = FEATURE_OFF
 
 #power_on_off 
 CFG_FEATURE_POWER_ON_OFF                        = FEATURE_OFF
@@ -477,29 +478,29 @@ CFG_FEATURE_NFEXT                               = FEATURE_ON
 CFG_FEATURE_UL_E_CELL_FACH                      = FEATURE_OFF
 
 CFG_FEATURE_DC_UPA                              = FEATURE_OFF
-#E5 ºôÎüµÆ 
+#E5 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 CFG_FEATURE_BREATH_LIGHT                        = FEATURE_OFF
 
-# ÈýÉ«µÆÊ¹ÄÜ¿ª¹Ø  
+# ï¿½ï¿½É«ï¿½ï¿½Ê¹ï¿½Ü¿ï¿½ï¿½ï¿½  
 CFG_FEATURE_LEDSTATUS                           = FEATURE_OFF
 
 #E5 LED 
 CFG_FEATURE_E5_LED                              = FEATURE_OFF
 
-#RTCÌØÐÔ¿ª¹Ø 
+#RTCï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ 
 CFG_FEATURE_RTC                                 = FEATURE_OFF
 
-# BBPÐ¡ÓÊÏä: ´ËÌØÐÔ¿ªÆôºó, WTTF»á½«BBPÓÊÏäÖÐµÄÊý¾Ý¿½±´µ½TTF MEM, ´Ó¶ø¼õÐ¡BBPÓÊÏä¹æ¸ñ, ´ïµ½²Ã¼ôÄÚ´æµÄÄ¿µÄ  
+# BBPÐ¡ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ï¿½, WTTFï¿½á½«BBPï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½TTF MEM, ï¿½Ó¶ï¿½ï¿½ï¿½Ð¡BBPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ïµ½ï¿½Ã¼ï¿½ï¿½Ú´ï¿½ï¿½Ä¿ï¿½ï¿½  
 CFG_FEATURE_SMALL_MAILBOX                       = FEATURE_OFF
 
-# µÍ¹¦ºÄ·ÖÇøÉÏÏÂµçÁÙÊ±¿ª¹Ø  
+# ï¿½Í¹ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½  
 CFG_FEATURE_TEMP_DSP_CORE_POWER_DOWN            = FEATURE_OFF
 CFG_FEATURE_RECONFIG                            = FEATURE_ON
 
-# Ó²¼ÓÃÜ°æ±¾¸ÄÖÆÌØÐÔºê£¬E5 ÉÏ´ò¿ª£¬stick µÈ°æ±¾¹Ø±Õ¡£²Î¼û matao00151948 µÄÓÊ¼þ  
+# Ó²ï¿½ï¿½ï¿½Ü°æ±¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôºê£¬E5 ï¿½Ï´ò¿ª£ï¿½stick ï¿½È°æ±¾ï¿½Ø±Õ¡ï¿½ï¿½Î¼ï¿½ matao00151948 ï¿½ï¿½ï¿½Ê¼ï¿½  
 CFG_FEATURE_HWENCRY_REWORK                      = FEATURE_OFF
 
-# ÄÚ´æ³Ø¹ÜÀíµ¥Ôª  
+# ï¿½Ú´ï¿½Ø¹ï¿½ï¿½ï¿½ï¿½ï¿½Ôª  
 CFG_FEATURE_MMU_BIG                             = FEATURE_OFF
 
 CFG_FEATURE_MMU_MEDIUM                          = FEATURE_ON
@@ -510,14 +511,14 @@ CFG_FEATURE_TTFMEM_CACHE                        = FEATURE_OFF
 
 CFG_FEATURE_SDUPDATE                            = FEATURE_OFF
 
-# x00195127 add for SHELL LOCKÌØÐÔ  
+# x00195127 add for SHELL LOCKï¿½ï¿½ï¿½ï¿½  
 CFG_FEATURE_SECURITY_SHELL                      = FEATURE_ON
 
 CFG_FEATURE_EPAD                                = FEATURE_OFF
 
 CFG_FEATURE_HSIC_SLAVE                          = FEATURE_OFF
 
-# ÉÕÆ¬°æ±¾´ò¿ªLOG  
+# ï¿½ï¿½Æ¬ï¿½æ±¾ï¿½ï¿½LOG  
 CFG_FEATURE_MANUFACTURE_LOG                     = FEATURE_OFF
 
 CFG_FEATURE_MEM_MONITOR                         = FEATURE_ON
@@ -531,10 +532,10 @@ CFG_FEATURE_SIM_NOTIFY                          = FEATURE_OFF
 
 CFG_FEATURE_HW_CODEC                            = FEATURE_OFF
 
-# SKBÊÇ·ñÎªÀ©Õ¹½á¹¹¿ª¹Ø  
+# SKBï¿½Ç·ï¿½Îªï¿½ï¿½Õ¹ï¿½á¹¹ï¿½ï¿½ï¿½ï¿½  
 CFG_FEATURE_SKB_EXP                             = FEATURE_OFF
 
-# ¶àÎÄ¼þÏµÍ³·ÖÇø  
+# ï¿½ï¿½ï¿½Ä¼ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½  
 CFG_FEATURE_MULTI_FS_PARTITION                  = FEATURE_ON 
 
 CFG_FEATURE_MULTI_MODEM                         = FEATURE_ON
@@ -544,26 +545,26 @@ CFG_FEATURE_VCOM_EXT                            = FEATURE_ON
 #add by y00228784 ,om chan merge
 CFG_FEATURE_MERGE_OM_CHAN						= FEATURE_ON
 
-# socpÍ¨µÀ²Ã¼ô  
+# socpÍ¨ï¿½ï¿½ï¿½Ã¼ï¿½  
 CFG_FEATURE_SOCP_CHANNEL_REDUCE                 = FEATURE_OFF
 
-#µ¥SKUÖ§³Ö¶àÔËÓªÉÌ
+#ï¿½ï¿½SKUÖ§ï¿½Ö¶ï¿½ï¿½ï¿½Óªï¿½ï¿½
 CFG_FEATURE_S_SKU_M_OPERATORS                   = FEATURE_OFF
 
-#FileBrowser·ÃÎÊNVÎÄ¼þIMEI±£»¤
+#FileBrowserï¿½ï¿½ï¿½ï¿½NVï¿½Ä¼ï¿½IMEIï¿½ï¿½ï¿½ï¿½
 CFG_FEATURE_BROWSER_NV_FILE_IMEI_PROTECT        = FEATURE_OFF
 
-#¿ÉÎ¬¿É²âLogÑ¹ËõÐ´ÎÄ¼þ
+#ï¿½ï¿½Î¬ï¿½É²ï¿½LogÑ¹ï¿½ï¿½Ð´ï¿½Ä¼ï¿½
 CFG_FEATURE_COMPRESS_WRITE_LOG_FILE             = FEATURE_OFF
 
-#V9R1Ö§³ÖCBT×¥È¡LOG
+#V9R1Ö§ï¿½ï¿½CBT×¥È¡LOG
 #CFG_FEATURE_CBT_LOG                             = FEATURE_OFF
 
 CFG_FEATURE_POWER_TIMER                         = FEATURE_ON
 
 CFG_FEATURE_UE_MODE_TDS                         = FEATURE_ON
 
-# ETWS¹¦ÄÜ¿ª¹Ø
+# ETWSï¿½ï¿½ï¿½Ü¿ï¿½ï¿½ï¿½
 CFG_FEATURE_ETWS                                = FEATURE_ON
 
 CFG_FEATURE_AGPS                                = FEATURE_ON
@@ -572,13 +573,13 @@ CFG_FEATRUE_XML_PARSER                          = FEATURE_ON
 
 CFG_FEATURE_RNDIS				= FEATURE_OFF
 
-#ÉÌÓÃERROR LOG¿ª¹Ø
+#ï¿½ï¿½ï¿½ï¿½ERROR LOGï¿½ï¿½ï¿½ï¿½
 CFG_FEATURE_PTM                                 = FEATURE_ON
 
-# ÐéÄâ¿¨ÌØÐÔ¿ª¹Ø
+# ï¿½ï¿½ï¿½â¿¨ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½
 CFG_FEATURE_VSIM                                = FEATURE_OFF
 
-# A/CºË½âñî
+# A/Cï¿½Ë½ï¿½ï¿½ï¿½
 CFG_FEATURE_DELAY_MODEM_INIT                    = FEATURE_ON
 
 CFG_FEATURE_GUBBP_HANDSHAKE                     = FEATURE_ON
@@ -589,7 +590,7 @@ CFG_FEATURE_BBP_MASTER                          = FEATURE_ON
 #####################################################################
 # GU NAS FEATURE CONFIG                                             #
 #####################################################################
-#±íÃ÷NVIMÖÐÊÇ·ñÄÜ±£´æ¶ÌÐÅ 
+#ï¿½ï¿½ï¿½ï¿½NVIMï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ü±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 CFG_NAS_FEATURE_SMS_NVIM_SMSEXIST                       = FEATURE_ON
 CFG_NAS_FEATURE_SMS_FLASH_SMSEXIST                      = FEATURE_ON
 
@@ -607,7 +608,7 @@ CFG_FEATURE_RMNET_CUSTOM                                = FEATURE_OFF
 #####################################################################
 # GU GAS FEATURE CONFIG                                             #
 #####################################################################
-# GASÐ­Òé°æ±¾¶¨Òå  
+# GASÐ­ï¿½ï¿½æ±¾ï¿½ï¿½ï¿½ï¿½  
 CFG_GAS_PTL_VER_PRE_R99             = (PS_PTL_VER_PRE_R99)
 CFG_GAS_PTL_VER_R99                 = (PS_PTL_VER_R99)
 CFG_GAS_PTL_VER_R3                  = (PS_PTL_VER_R3)
@@ -618,7 +619,7 @@ CFG_GAS_PTL_VER_R7                  = (PS_PTL_VER_R7)
 CFG_GAS_PTL_VER_R8                  = (PS_PTL_VER_R8)
 CFG_GAS_PTL_VER_R9                  = (PS_PTL_VER_R9)
 
-# GASµ±Ç°°æ±¾  
+# GASï¿½ï¿½Ç°ï¿½æ±¾  
 CFG_GAS_UE_REL_VER                  = (GAS_PTL_VER_R9)
 
 #####################################################################
@@ -634,30 +635,30 @@ CFG_FEATURE_BBP_MASTER                          = FEATURE_ON
 
 CFG_FEATURE_BBPMST_FREQUENCY_REDUCE             = FEATURE_OFF
 
-# Ñ¹Ëõ¿ª¹Ø  
+# Ñ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
 CFG_TTF_CF_FEATURE                              = FEATURE_OFF
 
-# TTFÄÚ´æµ÷ÊÔ¿ª¹Ø  
-# Ä¿Ç°´ò¿ª¿ª¹ØÒÔÖ÷Òª¼ì²éÄÚ´æÐ¹Â©, ÎÈ¶¨ºó¿ÉÒÔ¹Ø±Õ  
-CFG_FEATURE_TTF_MEM_DEBUG                       = FEATURE_ON
+# TTFï¿½Ú´ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½  
+# Ä¿Ç°ï¿½ò¿ª¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ú´ï¿½Ð¹Â©, ï¿½È¶ï¿½ï¿½ï¿½ï¿½ï¿½Ô¹Ø±ï¿½  
+CFG_FEATURE_TTF_MEM_DEBUG                       = FEATURE_OFF
 
-# TCP-ACKÇ°ÒÆ  
+# TCP-ACKÇ°ï¿½ï¿½  
 CFG_FEATURE_TCP_ACK_IN_FRONT                    = FEATURE_ON
 
 CFG_FEATURE_CST_ASYN_OR_NOT_TRANS               = FEATURE_OFF
 
 CFG_FEATURE_EDMAC                               = FEATURE_OFF
 
-# ACPU ¸ºÔØÍ³¼Æ  
+# ACPU ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½  
 CFG_FEATURE_ACPU_STAT                           = FEATURE_OFF
 
-# Á÷¿ØÄ£¿éÔÚAPÉÏµÄÁ÷¿Øµã×¢²á  
+# ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½APï¿½Ïµï¿½ï¿½ï¿½ï¿½Øµï¿½×¢ï¿½ï¿½  
 CFG_FEATURE_ACPU_FC_POINT_REG                   = FEATURE_OFF
 
-# XMLÖ§³Ö²úÆ·Ë÷Òý¿ª¹Ø
+# XMLÖ§ï¿½Ö²ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 CFG_FEATURE_XNV_SUPPORT_PRODUCT_CAT             = FEATURE_ON
 
-# ¼ÓÃÜÏµÍ³¿ØÖÆÆ÷
+# ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 CFG_SC_CTRL_MOD_6620_FPGA                       = 1
 CFG_SC_CTRL_MOD_6620_SFT                        = 2
 CFG_SC_CTRL_MOD_6758_FPGA                       = 3
@@ -672,48 +673,48 @@ CFG_SC_CTRL_MOD                                 =(SC_CTRL_MOD_6210_SFT)
 #####################################################################
 # TL PHY FEATURE CONFIG                                             #
 #####################################################################
-###TL PHY ÊÇ·ñÖ§³Öµ¥DCXOÌØÐÔ###
+###TL PHY ï¿½Ç·ï¿½Ö§ï¿½Öµï¿½DCXOï¿½ï¿½ï¿½ï¿½###
 CFG_FEATURE_TLPHY_SINGLE_XO								= YES
 #####################################################################
 # GU PHY FEATURE CONFIG                                             #
 #####################################################################
-# GUTL¶àÄ£µÍ¹¦ºÄÌØÐÔ¿ª¹Ø
+# GUTLï¿½ï¿½Ä£ï¿½Í¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½
 CFG_FEATURE_TEMP_MULTI_MODE_LP                	= FEATURE_ON
 
-# HARQÍâÒÆÌØÐÔ¿ª¹Ø
+# HARQï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½
 CFG_FEATURE_HARQ_OUT                          	= FEATURE_ON
 
-# ¿çRFIC²âÁ¿ÌØÐÔ¿ª¹Ø
+# ï¿½ï¿½RFICï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½
 CFG_FEATURE_MULTI_RFIC_MEAS			= FEATURE_ON
 
-# DCDPAÌØÐÔ¿ª¹Ø
+# DCDPAï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½
 CFG_FEATURE_DC_DPA				= FEATURE_ON
 
-# 32KÊ±ÖÓÍâ²¿Ìá¹©ÌØÐÔ¿ª¹Ø
+# 32KÊ±ï¿½ï¿½ï¿½â²¿ï¿½á¹©ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½
 CFG_FEATURE_EXTERNAL_32K_CLK			= FEATURE_OFF
 
-# RFIC RESETÓÉGPIO¿ØÖÆÌØÐÔ¿ª¹Ø
+# RFIC RESETï¿½ï¿½GPIOï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½
 CFG_FEATURE_RFIC_RESET_GPIO_ON			= FEATURE_OFF
 
-# L·Ö¼¯ºÍG¸±¿¨¹²ÌìÏßÌØÐÔ¿ª¹Ø
+# Lï¿½Ö¼ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½
 CFG_FEATURE_ANT_SHARE				= FEATURE_ON
 
-# TUNERÌØÐÔ¿ª¹Ø
+# TUNERï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½
 CFG_FEATURE_TUNER				= FEATURE_OFF
 
-# SIO WPLLÎÊÌâ¹æ±ÜÌØ¶¨¿ª¹Ø
+# SIO WPLLï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½ï¿½ï¿½
 CFG_FEATURE_UPHY_SIO_WPLL_ELUSION_ON		= FEATURE_OFF
 
-# SOCPµÍ¹¦ºÄÌØÐÔ¿ª¹Ø
+# SOCPï¿½Í¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½
 CFG_FEATURE_SOCP_ON_DEMAND			= FEATURE_OFF
 
-#CMCCÐéÄâÆµ¶Î
+#CMCCï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½
 CFG_FEATURE_VIRTUAL_BAND			= FEATURE_ON
 
 #####################################################################
 # GU DRV FEATURE CONFIG                                             #
 #####################################################################
-# IPFÓ²¼þÅäÖÃ  
+# IPFÓ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
 CFG_IPF_V200                                     = 1
 CFG_IPF_V300                                     = 2
 CFG_FEATURE_IPF_VERSION                          = IPF_V200
@@ -721,37 +722,37 @@ CFG_FEATURE_HANDSET_SECURITY_BOOT	     = FEATURE_OFF
 CFG_FEATURE_PHONE     			     = FEATURE_OFF
 CFG_FEATURE_PHOTOFRAME			     = FEATURE_OFF
 
-# DSP¼ÓÔØ  
+# DSPï¿½ï¿½ï¿½ï¿½  
 CFG_FEATURE_DSP_LOAD			     = FEATURE_ON
 #####################################################################
 # GU CODEC FEATURE CONFIG                                           #
 #####################################################################
 
-# ÓïÒôÈí¼þÉÏÒÆARMÅäÖÃ
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ARMï¿½ï¿½ï¿½ï¿½
 CFG_FEATURE_VOICE_UP                         = FEATURE_OFF
 
 CFG_FEATURE_PMU_SMARTSTAR                    = FEATURE_ON
 
-# V9R1ÐÔÄÜÌáÉý£¬´úÂë¶Î·ÅÈëSRAM¿ØÖÆºê
+# V9R1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î·ï¿½ï¿½ï¿½SRAMï¿½ï¿½ï¿½Æºï¿½
 CFG_FEATURE_SRAM_400K                           = FEATURE_OFF
 
-#V8R1 DSDSÌØÐÔ¿ª¹Ø
+#V8R1 DSDSï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½
 CFG_FEATURE_DSDS                    = FEATURE_ON
 
-#V8R1 ¶àÄ£¶àÌìÏßTASÌØÐÔ¿ª¹Ø
+#V8R1 ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½TASï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½
 CFG_FEATURE_TAS                     = FEATURE_OFF
 
-#SVLTE ¹²ÌìÏßÌØÐÔ¿ª¹Ø
+#SVLTE ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½
 CFG_FEATURE_SOCP_ON_DEMAND			= FEATURE_OFF
 
 CFG_FEATURE_SAMPLE_LTE_CHAN			= FEATURE_ON
 
 CFG_FEATURE_BSP_LCH_OM              = FEATURE_OFF
 
-#CL INTERWORK CL»¥²Ù×÷¿ª¹Ø
+#CL INTERWORK CLï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 CFG_FEATURE_CL_INTERWORK                     = FEATURE_OFF
 
-# HISOCKET¿ª¹Ø
+# HISOCKETï¿½ï¿½ï¿½ï¿½
 CFG_FEATURE_HISOCKET                           = FEATURE_OFF
 
 CFG_FEATURE_CL_INTERWORK            = FEATURE_ON
@@ -759,18 +760,18 @@ CFG_FEATURE_CL_INTERWORK            = FEATURE_ON
 CFG_FEATURE_MULTI_CHANNEL		= FEATURE_ON
 
 #2014.8.15 add by z00282933 for DTS2014072404244
-#DFSÍ¬²½/Òì²½ÅäÖÃ½Ó¿ÚÌØÐÔºê,FEATURE_ONÎªÊ¹ÓÃÍ¬²½ÅäÖÃ½Ó¿Ú
+#DFSÍ¬ï¿½ï¿½/ï¿½ì²½ï¿½ï¿½ï¿½Ã½Ó¿ï¿½ï¿½ï¿½ï¿½Ôºï¿½,FEATURE_ONÎªÊ¹ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½Ã½Ó¿ï¿½
 CFG_FEATURE_DFS_SYNC                            =FEATURE_OFF
 
-# GU¶ÀÁ¢Ö÷´ÓÄ£¿ª¹Ø
+# GUï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½
 CFG_FEATURE_GU_DSP_SPLIT                = FEATURE_ON
 #####################################################################
 # V8 CIPHER FEATURE CONFIG    w00161397                             #
 #####################################################################
-#2014.9.15 add by w00161397 ÒÆÖ²¶àÍ¨µÀµÄÌØÐÔºêÓÃÓÚ711 one track
+#2014.9.15 add by w00161397 ï¿½ï¿½Ö²ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½ï¿½711 one track
 CFG_FEATURE_MULTI_CHANNEL		        = FEATURE_ON
 CFG_FEATURE_CIPHER_OPTIMIZE                     =FEATURE_ON
 
-#2014.9.16 add by z00100616 Í¬²½V8´úÂëµ½V711 one track
+#2014.9.16 add by z00100616 Í¬ï¿½ï¿½V8ï¿½ï¿½ï¿½ëµ½V711 one track
 CFG_FEATURE_DCX0_TLHPA_WRITE_PHY_NV             = FEATURE_ON
 CFG_FEATURE_VERSION_V8                          = FEATURE_ON

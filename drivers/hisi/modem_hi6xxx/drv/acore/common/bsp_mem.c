@@ -18,48 +18,48 @@ extern "C"
 #endif /* __cplusplus */
 
 /**************************************************************************
-  ºê¶¨Òå
+  ï¿½ê¶¨ï¿½ï¿½
 **************************************************************************/
-#define __BSP_MEM_DEBUG__
+//#define __BSP_MEM_DEBUG__
 
 #ifdef __BSP_MEM_DEBUG__
-/* ÓÃÓÚ´òÓ¡²éÕÒ´ÎÊý, ·½±ãÉèÖÃ MostUseItem µÄÖµ */
+/* ï¿½ï¿½ï¿½Ú´ï¿½Ó¡ï¿½ï¿½ï¿½Ò´ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ MostUseItem ï¿½ï¿½Öµ */
 /*#define MEM_PRINT_FIND_TIMES*/
 #endif
 
-/* Ã¿¸öÄÚ´æ½ÚµãµÄ×î´óÖµ¶¨Òå */
+/* Ã¿ï¿½ï¿½ï¿½Ú´ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ */
 #define MEM_NODE_MGR_SIZE           32
 
-/* MAGIC¶¨ÒåÂë */
+/* MAGICï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 #define MEM_MAGIC_NUM               0x11223344
 
-/* ÄÚ´æ³ß´ç·ÖÅä±í */
+/* ï¿½Ú´ï¿½ß´ï¿½ï¿½ï¿½ï¿½ï¿½ */
 BSP_U32 sg_AllocListSize[] =        {32, 128, 512, 1024, 2048, 4096, 8192, 0x4000, 0x8000, 0x20000};
 
 #define MEM_ALLOC_LIST_NUM          (sizeof(sg_AllocListSize) / sizeof(BSP_U32))
 
 
 /**************************************************************************
-  ÀàÐÍ¶¨Òå
+  ï¿½ï¿½ï¿½Í¶ï¿½ï¿½ï¿½
 **************************************************************************/
-/* ÄÚ´æ½Úµã×´Ì¬ÀàÐÍ */
+/* ï¿½Ú´ï¿½Úµï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½ */
 typedef enum tagMEM_STATUS
 {
     MEM_FREE = 0,
     MEM_ALLOC = 1
 }MEM_STATUS;
 
-/* ÄÚ´æ³Ø¹ÜÀíÐÅÏ¢ */
+/* ï¿½Ú´ï¿½Ø¹ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ */
 typedef struct tagMEM_POOL_INFO
 {
-    BSP_U32 u32BaseAddr;            /* ÄÚ´æ³Ø»ùµØÖ· */
-    BSP_U32 u32Size;                /* ÄÚ´æ³Ø×Ü´óÐ¡ */
-    BSP_U32 u32CurPosAddr;          /* ÄÚ´æ³Øµ±Ç°·ÖÅäµ½µÄÎ»ÖÃ */
-    BSP_U32 u32Left;                /* ÄÚ´æ³ØÊ£Óà´óÐ¡ */
-    BSP_U32 u32MgrSize;             /* ¹ÜÀí½á¹¹´óÐ¡ */
+    BSP_U32 u32BaseAddr;            /* ï¿½Ú´ï¿½Ø»ï¿½ï¿½ï¿½Ö· */
+    BSP_U32 u32Size;                /* ï¿½Ú´ï¿½ï¿½ï¿½Ü´ï¿½Ð¡ */
+    BSP_U32 u32CurPosAddr;          /* ï¿½Ú´ï¿½Øµï¿½Ç°ï¿½ï¿½ï¿½äµ½ï¿½ï¿½Î»ï¿½ï¿½ */
+    BSP_U32 u32Left;                /* ï¿½Ú´ï¿½ï¿½Ê£ï¿½ï¿½ï¿½Ð¡ */
+    BSP_U32 u32MgrSize;             /* ï¿½ï¿½ï¿½ï¿½ï¿½á¹¹ï¿½ï¿½Ð¡ */
 }MEM_POOL_INFO;
 
-/* Ã¿¸öÄÚ´æ½ÚµãµÄ¹ÜÀíÐÅÏ¢(×¢Òâ,×î´ó²»Òª³¬¹ý 32bytes) */
+/* Ã¿ï¿½ï¿½ï¿½Ú´ï¿½Úµï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢(×¢ï¿½ï¿½,ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ 32bytes) */
 typedef struct tagMEM_MGR_INFO
 {
     BSP_U32 u32MagicNumber;
@@ -73,16 +73,16 @@ typedef struct tagMEM_MGR_INFO
 #endif
 }MEM_MGR_INFO;
 
-/* Ã¿¸öÄÚ´æ½ÚµãµÄÊ¹ÓÃ¼ÆÊý */
+/* Ã¿ï¿½ï¿½ï¿½Ú´ï¿½Úµï¿½ï¿½Ê¹ï¿½Ã¼ï¿½ï¿½ï¿½ */
 typedef struct tagMEM_USED_INFO
 {
-    BSP_U32 u32CurNum;              /* µ±Ç°Ê¹ÓÃ¸öÊý¼ÆÊý */
-    BSP_U32 u32MaxNum;              /* Ê¹ÓÃ¸öÊý·åÖµ */
-    BSP_U32 u32TotalMallocNum;      /* ÀÛ»ýmalloc´ÎÊý */
-    BSP_U32 u32TotalFreeNum;        /* ÀÛ»ýfree´ÎÊý */
+    BSP_U32 u32CurNum;              /* ï¿½ï¿½Ç°Ê¹ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+    BSP_U32 u32MaxNum;              /* Ê¹ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½Öµ */
+    BSP_U32 u32TotalMallocNum;      /* ï¿½Û»ï¿½mallocï¿½ï¿½ï¿½ï¿½ */
+    BSP_U32 u32TotalFreeNum;        /* ï¿½Û»ï¿½freeï¿½ï¿½ï¿½ï¿½ */
 }MEM_USED_INFO;
 
-/* ÄÚ´æ·ÖÅä¹ÜÀíÐÅÏ¢ */
+/* ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ */
 typedef struct tagMEM_ALLOC_INFO
 {
     BSP_U32           allocList[MEM_ALLOC_LIST_NUM];
@@ -92,14 +92,14 @@ typedef struct tagMEM_ALLOC_INFO
 }MEM_ALLOC_INFO;
 
 /**************************************************************************
-  º¯ÊýÉêÃ÷
+  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 **************************************************************************/
 extern void BSP_IPC_SpinLock (unsigned int u32SignalNum);
 extern void BSP_IPC_SpinUnLock (unsigned int u32SignalNum);
 
 
 /**************************************************************************
-  È«¾Ö±äÁ¿
+  È«ï¿½Ö±ï¿½ï¿½ï¿½
 **************************************************************************/
 #ifdef MEM_PRINT_FIND_TIMES
 BSP_U32 g_MemIsPrintTimes=0;
@@ -113,7 +113,7 @@ static MEM_ALLOC_INFO* sg_pIccAllocInfo = 0;
 
 spinlock_t g_ipc_sem_mem_lock = __SPIN_LOCK_UNLOCKED(old_style_spin_init);
 /**************************************************************************
-  ºêÊµÏÖ
+  ï¿½ï¿½Êµï¿½ï¿½
 **************************************************************************/
 #define MEM_GET_ALLOC_SIZE(i)       (*(sg_pAllocSizeTbl+i))
 #define MEM_GET_ALLOC_INFO(type)    (((type) >= MEM_ICC_DDR_POOL) ? \
@@ -176,7 +176,7 @@ do{\
     }\
 }while(0)
 
-/* Cache²Ù×÷¶¨Òå */
+/* Cacheï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 #ifdef  MEM_USE_ACP
 #define MEM_FLUSH_CACHE(ptr, size)
 #define MEM_INVALID_CACHE(ptr, size)
@@ -223,7 +223,7 @@ do{\
 #define MEM_PRINT_TIMES(size)
 #endif
 
-/* ÔÚsize list ÖÐ²éÕÒºÏÊÊµÄÄÚ´æ½Úµã,Èç¹ûÕÒ²»µ½Ôò·µ»Ø MEM_ALLOC_LIST_NUM */
+/* ï¿½ï¿½size list ï¿½Ð²ï¿½ï¿½Òºï¿½ï¿½Êµï¿½ï¿½Ú´ï¿½Úµï¿½,ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ò·µ»ï¿½ MEM_ALLOC_LIST_NUM */
 #define MEM_FIND_RIGHT_ITEM(item, size, most_used) \
 do {\
     MEM_DEFINE_TIMES();\
@@ -242,7 +242,7 @@ do {\
         {\
              MEM_INC_TIMES();\
         }\
-        /* Èç¹ûÎÞÐ§, ½«ÎÞÐ§Öµ¸ÄÎª MEM_ALLOC_LIST_NUM */\
+        /* ï¿½ï¿½ï¿½ï¿½ï¿½Ð§, ï¿½ï¿½ï¿½ï¿½Ð§Öµï¿½ï¿½Îª MEM_ALLOC_LIST_NUM */\
         if ((item) > (most_used))\
         {\
             (item) = MEM_ALLOC_LIST_NUM;\
@@ -253,13 +253,13 @@ do {\
 
 
 /**************************************************************************
-  ÄÚ²¿º¯Êý
+  ï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½
 **************************************************************************/
 LOCAL BSP_S32 memInitPool(BSP_U32 u32PoolType)
 {
     MEM_ALLOC_INFO* pAllocInfo = MEM_GET_ALLOC_INFO(u32PoolType);
 
-    /* ·ÖÅä»ùµØÖ·ºÍ´óÐ¡ */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½Í´ï¿½Ð¡ */
     switch((MEM_POOL_TYPE)u32PoolType)
     {
         case MEM_NORM_DDR_POOL:
@@ -288,7 +288,7 @@ LOCAL BSP_S32 memInitPool(BSP_U32 u32PoolType)
         return ERROR;
     }
 
-    /* ³õÊ¼»¯ÆäËûÈ«¾Ö±äÁ¿ */
+    /* ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½Ö±ï¿½ï¿½ï¿½ */
     pAllocInfo->mostUsedItem = 0;
     return OK;
 }
@@ -342,10 +342,10 @@ LOCAL INLINE VOID* memGetItem(MEM_ALLOC_INFO* pAllocInfo, BSP_U32 cnt, BSP_U32 u
     VOID *pItem;
     BSP_U32 *ppHead = &(pAllocInfo->allocList[cnt]);
 
-    /* Èç¹ûÁ´±íÖÐÃ»ÓÐ½Úµã,Ôò´ÓÄÚ´æ³ØÖÐ·ÖÅä */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð½Úµï¿½,ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½Ð·ï¿½ï¿½ï¿½ */
     if ((BSP_U32)BSP_NULL == *ppHead)
     {
-        /* ×¢Òâ´ÓÄÚ´æ³ØÖÐ·ÖÅäµÄ³ß´çÒª¶îÍâ°üº¬ MGR µÄ²¿·Ö */
+        /* ×¢ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½Ð·ï¿½ï¿½ï¿½Ä³ß´ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ MGR ï¿½Ä²ï¿½ï¿½ï¿½ */
     	pItem = memPoolAlloc(pAllocInfo, u32Size+pAllocInfo->memPoolInfo.u32MgrSize);
 
     	if (NULL == pItem)
@@ -363,7 +363,7 @@ LOCAL INLINE VOID* memGetItem(MEM_ALLOC_INFO* pAllocInfo, BSP_U32 cnt, BSP_U32 u
     	MEM_ITEM_LINE(pItem) = 0;
 #endif
     }
-    /* ´ÓÁ´±íÖÐÈ¡³ö½Úµã */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½Úµï¿½ */
     else
     {
 	    pItem = (VOID*)HISI_VA_ADDRESS(((unsigned long)(*ppHead)));
@@ -383,17 +383,17 @@ LOCAL INLINE BSP_U8* memAlloc(BSP_U32 u32PoolType, BSP_U32 u32Size)
     MEM_ALLOC_INFO* pAllocInfo = MEM_GET_ALLOC_INFO(u32PoolType);
     BSP_U32 u32MostUsedItem = pAllocInfo->mostUsedItem;
 
-    /* ÏÈ²éÕÒAllocListÖÐÊÇ·ñÓÐ¿ÉÓÃµÄÄÚ´æ½Úµã */
+    /* ï¿½È²ï¿½ï¿½ï¿½AllocListï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ð¿ï¿½ï¿½Ãµï¿½ï¿½Ú´ï¿½Úµï¿½ */
     MEM_FIND_RIGHT_ITEM(cnt, u32Size, u32MostUsedItem);
 
-    /* Èç¹ûÃ»ÓÐÕÒµ½ÔòÖ±½Ó·µ»ØÊ§°Ü */
+    /* ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½Ö±ï¿½Ó·ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ */
     if (cnt >= MEM_ALLOC_LIST_NUM)
     {
         printk("Invalid malloc size:%d, line:%d\n", u32Size, __LINE__);
         return NULL;
     }
 
-    /* ¸üÐÂsizeÎªÁÐ±íÖÐµÄsize */
+    /* ï¿½ï¿½ï¿½ï¿½sizeÎªï¿½Ð±ï¿½ï¿½Ðµï¿½size */
     u32Size = MEM_GET_ALLOC_SIZE(cnt);
     MEM_LOCK_BY_TYPE(u32PoolType, flag);
     pItem = memGetItem(pAllocInfo, cnt, u32PoolType, u32Size);
@@ -412,7 +412,7 @@ LOCAL INLINE BSP_U8* memAlloc(BSP_U32 u32PoolType, BSP_U32 u32Size)
         }
         MEM_ITEM_STATUS(pItem) = MEM_ALLOC;
 #endif
-        /* ¶àºËÒª Flush Cache, È·±£¹ÜÀíÐÅÏ¢Ð´Èë */
+        /* ï¿½ï¿½ï¿½Òª Flush Cache, È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Ð´ï¿½ï¿½ */
         MEM_FLUSH_CACHE_BY_TYPE(MEM_GET_ALLOC_ADDR(pItem), MEM_MGR_SIZE_FOR_CACHE, u32PoolType);
     }
 
@@ -430,11 +430,11 @@ INLINE VOID memFree(BSP_U32 u32PoolType, BSP_VOID* pMem, BSP_U32 u32Size)
     MEM_ALLOC_INFO* pAllocInfo = MEM_GET_ALLOC_INFO(u32PoolType);
     u32MostUsedItem = pAllocInfo->mostUsedItem;
 
-    /* ÏÈ²éÕÒAllocListÖÐÊÇ·ñÓÐ¿ÉÓÃµÄÄÚ´æ½Úµã */
+    /* ï¿½È²ï¿½ï¿½ï¿½AllocListï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ð¿ï¿½ï¿½Ãµï¿½ï¿½Ú´ï¿½Úµï¿½ */
     MEM_FIND_RIGHT_ITEM(cnt, u32Size, u32MostUsedItem);
 
 #ifdef __BSP_MEM_DEBUG__
-    /* ÅÐ¶Ï¸Ã½ÚµãÊÇ·ñÓÐÐ§ */
+    /* ï¿½Ð¶Ï¸Ã½Úµï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ð§ */
     if (cnt >= MEM_ALLOC_LIST_NUM)
     {
         printk("memPoolAlloc Fail, size:%d, line:%d\n", u32Size, __LINE__);
@@ -444,7 +444,7 @@ INLINE VOID memFree(BSP_U32 u32PoolType, BSP_VOID* pMem, BSP_U32 u32Size)
 
     MEM_LOCK_BY_TYPE(u32PoolType, flag);
 
-    /* ½«item¹Ò»Øµ½Á´±í */
+    /* ï¿½ï¿½itemï¿½Ò»Øµï¿½ï¿½ï¿½ï¿½ï¿½ */
     MEM_ITEM_NEXT(pMem) = (BSP_U32)(pAllocInfo->allocList[cnt]);
     pAllocInfo->allocList[cnt] = (BSP_U32)HISI_PA_ADDRESS((unsigned long)pMem);
 
@@ -470,7 +470,7 @@ int memUsrInitFunction(void)
     return 0;
 }
 /**************************************************************************
-  ½Ó¿ÚÊµÏÖ
+  ï¿½Ó¿ï¿½Êµï¿½ï¿½
 **************************************************************************/
 BSP_S32 BSP_MEM_Init(BSP_VOID)
 {
@@ -483,7 +483,7 @@ BSP_S32 BSP_MEM_Init(BSP_VOID)
 
     sg_pIccAllocInfo = (MEM_ALLOC_INFO*)((unsigned long)sg_pAllocSizeTbl + sizeof(sg_AllocListSize));
 
-    /* Èç¹û²éÕÒ±íÒÑ¾­¸³ÖµËµÃ÷ ICC µÄ²¿·ÖÒÑ¾­³õÊ¼»¯ */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò±ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ÖµËµï¿½ï¿½ ICC ï¿½Ä²ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ */
     ret = mdrv_sync_lock(SYNC_MODULE_MEM, &state, 10000);
     if(ret)
     {
@@ -503,13 +503,13 @@ BSP_S32 BSP_MEM_Init(BSP_VOID)
     }
     else
     {
-        u32MaxInitNum = 1; /* Ö»³õÊ¼»¯µ¥ºË DDRµÄ²¿·Ö */
+        u32MaxInitNum = 1; /* Ö»ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ DDRï¿½Ä²ï¿½ï¿½ï¿½ */
     }
 
 
     for (u32PoolType = (BSP_U32)MEM_NORM_DDR_POOL; u32PoolType < (BSP_U32)u32MaxInitNum; u32PoolType++)
     {
-        /* ·ÖÅäÄÚ´æ³Ø */
+        /* ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ */
         if (OK != memInitPool(u32PoolType))
         {
             return ERROR;
@@ -542,21 +542,21 @@ BSP_S32 BSP_MEM_SetMostUsedSize(BSP_U32 u32Size, BSP_U32 u32PoolType)
         return ERROR;
     }
 
-    /* ÉèÖÃÊ±ÒªÉèÖÃ MostItem - 1, ·½±ã²éÕÒ */
+    /* ï¿½ï¿½ï¿½ï¿½Ê±Òªï¿½ï¿½ï¿½ï¿½ MostItem - 1, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     MEM_GET_ALLOC_INFO(u32PoolType)->mostUsedItem  = (u32Item == 0) ? (0) : (u32Item-1);
 
     return OK;
 }
 
 /*****************************************************************************
-* º¯ Êý Ãû  : BSP_Malloc
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : BSP_Malloc
 *
-* ¹¦ÄÜÃèÊö  : BSP ¶¯Ì¬ÄÚ´æ·ÖÅä
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : BSP ï¿½ï¿½Ì¬ï¿½Ú´ï¿½ï¿½ï¿½ï¿½
 *
-* ÊäÈë²ÎÊý  : u32Size: ·ÖÅäµÄ´óÐ¡(byte)
-*             enFlags: ÄÚ´æÊôÐÔ(ÔÝ²»Ê¹ÓÃ,Ô¤Áô)
-* Êä³ö²ÎÊý  : ÎÞ
-* ·µ »Ø Öµ  : ·ÖÅä³öÀ´µÄÄÚ´æÖ¸Õë
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : u32Size: ï¿½ï¿½ï¿½ï¿½Ä´ï¿½Ð¡(byte)
+*             enFlags: ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Ý²ï¿½Ê¹ï¿½ï¿½,Ô¤ï¿½ï¿½)
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½Ö¸ï¿½ï¿½
 *****************************************************************************/
 BSP_VOID* BSP_Malloc(BSP_U32 u32Size, MEM_POOL_TYPE enFlags)
 {
@@ -567,7 +567,7 @@ BSP_VOID* BSP_Malloc(BSP_U32 u32Size, MEM_POOL_TYPE enFlags)
 	    return kmalloc(u32Size, GFP_KERNEL);
     }
 
-    /* ·ÖÅäÄÚ´æ */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ */
     pItem = memAlloc(enFlags, u32Size);
 
     return (BSP_VOID*)pItem;
@@ -575,28 +575,28 @@ BSP_VOID* BSP_Malloc(BSP_U32 u32Size, MEM_POOL_TYPE enFlags)
 EXPORT_SYMBOL(BSP_Malloc);
 
 /*****************************************************************************
-* º¯ Êý Ãû  : BSP_MallocDbg
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : BSP_MallocDbg
 *
-* ¹¦ÄÜÃèÊö  : BSP ¶¯Ì¬ÄÚ´æ·ÖÅä(Debug½Ó¿Ú)
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : BSP ï¿½ï¿½Ì¬ï¿½Ú´ï¿½ï¿½ï¿½ï¿½(Debugï¿½Ó¿ï¿½)
 *
-* ÊäÈë²ÎÊý  : u32Size: ·ÖÅäµÄ´óÐ¡(byte)
-*             enFlags: ÄÚ´æÊôÐÔ(ÔÝ²»Ê¹ÓÃ,Ô¤Áô)
-*             pFileName: Ê¹ÓÃµÄÔ´ÎÄ¼þ
-*             u32Line:   ËùÔÚÎÄ¼þµÄÐÐºÅ
-* Êä³ö²ÎÊý  : ÎÞ
-* ·µ »Ø Öµ  : ³É¹¦/Ê§°Ü
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : u32Size: ï¿½ï¿½ï¿½ï¿½Ä´ï¿½Ð¡(byte)
+*             enFlags: ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Ý²ï¿½Ê¹ï¿½ï¿½,Ô¤ï¿½ï¿½)
+*             pFileName: Ê¹ï¿½Ãµï¿½Ô´ï¿½Ä¼ï¿½
+*             u32Line:   ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ðºï¿½
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  : ï¿½É¹ï¿½/Ê§ï¿½ï¿½
 *****************************************************************************/
 BSP_VOID* BSP_MallocDbg(BSP_U32 u32Size, MEM_POOL_TYPE enFlags, BSP_U8* pFileName, BSP_U32 u32Line)
 {
     BSP_U8 *pItem;
 
-    /* ·ÖÅäÄÚ´æ */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ */
     pItem = memAlloc(MEM_NORM_DDR_POOL, (BSP_U32)u32Size);
 
 #ifdef __BSP_MEM_DEBUG__
     if (NULL != pItem)
     {
-        /* DebugÄ£Ê½Òª¸üÐÂMGR ÐÅÏ¢ */
+        /* DebugÄ£Ê½Òªï¿½ï¿½ï¿½ï¿½MGR ï¿½ï¿½Ï¢ */
         MEM_ITEM_LINE(pItem) = u32Line;
         MEM_ITEM_FILE_NAME(pItem) = (BSP_U32)pFileName;
     }
@@ -605,13 +605,13 @@ BSP_VOID* BSP_MallocDbg(BSP_U32 u32Size, MEM_POOL_TYPE enFlags, BSP_U8* pFileNam
 }
 
 /*****************************************************************************
-* º¯ Êý Ãû  : BSP_Free
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : BSP_Free
 *
-* ¹¦ÄÜÃèÊö  : BSP ¶¯Ì¬ÄÚ´æÊÍ·Å
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : BSP ï¿½ï¿½Ì¬ï¿½Ú´ï¿½ï¿½Í·ï¿½
 *
-* ÊäÈë²ÎÊý  : pMem: ¶¯Ì¬ÄÚ´æÖ¸Õë
-* Êä³ö²ÎÊý  : ÎÞ
-* ·µ »Ø Öµ  : ÎÞ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : pMem: ï¿½ï¿½Ì¬ï¿½Ú´ï¿½Ö¸ï¿½ï¿½
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  : ï¿½ï¿½
 *****************************************************************************/
 BSP_VOID  BSP_Free(BSP_VOID* pMem)
 {
@@ -643,21 +643,21 @@ BSP_VOID  BSP_Free(BSP_VOID* pMem)
 EXPORT_SYMBOL(BSP_Free);
 
 /*****************************************************************************
-* º¯ Êý Ãû  : BSP_Free
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : BSP_Free
 *
-* ¹¦ÄÜÃèÊö  : BSP ¶¯Ì¬ÄÚ´æÊÍ·Å(Debug½Ó¿Ú)
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : BSP ï¿½ï¿½Ì¬ï¿½Ú´ï¿½ï¿½Í·ï¿½(Debugï¿½Ó¿ï¿½)
 *
-* ÊäÈë²ÎÊý  : pMem: ¶¯Ì¬ÄÚ´æÖ¸Õë
-*             pFileName: Ê¹ÓÃµÄÔ´ÎÄ¼þ
-*             u32Line:   ËùÔÚÎÄ¼þµÄÐÐºÅ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : pMem: ï¿½ï¿½Ì¬ï¿½Ú´ï¿½Ö¸ï¿½ï¿½
+*             pFileName: Ê¹ï¿½Ãµï¿½Ô´ï¿½Ä¼ï¿½
+*             u32Line:   ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ðºï¿½
 *
-* Êä³ö²ÎÊý  : ÎÞ
-* ·µ »Ø Öµ  : ÎÞ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  : ï¿½ï¿½
 *****************************************************************************/
 BSP_VOID  BSP_FreeDbg(BSP_VOID* pMem, BSP_U8* pFileName, BSP_U32 u32Line)
 {
 #ifdef __BSP_MEM_DEBUG__
-    /* ¼ì²éµ±Ç°ÄÚ´æÊÇ·ñÓÐÐ§ */
+    /* ï¿½ï¿½éµ±Ç°ï¿½Ú´ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ð§ */
     if (memPtrInvalid(pMem))
     {
         printk("invalid mem block, ptr:0x%p, line:%d\n", pMem, __LINE__);
@@ -673,7 +673,7 @@ BSP_VOID  BSP_FreeDbg(BSP_VOID* pMem, BSP_U8* pFileName, BSP_U32 u32Line)
 #endif
 
 #ifdef __BSP_MEM_DEBUG__
-    /* ¸üÐÂMGR DebugÐÅÏ¢ */
+    /* ï¿½ï¿½ï¿½ï¿½MGR Debugï¿½ï¿½Ï¢ */
     MEM_ITEM_LINE(pMem) = u32Line;
     MEM_ITEM_FILE_NAME(pMem) = (BSP_U32)pFileName;
 #endif
@@ -684,20 +684,20 @@ BSP_VOID  BSP_FreeDbg(BSP_VOID* pMem, BSP_U8* pFileName, BSP_U32 u32Line)
 }
 
 /*****************************************************************************
-* º¯ Êý Ãû  : BSP_SMalloc
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : BSP_SMalloc
 *
-* ¹¦ÄÜÃèÊö  : BSP ¶¯Ì¬ÄÚ´æ·ÖÅä(¼Óspin lock±£»¤,¶àºË³¡¾°Ê¹ÓÃ)
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : BSP ï¿½ï¿½Ì¬ï¿½Ú´ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½spin lockï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½Ë³ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½)
 *
-* ÊäÈë²ÎÊý  : u32Size: ·ÖÅäµÄ´óÐ¡(byte)
-*             enFlags: ÄÚ´æÊôÐÔ(ÔÝ²»Ê¹ÓÃ,Ô¤Áô)
-* Êä³ö²ÎÊý  : ÎÞ
-* ·µ »Ø Öµ  : ·ÖÅä³öÀ´µÄÄÚ´æÖ¸Õë
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : u32Size: ï¿½ï¿½ï¿½ï¿½Ä´ï¿½Ð¡(byte)
+*             enFlags: ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Ý²ï¿½Ê¹ï¿½ï¿½,Ô¤ï¿½ï¿½)
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½Ö¸ï¿½ï¿½
 *****************************************************************************/
 BSP_VOID* BSP_SMalloc(BSP_U32 u32Size, MEM_POOL_TYPE enFlags)
 {
     BSP_U8 *pItem;
 
-    /* ·ÖÅäÄÚ´æ */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ */
     pItem = memAlloc((BSP_U32)enFlags, u32Size);
 
     return (BSP_VOID*)pItem;
@@ -705,16 +705,16 @@ BSP_VOID* BSP_SMalloc(BSP_U32 u32Size, MEM_POOL_TYPE enFlags)
 EXPORT_SYMBOL(BSP_SMalloc);
 
 /*****************************************************************************
-* º¯ Êý Ãû  : BSP_SMallocDbg
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : BSP_SMallocDbg
 *
-* ¹¦ÄÜÃèÊö  : BSP ¶¯Ì¬ÄÚ´æ·ÖÅä(¼Óspin lock±£»¤,¶àºË³¡¾°Ê¹ÓÃ)(Debug½Ó¿Ú)
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : BSP ï¿½ï¿½Ì¬ï¿½Ú´ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½spin lockï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½Ë³ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½)(Debugï¿½Ó¿ï¿½)
 *
-* ÊäÈë²ÎÊý  : u32Size: ·ÖÅäµÄ´óÐ¡(byte)
-*             enFlags: ÄÚ´æÊôÐÔ(ÔÝ²»Ê¹ÓÃ,Ô¤Áô)
-*             pFileName: Ê¹ÓÃµÄÔ´ÎÄ¼þ
-*             u32Line:   ËùÔÚÎÄ¼þµÄÐÐºÅ
-* Êä³ö²ÎÊý  : ÎÞ
-* ·µ »Ø Öµ  : ³É¹¦/Ê§°Ü
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : u32Size: ï¿½ï¿½ï¿½ï¿½Ä´ï¿½Ð¡(byte)
+*             enFlags: ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Ý²ï¿½Ê¹ï¿½ï¿½,Ô¤ï¿½ï¿½)
+*             pFileName: Ê¹ï¿½Ãµï¿½Ô´ï¿½Ä¼ï¿½
+*             u32Line:   ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ðºï¿½
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  : ï¿½É¹ï¿½/Ê§ï¿½ï¿½
 *****************************************************************************/
 BSP_VOID* BSP_SMallocDbg(BSP_U32 u32Size, MEM_POOL_TYPE enFlags, BSP_U8* pFileName, BSP_U32 u32Line)
 {
@@ -728,20 +728,20 @@ BSP_VOID* BSP_SMallocDbg(BSP_U32 u32Size, MEM_POOL_TYPE enFlags, BSP_U8* pFileNa
     }
 #endif
 
-    /* ·ÖÅäÄÚ´æ */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ */
     pItem = memAlloc((BSP_U32)enFlags, u32Size);
 
     return (BSP_VOID*)pItem;
 }
 
 /*****************************************************************************
-* º¯ Êý Ãû  : BSP_SFree
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : BSP_SFree
 *
-* ¹¦ÄÜÃèÊö  : BSP ¶¯Ì¬ÄÚ´æÊÍ·Å(¼Óspin lock±£»¤,¶àºË³¡¾°Ê¹ÓÃ)
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : BSP ï¿½ï¿½Ì¬ï¿½Ú´ï¿½ï¿½Í·ï¿½(ï¿½ï¿½spin lockï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½Ë³ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½)
 *
-* ÊäÈë²ÎÊý  : pMem: ¶¯Ì¬ÄÚ´æÖ¸Õë
-* Êä³ö²ÎÊý  : ÎÞ
-* ·µ »Ø Öµ  : ÎÞ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : pMem: ï¿½ï¿½Ì¬ï¿½Ú´ï¿½Ö¸ï¿½ï¿½
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  : ï¿½ï¿½
 *****************************************************************************/
 BSP_VOID  BSP_SFree(BSP_VOID* pMem)
 {
@@ -753,7 +753,7 @@ BSP_VOID  BSP_SFree(BSP_VOID* pMem)
     MEM_INVALID_CACHE(MEM_GET_ALLOC_ADDR(pMem), MEM_MGR_SIZE_FOR_CACHE);
 
 #ifdef __BSP_MEM_DEBUG__
-    /* ¼ì²éµ±Ç°ÄÚ´æÊÇ·ñÓÐÐ§ */
+    /* ï¿½ï¿½éµ±Ç°ï¿½Ú´ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ð§ */
     if (memPtrInvalid(pMem)                     ||
         MEM_FREE == MEM_ITEM_STATUS(pMem)       ||
         MEM_ITEM_FLAGS(pMem) == MEM_NORM_DDR_POOL)
@@ -772,16 +772,16 @@ BSP_VOID  BSP_SFree(BSP_VOID* pMem)
 EXPORT_SYMBOL(BSP_SFree);
 
 /*****************************************************************************
-* º¯ Êý Ãû  : BSP_SFree
+* ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : BSP_SFree
 *
-* ¹¦ÄÜÃèÊö  : BSP ¶¯Ì¬ÄÚ´æÊÍ·Å(¼Óspin lock±£»¤,¶àºË³¡¾°Ê¹ÓÃ)(Debug½Ó¿Ú)
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : BSP ï¿½ï¿½Ì¬ï¿½Ú´ï¿½ï¿½Í·ï¿½(ï¿½ï¿½spin lockï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½Ë³ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½)(Debugï¿½Ó¿ï¿½)
 *
-* ÊäÈë²ÎÊý  : pMem: ¶¯Ì¬ÄÚ´æÖ¸Õë
-*             pFileName: Ê¹ÓÃµÄÔ´ÎÄ¼þ
-*             u32Line:   ËùÔÚÎÄ¼þµÄÐÐºÅ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : pMem: ï¿½ï¿½Ì¬ï¿½Ú´ï¿½Ö¸ï¿½ï¿½
+*             pFileName: Ê¹ï¿½Ãµï¿½Ô´ï¿½Ä¼ï¿½
+*             u32Line:   ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ðºï¿½
 *
-* Êä³ö²ÎÊý  : ÎÞ
-* ·µ »Ø Öµ  : ÎÞ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+* ï¿½ï¿½ ï¿½ï¿½ Öµ  : ï¿½ï¿½
 *****************************************************************************/
 BSP_VOID  BSP_SFreeDbg(BSP_VOID* pMem, BSP_U8* pFileName, BSP_U32 u32Line)
 {
@@ -791,7 +791,7 @@ BSP_VOID  BSP_SFreeDbg(BSP_VOID* pMem, BSP_U8* pFileName, BSP_U32 u32Line)
 }
 
 /**************************************************************************
-  µ÷ÊÔÐÅÏ¢ÊµÏÖ
+  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Êµï¿½ï¿½
 **************************************************************************/
 static const char* g_memPoolName[] =
 {
@@ -860,7 +860,7 @@ BSP_S32 BSP_MEM_DumpBlock(BSP_U32 u32Addr)
         printk("The Block:0x%x may Invalid!\n", u32Addr);
     }
 
-    /* ÎªÈ·±£ÕýÈ·,Í³Ò»Ë¢ÏÂCache */
+    /* ÎªÈ·ï¿½ï¿½ï¿½ï¿½È·,Í³Ò»Ë¢ï¿½ï¿½Cache */
     MEM_INVALID_CACHE(MEM_GET_ALLOC_ADDR(u32Addr), MEM_MGR_SIZE_FOR_CACHE);
 
     printk("================================\n");
@@ -946,16 +946,16 @@ BSP_S32 BSP_MEM_Scan(BSP_U32 u32PoolType)
     printk("Most Used Item:     %d\n", pAllocInfo->mostUsedItem);
     printk("\n");
 
-    /* É¨Ãè MemPool */
+    /* É¨ï¿½ï¿½ MemPool */
     while(u32CurScan < u32EndAddr)
     {
-        /* ÏÈÄÃµ½usr ptr */
+        /* ï¿½ï¿½ï¿½Ãµï¿½usr ptr */
         u32CurScan += u32MgrSize;
 
-        /* ´òÓ¡µ±Ç°ÄÚ´æ¿éÐÅÏ¢ */
+        /* ï¿½ï¿½Ó¡ï¿½ï¿½Ç°ï¿½Ú´ï¿½ï¿½ï¿½ï¿½Ï¢ */
         (VOID)BSP_MEM_DumpBlock(u32CurScan);
 
-        /* ÒÆ¶¯µ½ÏÂÒ»¸öÄÚ´æ¿é */
+        /* ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ */
         u32CurScan += MEM_ITEM_SIZE(u32CurScan);
 
         printk("\npress \'Enter\' to continue, press \'q\' to stop scan\n");
