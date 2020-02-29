@@ -1,19 +1,19 @@
 /******************************************************************************
 
-                  °æÈ¨ËùÓÐ (C), 2001-2011, »ªÎª¼¼ÊõÓÐÏÞ¹«Ë¾
+                  ï¿½ï¿½È¨ï¿½ï¿½ï¿½ï¿½ (C), 2001-2011, ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾
 
  ******************************************************************************
-  ÎÄ ¼þ Ãû   : FeatureConfig.h
-  °æ ±¾ ºÅ   :
-  ×÷    Õß   : Ëï·É 62584
-  Éú³ÉÈÕÆÚ   : 2008Äê03ÔÂ11ÈÕ
-  ×î½üÐÞ¸Ä   :
-  ¹¦ÄÜÃèÊö   : ¶¨ÒåÁË²úÆ·¼¶¿çÄ£¿éÌØÐÔºê¶¨Òå
-  º¯ÊýÁÐ±í   :
-  ÐÞ¸ÄÀúÊ·   :
-  1.ÈÕ    ÆÚ   : 2008Äê03ÔÂ11ÈÕ
-    ×÷    Õß   : Ëï·É 62584
-    ÐÞ¸ÄÄÚÈÝ   : ´´½¨ÎÄ¼þ
+  ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½   : FeatureConfig.h
+  ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½   :
+  ï¿½ï¿½    ï¿½ï¿½   : ï¿½ï¿½ï¿½ 62584
+  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   : 2008ï¿½ï¿½03ï¿½ï¿½11ï¿½ï¿½
+  ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½   :
+  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½ï¿½Ë²ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½Ôºê¶¨ï¿½ï¿½
+  ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½   :
+  ï¿½Þ¸ï¿½ï¿½ï¿½Ê·   :
+  1.ï¿½ï¿½    ï¿½ï¿½   : 2008ï¿½ï¿½03ï¿½ï¿½11ï¿½ï¿½
+    ï¿½ï¿½    ï¿½ï¿½   : ï¿½ï¿½ï¿½ 62584
+    ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
 
 ******************************************************************************/
 #ifndef __FEATURECONFIG_H__
@@ -25,7 +25,7 @@ extern "C" {
 #endif
 #endif
 
-/* ¿ª¹ØÌØÐÔ±äÁ¿ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ */
 #define FEATURE_ON                                  1
 #define FEATURE_OFF                                 0
 
@@ -34,7 +34,7 @@ extern "C" {
 #define MEMORY_SIZE_128M                            3
 #define MEMORY_SIZE_256M                            4
 #define MEMORY_SIZE_512M                            5
-/* Ð­ÒéÕ»°æ±¾ */
+/* Ð­ï¿½ï¿½Õ»ï¿½æ±¾ */
 #define PS_PTL_VER_DANAMIC                          20
 
 #define PS_PTL_VER_PRE_R99                          (-2)
@@ -48,46 +48,46 @@ extern "C" {
 #define PS_PTL_VER_R9                               6
 #define PS_UE_REL_VER                               PS_PTL_VER_R9
 
-/* GSM Í¨ÐÅ½ÓÈë¼¼ÊõÄ£Ê½ */
+/* GSM Í¨ï¿½Å½ï¿½ï¿½ë¼¼ï¿½ï¿½Ä£Ê½ */
 #define FEATURE_UE_MODE_G                           FEATURE_ON
 
-/* WCDMA Í¨ÐÅ½ÓÈë¼¼ÊõÄ£Ê½ */
+/* WCDMA Í¨ï¿½Å½ï¿½ï¿½ë¼¼ï¿½ï¿½Ä£Ê½ */
 #define FEATURE_UE_MODE_W                           FEATURE_ON
 
-/* Ö§³ÖCSÓïÒôÒµÎñ */
+/* Ö§ï¿½ï¿½CSï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ */
 #define FEATURE_CS                                  FEATURE_ON
 
-/* GÄ£´«ÕæÖ§³Ö */
+/* GÄ£ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ */
 #define FEATURE_GFAX                                FEATURE_OFF
 
-/* WÄ£´«ÕæÖ§³Ö */
+/* WÄ£ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ */
 #define FEATURE_WFAX                                FEATURE_OFF
 
-/* GÐ¡Çø¹ã²¥ */
+/* GÐ¡ï¿½ï¿½ï¿½ã²¥ */
 #define FEATURE_GCBS                                FEATURE_ON
 
-/* WÐ¡Çø¹ã²¥ */
+/* WÐ¡ï¿½ï¿½ï¿½ã²¥ */
 #define FEATURE_WCBS                                FEATURE_ON
 
-/* Ö§³ÖAP */
+/* Ö§ï¿½ï¿½AP */
 #define FEATURE_AP                                  FEATURE_OFF
 
-/* Ö§³ÖBALONG_UDP_V1R1 */
+/* Ö§ï¿½ï¿½BALONG_UDP_V1R1 */
 #define BALONG_UDP_V1R1                             FEATURE_OFF
 
-/* Ö§³ÖBALONG_UDP_V1R2 */
+/* Ö§ï¿½ï¿½BALONG_UDP_V1R2 */
 #define BALONG_UDP_V1R2                             FEATURE_OFF
 
-/* Ö§³Ö PTABLE UDP */
+/* Ö§ï¿½ï¿½ PTABLE UDP */
 #define FEATURE_PTABLE_UDP                          FEATURE_ON
 
-/* Ö§³ÖSTICK */
+/* Ö§ï¿½ï¿½STICK */
 #define FEATURE_STICK                               FEATURE_OFF
 
-/* Ö§³ÖE5 */
+/* Ö§ï¿½ï¿½E5 */
 #define FEATURE_E5                                  FEATURE_OFF
 
-/* Ö§³ÖE5_UDP */
+/* Ö§ï¿½ï¿½E5_UDP */
 #define FEATURE_E5_UDP                              FEATURE_OFF
 
 /* PC Voice */
@@ -99,7 +99,7 @@ extern "C" {
 /* Security Boot */
 #define FEATURE_SEC_BOOT                            FEATURE_OFF
 
-/* ÊÇ·ñÖ§³Ö¶àÄ£ */
+/* ï¿½Ç·ï¿½Ö§ï¿½Ö¶ï¿½Ä£ */
 #ifdef VERSION_V7R1_C010
 #define FEATURE_LTE                                 FEATURE_ON
 #else
@@ -134,7 +134,7 @@ extern "C" {
 /*charge*/
 #define FEATURE_CHARGE                              FEATURE_OFF
 
-#define FEATURE_ICC_DEBUG                           FEATURE_ON/*ICC¿ÉÎ¬¿É²â²âÊÔ´ò×®*/
+#define FEATURE_ICC_DEBUG                           FEATURE_OFF/*ICCï¿½ï¿½Î¬ï¿½É²ï¿½ï¿½ï¿½Ô´ï¿½×®*/
 
 /*power_on_off*/
 #define FEATURE_POWER_ON_OFF                        FEATURE_OFF
@@ -152,13 +152,13 @@ extern "C" {
 
 #define FEATURE_DC_MIMO                             FEATURE_OFF
 
-/*harq ÍâÒÆ*/
+/*harq ï¿½ï¿½ï¿½ï¿½*/
 #define FEATURE_HARQ_OUT                            FEATURE_OFF
 
 /*interpeak*/
 #define FEATURE_INTERPEAK                           FEATURE_OFF
 
-/*interpeak_mini ¸Ãºê¶¨ÒåÒÀÀµÓÚFEATURE_INTERPEAK£¬½öÔÚFEATURE_INTERPEAKÎªONÊ±ÉúÐ§Ëù*/
+/*interpeak_mini ï¿½Ãºê¶¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½FEATURE_INTERPEAKï¿½ï¿½ï¿½ï¿½ï¿½ï¿½FEATURE_INTERPEAKÎªONÊ±ï¿½ï¿½Ð§ï¿½ï¿½*/
 #define FEATURE_INTERPEAK_MINI                      FEATURE_OFF
 
 /*ipwebs_feature_e5*/
@@ -199,25 +199,25 @@ extern "C" {
 #define FEATURE_UL_E_CELL_FACH                      FEATURE_OFF
 
 #define FEATURE_DC_UPA                              FEATURE_OFF
-/*E5 ºôÎüµÆ*/
+/*E5 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 #define FEATURE_BREATH_LIGHT                        FEATURE_OFF
-/* ÈýÉ«µÆÊ¹ÄÜ¿ª¹Ø */
+/* ï¿½ï¿½É«ï¿½ï¿½Ê¹ï¿½Ü¿ï¿½ï¿½ï¿½ */
 #define FEATURE_LEDSTATUS                           FEATURE_OFF
 /*E5 LED*/
 #define FEATURE_E5_LED                              FEATURE_OFF
-/*RTCÌØÐÔ¿ª¹Ø*/
+/*RTCï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½*/
 #define FEATURE_RTC                                 FEATURE_OFF
-/* BBPÐ¡ÓÊÏä: ´ËÌØÐÔ¿ªÆôºó, WTTF»á½«BBPÓÊÏäÖÐµÄÊý¾Ý¿½±´µ½TTF MEM, ´Ó¶ø¼õÐ¡
-BBPÓÊÏä¹æ¸ñ, ´ïµ½²Ã¼ôÄÚ´æµÄÄ¿µÄ */
+/* BBPÐ¡ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ï¿½, WTTFï¿½á½«BBPï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½TTF MEM, ï¿½Ó¶ï¿½ï¿½ï¿½Ð¡
+BBPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ïµ½ï¿½Ã¼ï¿½ï¿½Ú´ï¿½ï¿½Ä¿ï¿½ï¿½ */
 #define FEATURE_SMALL_MAILBOX                       FEATURE_OFF
-/* µÍ¹¦ºÄ·ÖÇøÉÏÏÂµçÁÙÊ±¿ª¹Ø */
+/* ï¿½Í¹ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ */
 #define FEATURE_TEMP_DSP_CORE_POWER_DOWN            FEATURE_OFF
 #define FEATURE_RECONFIG                            FEATURE_ON
 
-/* Ó²¼ÓÃÜ°æ±¾¸ÄÖÆÌØÐÔºê£¬E5 ÉÏ´ò¿ª£¬stick µÈ°æ±¾¹Ø±Õ¡£²Î¼û matao00151948 µÄÓÊ¼þ */
+/* Ó²ï¿½ï¿½ï¿½Ü°æ±¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôºê£¬E5 ï¿½Ï´ò¿ª£ï¿½stick ï¿½È°æ±¾ï¿½Ø±Õ¡ï¿½ï¿½Î¼ï¿½ matao00151948 ï¿½ï¿½ï¿½Ê¼ï¿½ */
 #define FEATURE_HWENCRY_REWORK                      FEATURE_OFF
 
-/* ÄÚ´æ³Ø¹ÜÀíµ¥Ôª */
+/* ï¿½Ú´ï¿½Ø¹ï¿½ï¿½ï¿½ï¿½ï¿½Ôª */
 #define FEATURE_MMU_BIG                             FEATURE_OFF
 
 #define FEATURE_MMU_MEDIUM                          FEATURE_ON
@@ -228,14 +228,14 @@ BBPÓÊÏä¹æ¸ñ, ´ïµ½²Ã¼ôÄÚ´æµÄÄ¿µÄ */
 
 #define FEATURE_SDUPDATE                            FEATURE_OFF
 
-/* x00195127 add for SHELL LOCKÌØÐÔ */
+/* x00195127 add for SHELL LOCKï¿½ï¿½ï¿½ï¿½ */
 #define FEATURE_SECURITY_SHELL                      FEATURE_ON
 
 #define FEATURE_EPAD                                FEATURE_OFF
 
 #define FEATURE_HSIC_SLAVE                          FEATURE_OFF
 
-/* ÉÕÆ¬°æ±¾´ò¿ªLOG */
+/* ï¿½ï¿½Æ¬ï¿½æ±¾ï¿½ï¿½LOG */
 #ifdef PRODUCT_CFG_BURN_OPEN
 #define FEATURE_MANUFACTURE_LOG                     FEATURE_ON
 #else
@@ -257,15 +257,15 @@ BBPÓÊÏä¹æ¸ñ, ´ïµ½²Ã¼ôÄÚ´æµÄÄ¿µÄ */
 
 #define FEATURE_HW_CODEC                            FEATURE_ON
 
-/* SKBÊÇ·ñÎªÀ©Õ¹½á¹¹¿ª¹Ø */
+/* SKBï¿½Ç·ï¿½Îªï¿½ï¿½Õ¹ï¿½á¹¹ï¿½ï¿½ï¿½ï¿½ */
 #define FEATURE_SKB_EXP                             FEATURE_OFF
 
-/* ¶àÎÄ¼þÏµÍ³·ÖÇø */
+/* ï¿½ï¿½ï¿½Ä¼ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ */
 #define FEATURE_MULTI_FS_PARTITION                  FEATURE_ON 
 
 #define FEATURE_MULTI_MODEM                         FEATURE_OFF
 
-/* socpÍ¨µÀ²Ã¼ô */
+/* socpÍ¨ï¿½ï¿½ï¿½Ã¼ï¿½ */
 #define FEATURE_SOCP_CHANNEL_REDUCE                 FEATURE_OFF
 
 #ifdef __cplusplus

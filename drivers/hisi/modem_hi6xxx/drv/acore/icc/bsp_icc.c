@@ -1090,8 +1090,10 @@ BSP_S32 ICC_SendStream(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
     /* BSP-693, modified by z67193 */
     local_irq_restore(flags);
 
+    #if(FEATURE_ICC_DEBUG == FEATURE_ON)
     pChan->sDebug.u32SendTimes++;
     pChan->sDebug.u32SendBytes += s32CopySize;
+    #endif
 
     /* ֪ͨ�Է� */
     ICC_NotifyTarget(pChan, ICC_CHAN_SIGNAL_DATA);
@@ -1582,6 +1584,7 @@ BSP_S32 ICC_SendPacket(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
     BSP_U32 delta;
     unsigned long flags = 0;
 
+    #if 0
     #if(FEATURE_ICC_DEBUG != FEATURE_ON)
     BSP_S32 s32FifoSize;
     BSP_U8* CopyStart;
@@ -1589,7 +1592,7 @@ BSP_S32 ICC_SendPacket(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
     BSP_S32 s32SaveAdd;
     BSP_S32 s32UsedSize;
     #endif
-
+    #endif
 
     down(&pChan->semSync);
 
@@ -1634,7 +1637,7 @@ BSP_S32 ICC_SendPacket(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
         local_irq_restore(flags);
         up(&pChan->semSync);
 
-
+#if 0
 #if(FEATURE_ICC_DEBUG != FEATURE_ON)
         s32FifoSize =ptxChan->u32FIFOsize;
 
@@ -1673,6 +1676,7 @@ BSP_S32 ICC_SendPacket(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
 
         *(volatile UINT32 *) EXCH_A_ICC_FLAG_ADDR = EXCH_A_CORE_FLAG;
 
+#endif
 #endif
         //systemError(BSP_MODU_MNTN, 0, 0, 0, 0);//test
         return BSP_ERR_ICC_BUFFER_FULL;
@@ -1723,11 +1727,10 @@ BSP_S32 ICC_SendPacket(ICC_CHAN_DEV_S *pChan, BSP_U8 *pData, BSP_S32 s32Size)
 
     /* ����дָ�� */
     ptxChan->u32PhyWrite = (BSP_U32)HISI_PA_ADDRESS(pWrite);
-
+#if(FEATURE_ICC_DEBUG == FEATURE_ON)
     pChan->sDebug.u32SendTimes++;
     pChan->sDebug.u32SendBytes += s32Size;
 
-#if(FEATURE_ICC_DEBUG == FEATURE_ON)
     ICC_FIFOIdleSize(ptxChan, &s32IdleSize1, &s32IdleSize2);
     s32IdleSize = s32IdleSize1 + s32IdleSize2;
     pChan->sDebug.u32IdleSize = s32IdleSize;
@@ -1757,7 +1760,9 @@ BSP_VOID ICC_ReceiveStream(ICC_CHAN_DEV_S *pChan)
     UDI_HANDLE handle;
 
     ICC_FIFODataSize(pChan->prxSubChanInfo, &s32DataSize1, &s32DataSize2);
+    #if(FEATURE_ICC_DEBUG == FEATURE_ON)
     pChan->sDebug.u32LastHaveBytes = s32DataSize1+s32DataSize2;
+    #endif
 
     /* streamģʽֱ�ӻص� */
     if (pChan->read_cb)
@@ -2124,7 +2129,10 @@ BSP_VOID ICC_HandleEvent(ICC_CHAN_DEV_S *pChan)
 
     if (ICC_CHAN_SIGNAL_DATA & u32Signal)
     {
+        #if(FEATURE_ICC_DEBUG == FEATURE_ON)
         pChan->sDebug.u32RecvInt++;
+        #endif
+
         if (ICC_CHAN_MODE_STREAM == pChan->enMode)
         {
             /* streamģʽ */
@@ -2527,6 +2535,7 @@ BSP_S32 BSP_ICC_Open(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
     pChan->read_cb = pChanAttr->read_cb;
     pChan->write_cb = pChanAttr->write_cb;
     pChan->next = BSP_NULL;
+    #if(FEATURE_ICC_DEBUG == FEATURE_ON)
     pChan->sDebug.u32SendTimes = 0;
     pChan->sDebug.u32SendBytes= 0;
     pChan->sDebug.u32RecvTimes= 0;
@@ -2536,6 +2545,7 @@ BSP_S32 BSP_ICC_Open(BSP_U32 u32ChanId, ICC_CHAN_ATTR_S *pChanAttr)
     pChan->sDebug.u32LastReadBytes = 0;
     pChan->sDebug.u32NoticeEnough = 0;
     pChan->sDebug.u32RecvEnough = 0;
+    #endif
 
     /* �ж�Ŀ�괦����ͨ����״̬ */
     if(ICC_CHAN_STATE_OPENED == pChan->prxSubChanInfo->u32SubChanState)
@@ -3012,19 +3022,21 @@ BSP_S32 ICC_ShowChan(BSP_U32 u32ChanId)
         printk("TX buffer:\tS=0x%x,E=0x%x,W=0x%x,R=0x%x\n",
                (unsigned int)(pChan->ptxSubChanInfo->u32PhyStart), (unsigned int)(pChan->ptxSubChanInfo->u32PhyEnd),
                (unsigned int)(pChan->ptxSubChanInfo->u32PhyWrite), (unsigned int)(pChan->ptxSubChanInfo->u32PhyRead));
+        #if(FEATURE_ICC_DEBUG == FEATURE_ON)
         printk("TX times:\tWt=0x%x Bytes=0x%x EM=0x%x\n", pChan->sDebug.u32SendTimes, pChan->sDebug.u32SendBytes, pChan->sDebug.u32NoticeEnough);
+        #endif
         printk("RX state:\t0x%x\n", pChan->prxSubChanInfo->u32SubChanState);
         printk("RX signal:\t0x%x\n", pChan->prxSubChanInfo->u32Signal);
         printk("RX need write data size:\t%d\n", pChan->prxSubChanInfo->u32WriteNeedSize);
         printk("RX buffer:\tS=0x%x,E=0x%x,W=0x%x,R=0x%x\n",
                (unsigned int)(pChan->prxSubChanInfo->u32PhyStart), (unsigned int)(pChan->prxSubChanInfo->u32PhyEnd),
                (unsigned int)(pChan->prxSubChanInfo->u32PhyWrite), (unsigned int)(pChan->prxSubChanInfo->u32PhyRead));
+        #if(FEATURE_ICC_DEBUG == FEATURE_ON)
         printk("RX times:\tInt=0x%x Read=0x%x Bytes=0x%x EM=0x%x\n", pChan->sDebug.u32RecvInt,
             pChan->sDebug.u32RecvTimes, pChan->sDebug.u32RecvBytes, pChan->sDebug.u32RecvEnough);
         printk("RX last:\tRecv=0x%x Read=0x%x\n", pChan->sDebug.u32LastHaveBytes, pChan->sDebug.u32LastReadBytes);
-#if(FEATURE_ICC_DEBUG == FEATURE_ON)
         printk("IdleSize=0x%x \n", pChan->sDebug.u32IdleSize);
-#endif
+        #endif
     }
 
     return 0;
@@ -3053,19 +3065,21 @@ BSP_S32 ICC_ShowChanAll(void)
             printk("TX buffer:\tS=0x%x,E=0x%x,W=0x%x,R=0x%x\n",
                     (unsigned int)(pChan->ptxSubChanInfo->u32PhyStart), (unsigned int)(pChan->ptxSubChanInfo->u32PhyEnd),
                     (unsigned int)(pChan->ptxSubChanInfo->u32PhyWrite), (unsigned int)(pChan->ptxSubChanInfo->u32PhyRead));
+            #if(FEATURE_ICC_DEBUG == FEATURE_ON)
             printk("TX times:\tWt=0x%x Bytes=0x%x EM=0x%x\n", pChan->sDebug.u32SendTimes, pChan->sDebug.u32SendBytes, pChan->sDebug.u32NoticeEnough);
+            #endif
             printk("RX state:\t0x%x\n", pChan->prxSubChanInfo->u32SubChanState);
             printk("RX signal:\t0x%x\n", pChan->prxSubChanInfo->u32Signal);
             printk("RX need write data size:\t%d\n", pChan->prxSubChanInfo->u32WriteNeedSize);
             printk("RX buffer:\tS=0x%x,E=0x%x,W=0x%x,R=0x%x\n",
                     (unsigned int)(pChan->prxSubChanInfo->u32PhyStart), (unsigned int)(pChan->prxSubChanInfo->u32PhyEnd),
                     (unsigned int)(pChan->prxSubChanInfo->u32PhyWrite), (unsigned int)(pChan->prxSubChanInfo->u32PhyRead));
+            #if(FEATURE_ICC_DEBUG == FEATURE_ON)
             printk("RX times:\tInt=0x%x Read=0x%x Bytes=0x%x EM=0x%x\n", pChan->sDebug.u32RecvInt,
                 pChan->sDebug.u32RecvTimes, pChan->sDebug.u32RecvBytes, pChan->sDebug.u32RecvEnough);
             printk("RX last:\tRecv=0x%x Read=0x%x\n", pChan->sDebug.u32LastHaveBytes, pChan->sDebug.u32LastReadBytes);
-#if(FEATURE_ICC_DEBUG == FEATURE_ON)
             printk("IdleSize=0x%x \n", pChan->sDebug.u32IdleSize);
-#endif
+            #endif
         }
 
     }
