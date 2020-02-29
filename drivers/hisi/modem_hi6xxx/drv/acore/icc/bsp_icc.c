@@ -151,7 +151,7 @@ BSP_BOOL    g_bCcoreReset_Channel[ICC_CHAN_NUM_MAX] = {BSP_FALSE};
 /*used for the Uplayer like OAM to register a icc channel 's wakeup callback*/
 IccUplayerChannelCB  g_UplayerChannel_CB = {NULL, 0};
 
-int mdrv_icc_register_resume_cb(unsigned int u32ChanId, FUNCPTR_1 debug_routine, int param)
+void mdrv_icc_register_resume_cb(unsigned int u32ChanId, FUNCPTR_1 debug_routine, int param)
 {
     /*the u32ChanId is ignored*/
     g_UplayerChannel_CB.routine = debug_routine;
