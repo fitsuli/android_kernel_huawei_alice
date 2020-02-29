@@ -735,9 +735,9 @@ ifeq ($(shell $(CONFIG_SHELL) $(srctree)/scripts/gcc-goto.sh $(CC)), y)
 endif
 
 #release version complie
-ifeq (true,$(OBB_PRODUCT_FINAL_RELEASE))
-    KBUILD_CFLAGS += -DFINAL_RELEASE_MODE
-endif
+#ifeq (true,$(OBB_PRODUCT_FINAL_RELEASE))
+KBUILD_CFLAGS += -DFINAL_RELEASE_MODE
+#endif
 
 # Add user supplied CPPFLAGS, AFLAGS and CFLAGS as the last assignments
 KBUILD_CPPFLAGS += $(KCPPFLAGS)
