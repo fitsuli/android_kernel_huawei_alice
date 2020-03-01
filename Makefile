@@ -385,7 +385,8 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Wimplicit-function-declaration \
 		   -Wno-format-security \
 		   -fno-delete-null-pointer-checks \
-		   -pipe
+		   -pipe \
+		   -mtune=cortex-a53
 
 # Disable some GCC warnings
 KBUILD_CFLAGS   += $(call cc-disable-warning,int-to-pointer-cast,)
