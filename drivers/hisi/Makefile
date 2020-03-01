@@ -50,13 +50,4 @@ ifeq ($(TARGET_VERSION_MODE),factory)
 CFLAGS_KERNEL   += -DCONFIG_FACTORY_MODE
 endif
 
-ifneq ($(strip $(CFG_HISI_OPENSOURCE)), true)
-obj-$(CONFIG_HISI_BALONG_MODEM_HI3XXX)        += modem_hi3xxx/
-endif
-
-ifneq ($(strip $(CFG_HISI_OPENSOURCE)), true)
-obj-$(CONFIG_HISI_BALONG_MODEM_HI3630)        += modem_hi3630/
-endif
-
-
 obj-$(CONFIG_HISI_PERFHUB) += perfhub/

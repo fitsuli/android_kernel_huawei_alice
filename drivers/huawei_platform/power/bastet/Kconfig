@@ -9,7 +9,7 @@ config HUAWEI_BASTET
 
 config BASTET_BALONG_COMM
 	bool "Bastet Balong comm driver support"
-	depends on HUAWEI_BASTET && (HISI_BALONG_MODEM_HI3XXX || HISI_BALONG_MODEM_HI6XXX)
+	depends on HUAWEI_BASTET && (HISI_BALONG_MODEM_HI6XXX)
 	default y
 	---help---
 	  This driver provides Balong modem comm interface for Huawei Bastet.

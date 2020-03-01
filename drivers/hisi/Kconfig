@@ -4,12 +4,6 @@ config HISILICON_PLATFORM
 	help
 	  Say yes here to support the hisilicon platform
 
-config HISI_BALONG_MODEM_HI3630
-	bool "HISI_BALONG_MODEM_HI3630 support"
-	default n 
-	help
-	  Say yes here to support HISI_BALONG_MODEM_HI3630
-
 if HISILICON_PLATFORM
 
 source "drivers/hisi/adc/Kconfig"
@@ -23,8 +17,6 @@ source "drivers/hisi/mntn/Kconfig"
 source "drivers/hisi/ipc_hi6xxx/Kconfig"
 source "drivers/hisi/hifi_mailbox/Kconfig"
 source "drivers/hisi/modem_hi6xxx/Kconfig"
-source "drivers/hisi/modem_hi3xxx/Kconfig"
-source "drivers/hisi/modem_hi3630/Kconfig"
 source "drivers/hisi/mailbox/Kconfig"
 source "drivers/hisi/mutex_service/Kconfig"
 source "drivers/hisi/noc/Kconfig"
@@ -44,10 +36,3 @@ source "drivers/hisi/hmpthresholds/Kconfig"
 source "drivers/hisi/memory_dump/Kconfig"
 source "drivers/hisi/perfhub/Kconfig"
 endif #HISILICON_PLATFORM
-
-if HISI_BALONG_MODEM_HI3XXX
-source "drivers/hisi/efuse/Kconfig"
-endif
-if HISI_BALONG_MODEM_HI3630
-source "drivers/hisi/efuse/Kconfig"
-endif
