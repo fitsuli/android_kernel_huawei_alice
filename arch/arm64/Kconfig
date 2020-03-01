@@ -241,12 +241,6 @@ config HISI_BALONG_MODEM
 	help
 	Hisilicon ap+modem config support.
 
-config HISI_BALONG_MODEM_HI3XXX
-	bool "Hisilicon ap+modem config"
-	default n
-	help
-	Hisilicon ap+modem config support.
-
 config ARM_TIMER_SP804
 	bool "sp804 clockevent support"
 	default n

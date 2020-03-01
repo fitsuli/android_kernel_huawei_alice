@@ -137,12 +137,6 @@ static irqreturn_t hisi_noc_irq_handler(int irq, void *data)
 	struct hisi_noc_device *noc_dev = (struct hisi_noc_device *)data;
 	pctrl_base = noc_dev->pctrl_base;
 
-#if defined(CONFIG_HISI_NOC_HI3635_PLATFORM) ||defined(CONFIG_HISI_NOC_HI3650_PLATFORM) || defined(CONFIG_HISI_NOC_HI3630_PLATFORM)
-#ifdef CONFIG_HISI_BALONG_MODEM_HI3XXX
-    bsp_modem_error_handler(0,(void*)0,(void*)0,(void*)0);
-#endif
-#endif
-
 #if defined(CONFIG_HISI_NOC_HI3635_PLATFORM) || defined(CONFIG_HISI_NOC_HI3630_PLATFORM)
     regulator_address_info_list();
 #endif
